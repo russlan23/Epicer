@@ -2,17 +2,21 @@
 	#jeu{position :static}
 	#frame {width: 1000px; margin:auto; left:0; right:0; height: 500px; position: relative;  border: groove 10px; background-color: black ; background-size: 100%;}
 	
-	#infoJoueur{width : 100 px; position : absolute ;  top:0px;  right:0px;  height: 50px; background-color: rgba(143,143,143, 0.7); }
+	#infoJoueur{width : 100 px; position : absolute ;  top:0px;  right:0px;  height: 100px; background-color: rgba(143,143,143, 0.7); }
 
 	#joueur{position : static ;  top:0px;  right:15px;  height: 22px; color: black; }
 	#scoreTotal {position : static; top: 22px; right: 15px; height: 22px; color: black; }
+	#etapeActuelle{position : static; top: 44px; right: 15px; height: 22px; color: black; }
+	#chapActuel{position : static; top: 66px; right: 15px; height: 22px; color: black; }
 	
-	#Accueil{position : absolute ;  top:100px;  left:50px;  width : 200px;  height: 200px; background-color: rgba(143,143,143, 0.8); }
 	
-	#reprendre { position : absolute; top: 20px; right:10px ;left: 10px;  background-color: white; color : black; padding: 5px; border-radius: 3px; font-size:25px}
-	#accederChapitre{ position : absolute;  top: 60px; right:10px ;left: 10px; background-color: yellow; color : black; padding: 5px; border-radius: 3px; font-size:25px}
-	#tutoriel{ position : absolute;  top: 100px;  right:10px ;left: 10px; background-color: red; color : black; padding: 5px; border-radius: 3px; font-size:25px}
-	#historiqueScore{ position : absolute;  top: 140px;  right:10px ;left: 10px; background-color: green; color : black; padding: 5px; border-radius: 3px;font-size:25px}
+	
+	#Accueil{position : absolute ;  top:100px;  left:50px;  width : 200px;  height: 320px; background-color: rgba(143,143,143, 0.8); }
+	
+	#reprendre { position : absolute; top: 20px; height:80px;   right:10px ;left: 10px;  background-color: white; color : black; padding: 5px; border-radius: 3px; font-size:25px}
+	#accederChapitre{ position : absolute;  top: 100px; height:80px;right:10px ;left: 10px; background-color: yellow; color : black; padding: 5px; border-radius: 3px; font-size:25px}
+	#tutoriel{ position : absolute;  top: 180px; height:80px; right:10px ;left: 10px; background-color: red; color : black; padding: 5px; border-radius: 3px; font-size:25px}
+	#historiqueScore{ position : absolute;  top: 260px; height:80px; right:10px ;left: 10px; background-color: green; color : black; padding: 5px; border-radius: 3px;font-size:25px}
 	
 	
 	#menu {position : absolute; top: 55px; right: 5px;  background-color: grey; border: 4px 4px #0072cf groove; color : black; padding: 5px; 	border-radius: 3px; }

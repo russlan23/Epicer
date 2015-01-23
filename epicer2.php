@@ -21,7 +21,7 @@
 			<?php	
 				
 				$log_reussie=false;	 $nouv_compte_reussi=false; $pseudo_existant=false;
-				$pseudo=""; $motPass=""; $scoreTotal=0;	$scoreChapitre=0; $etape=0; $chapitre=0; $chapitresFaits="";
+				$pseudo=""; $motPass=""; $scoreTotal=0;	$scoreActChap=0; $idEtape=0; $emplacementChap=0; $idChapitre=0;
 				
 				
 				 // si l'utilisateur a clické sur le bouton "se connecter"
@@ -38,8 +38,13 @@
 						}
 
 						// la requete
-							$req = $bdd->prepare('SELECT * FROM joueur WHERE pseudo= ?');
-							$req->execute(array($_POST['pseudo']));
+	$req = $bdd->prepare('SELECT joueur.pseudo ,joueur.motPass, joueur.idEtape, joueur.scoreTotal,chapitre.idChapitre, etape.emplacementChap FROM joueur,etape,chapitre WHERE joueur.idEtape=etape.idEtape AND etape.idChapitre=chapitre.idChapitre AND joueur.pseudo= ?');
+				//		SELECT joueur.pseudo ,joueur.motPass, joueur.idEtape, joueur.scoreTotal,chapitre.idChapitre, etape.emplacementChap FROM joueur,etape,chapitre,joue WHERE joueur.idEtape=etape.idEtape AND joue.idJoueur=joueur.idJoueur AND joue.idEtape=etape.idEtape AND etape.idChapitre=chapitre.idChapitre AND joueur.pseudo= 'baba' 
+						
+											
+						//$req = $bdd->prepare('SELECT * FROM joueur WHERE pseudo=?');
+						$req->execute(array($_POST['pseudo']));
+						
 							$donnees = $req->fetch();
 							
 							if($donnees['pseudo']!=null){ // Si il a pu recuperer des donnés : 
@@ -47,8 +52,11 @@
 								
 								if($donnees['motPass']==$_POST['mot_pass']){
 									$log_reussie=true;
+									
 									$scoreTotal=$donnees['scoreTotal'];
-									$chapitresFaits=$donnees['chapitresFaits'];
+									$idEtape=$donnees['idEtape'];
+									$idChapitre=$donnees['idChapitre'];
+									$emplacementChap=$donnees['emplacementChap'];
 									$req->closeCursor();	
 								}
 							
@@ -89,13 +97,15 @@
 							<div id = "infoJoueur"> 
 								<div id="joueur"> <?php	echo 'Joueur : '. ' ' . $_POST['pseudo']; ?>  </div>
 								<div id="scoreTotal"> <?php echo 'Score Total : '. ' ' . $scoreTotal; ?>  </div>  
+								<div id ="etapeActuelle"> <?php echo 'Etape Actuelle : '. ' ' . $emplacementChap; ?>  </div>
+								<div id ="chapActuel"> <?php echo 'Chapitre Actuel : '. ' ' . $idChapitre; ?>  </div>
+								
 							</div> 
 							
-							<div id="menu" onClick= "pause()"> Menu </div> 
 							
 							<div id ="Accueil"> 
 							
-							<?php	if ($nouv_compte_reussi==false ){ 
+							<?php	if ($nouv_compte_reussi==false AND $emplacementChap!=0){ 
 							
 										echo '<div id = "reprendre"> Reprendre </div>'; // L'option Reprendre, mais à revoir au niveau de codage									} 
 									}
