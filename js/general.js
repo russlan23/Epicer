@@ -1,11 +1,10 @@
 // variables 
 				
-			
-				document.getElementById("frame").style.backgroundImage= "url('/Epicer/images/accueil.jpg')";
+		var p=0; 	
+		
+		document.getElementById("frame").style.backgroundImage= "url('/Epicer/images/accueil.jpg')";
 								
 		
-
-
 		function choixChap(){
 		document.getElementById("Accueil").style.visibility="hidden";	
 		document.getElementById("choixChapitre").style.visibility="visible";
@@ -13,7 +12,7 @@
 		
 
 	// definition de variable joueur 
-		var joueurConstr ={
+	/*	var joueurConstr ={
 
 			pseudo="", 
 			motPass="",
@@ -25,12 +24,12 @@
 			
 			}
 			
-		joueur.pseudo="Jessie";  // a faire en sorte qu'il recupère les donnes du site qui les a recupéré de la BDD
+	joueur.pseudo="Jessie";  // a faire en sorte qu'il recupère les donnes du site qui les a recupéré de la BDD
 
 	var joueur=Object.create(joueurConstr);
 
-	
-	
+
+	*/
  
     //la map Globale des chapitres :
 	   var tableChap = [];
@@ -39,10 +38,10 @@
 
 			switch(chp){
 				case 1: tableChap =  [0,1,2,101,102,3,4,5,103,104,6];  // 1,2,3... sont les numéros d'image dans ce chapitre, quand >100 c'est un mini jeu
-					Break:
+					Break;
 				case 2: tableChap =  [0,7,8,105,106,9,10,11, ];
 					//do something
-					Break:
+					Break;
 				default:
 					// do something
 					Break;
@@ -70,9 +69,7 @@
 				
 			case 1 : 
 				changeChapitre (chapitre);
-			//	document.getElementById('imgFond').style.visibility="visible";
-				limit= 15;
-				counttime(); 
+			
 			break; 
 			
 			case 2 : 
@@ -94,4 +91,5 @@
 		
 		
 	//
+	
 		

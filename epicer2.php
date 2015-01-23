@@ -90,9 +90,7 @@
 					
 				?> 		
 
-							<script src="/Epicer/js/start.js"></script>
-							<script src="/Epicer/js/general.js"></script>  
-							
+							<script src="/Epicer/js/general.js"> </script>  
 							
 							<div id = "infoJoueur"> 
 								<div id="joueur"> <?php	echo 'Joueur : '. ' ' . $_POST['pseudo']; ?>  </div>
@@ -117,8 +115,8 @@
 								
 							</div>
 							
-							
 			<?php } ?>
+			</div>    <!-- pour fermer la frame-->
 		</body>
 		
 	</html>
