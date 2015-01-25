@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="/css/style.css" /> 
 		<link rel="stylesheet" href="/Epicer/css/epicer_style.css" />
 		<title>  Jeu Epicer </title>
+		<script src="/Epicer/js/general.js"> </script>  
 		</head>
 
 		<body onkeydown="keydown(event)" onkeyup="keyup(event)" onkeypress = "keypress(event)">
@@ -89,31 +90,47 @@
 					if ($log_reussie==true OR $nouv_compte_reussi==true ){
 					
 				?> 		
-
-							<script src="/Epicer/js/general.js"> </script>  
 							
-							<div id = "infoJoueur"> 
-								<div id="joueur"> <?php	echo 'Joueur : '. ' ' . $_POST['pseudo']; ?>  </div>
-								<div id="scoreTotal"> <?php echo 'Score Total : '. ' ' . $scoreTotal; ?>  </div>  
-								<div id ="etapeActuelle"> <?php echo 'Etape Actuelle : '. ' ' . $emplacementChap; ?>  </div>
-								<div id ="chapActuel"> <?php echo 'Chapitre Actuel : '. ' ' . $idChapitre; ?>  </div>
+							<div id ="barreInfo"> 
+							
+								<div id = "infoJoueur"> 
+									<div id="joueur" class="infoJoueur"> <?php	echo 'Joueur : '. ' ' . $_POST['pseudo']; ?>  </div>
+									<div id="scoreTotal" class="infoJoueur"> <?php echo 'Score Total : '. ' ' . $scoreTotal; ?>  </div>  
+									<div id ="etapeActuelle" class="infoJoueur"> <?php echo 'Etape Actuelle : '. ' ' . $emplacementChap; ?>  </div>
+									<div id ="chapActuel" class="infoJoueur"> <?php echo 'Chapitre Actuel : '. ' ' . $idChapitre; ?>  </div>
+								</div> 
 								
-							</div> 
-							
-							
-							<div id ="Accueil"> 
-							
-							<?php	if ($nouv_compte_reussi==false AND $emplacementChap!=0){ 
-							
-										echo '<div id = "reprendre"> Reprendre </div>'; // L'option Reprendre, mais à revoir au niveau de codage									} 
-									}
-							?>
-																				
-								<div id="accederChapitre" onClick= "accdrChap()"> Acceder aux chapitres </div>
-								<div id="tutoriel" onClick= "accdrTuto()"> Tutoriel </div>
-								<div id="historiqueScore" onClick= "accdrHstrq()"> Historique </div>
+								<div id="btnAccueil" onClick="accueil()"> Accueil </div>
 								
 							</div>
+							
+							<div id="espaceJeu">
+								<div id ="accueil"> 
+								
+								<?php	if ($nouv_compte_reussi==false AND $emplacementChap!=0){ 
+								
+											echo '<div id = "reprendre" class ="acc bcWhite" onClick :"reprendre()"> Reprendre </div>'; // L'option Reprendre, mais à revoir au niveau de codage									} 
+										}
+								?>
+																					
+									<div id="accederChapitre" class = "acc bcYellow" onClick= "choixChap()"> Acceder aux chapitres </div>
+									<div id="tutoriel" class = "acc bcGreen" onClick= "accdrTuto()"> Tutoriel </div>
+									<div id="historiqueScore" class = "acc bcRed" onClick= "accdrHstrq()"> Historique </div>
+									
+								</div>
+								
+								<div id="choixChapitre"> 
+								
+									<div id="chap1" class ="chap"> <h3>Chapitre I </h3> Temps estimé : 6 min  </div>
+									<div id="chap2" class ="chap"> <h3>Chapitre II </h3> Temps estimé : 3 min  </div>
+									<div id="chap3" class ="chap"> <h3>Chapitre III</h3>Temps estimé : 8 min  </div>
+									<div id="chap4" class ="chap"> <h3>Chapitre IV </h3> Temps estimé : 5 min  </div>
+								
+								</div>
+							
+							</div>
+							
+							
 							
 			<?php } ?>
 			</div>    <!-- pour fermer la frame-->

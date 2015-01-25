@@ -1,15 +1,26 @@
 // variables 
 				
-		var p=0; 	
-		
-		document.getElementById("frame").style.backgroundImage= "url('/Epicer/images/accueil.jpg')";
-								
 		
 		function choixChap(){
-		document.getElementById("Accueil").style.visibility="hidden";	
+		document.getElementById("accueil").style.visibility="hidden";	
 		document.getElementById("choixChapitre").style.visibility="visible";
+		document.getElementById("btnAccueil").style.visibility="visible";	
+		document.getElementById("espaceJeu").style.backgroundImage= "url('/Epicer/images/choixChapitre.jpg')";
 		}
 		
+		function accueil(){
+		document.getElementById("accueil").style.visibility="visible";	
+		document.getElementById("choixChapitre").style.visibility="hidden";
+		document.getElementById("espaceJeu").style.backgroundImage= "url('/Epicer/images/accueil.jpg')";
+		// rajouter la sauvegarde !
+		}
+		
+		
+		function reprendre(){
+		//a ecrire :
+		// changeChapitre (----);
+		
+		}
 
 	// definition de variable joueur 
 	/*	var joueurConstr ={
@@ -37,9 +48,17 @@
 	   function changeChapitre (chp){
 
 			switch(chp){
+				case 0: tableChap =  [0]; 
+					Break;
 				case 1: tableChap =  [0,1,2,101,102,3,4,5,103,104,6];  // 1,2,3... sont les numéros d'image dans ce chapitre, quand >100 c'est un mini jeu
 					Break;
-				case 2: tableChap =  [0,7,8,105,106,9,10,11, ];
+				case 2: tableChap =  [0,7,8,105,106,9,10,11 ];
+					//do something
+					Break;
+				case 3: tableChap =  [0];
+					//do something
+					Break;
+				case 4: tableChap =  [0];
 					//do something
 					Break;
 				default:

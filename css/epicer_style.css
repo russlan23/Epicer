@@ -1,30 +1,50 @@
 	
-	#jeu{position :static}
+#jeu{position :static}
 	
-	#frame {width: 1000px; margin:auto; left:0; right:0; height: 500px; position: relative;  border: groove 10px; background-color: black ; background-size: 100%;}
+#frame {width: 1000px; margin:auto; left:0; right:0; height: 500px; position: relative;  border: groove 10px; background-color: black ; background-size: cover;}
 	
-	#infoJoueur{width : 100 px; position : absolute ;  top:0px;  right:0px;  height: 100px; background-color: rgba(143,143,143, 0.7); }
-
-	#joueur{position : static ;  top:0px;  right:15px;  height: 22px; color: black; }
-	#scoreTotal {position : static; top: 22px; right: 15px; height: 22px; color: black; }
-	#etapeActuelle{position : static; top: 44px; right: 15px; height: 22px; color: black; }
-	#chapActuel{position : static; top: 66px; right: 15px; height: 22px; color: black; }
+	/* le div de barre Info et tout ce qui est dedans :  */
+	#barreInfo{width: 150px; margin:auto; left:850px; height: 500px;  position: absolute; background-color: rgba(143,143,143, 0.7);}
 	
 	
+			/* les infos en haut à droite :  */
+			.infoJoueur{position :relative ; top:20px; left : 5px;  height: 22px; color: black; }}
+			#joueur{}
+			#scoreTotal {}
+			#etapeActuelle{}
+			#chapActuel{}
+		
+		/* le bouton de reviens vers l'acceuil:  */
+		#btnAccueil{ position: absolute ; text-align: center; width: 90px; top:150px; left:25px;  background-color:red;  height: 40px; color: black; font-size:25px; border-radius: 10px; visibility:hidden}
+		#btnAccueil:hover{ background-color:blue;}
+		
+	/* le div de espace Jeu et tout ce qui est dedans :  */
+	#espaceJeu{width: 850px; position: relative; height: 500px; background-color: white; background-size: cover; background: url('/Epicer/images/accueil.jpg'); }
+		
+		#accueil{position : absolute;  top:80px;  left:50px;  width :200px;  height: 320px; background-color: rgba(143,143,143, 0.8); border-radius: 10px; }
+			
+			/*le Menu dans l'acceuil */
+			.acc{ position :relative;  height:65px; width : 160px; left: 20px; top:10px; color : black; padding: 5px; border-radius: 7px; font-size:25px;}
+			.acc:hover{font-size:30px; background-color: blue;}
+			.bcWhite{background-color: white;} 
+			.bcRed{background-color: red;} 
+			.bcGreen{background-color: green;} 
+			.bcYellow{background-color: yellow;} 
+			/*voici element par element s'il faut les editer*/
+			#reprendre {}
+			#accederChapitre{}
+			#tutoriel{}
+			#historiqueScore{}
 	
-	#Accueil{position : absolute ;  top:100px;  left:50px;  width : 200px;  height: 320px; background-color: rgba(143,143,143, 0.8); }
 	
-	#reprendre { position : absolute; top: 20px; height:80px;   right:10px ;left: 10px;  background-color: white; color : black; padding: 5px; border-radius: 3px; font-size:25px;}
-	#reprendre:hover {position : absolute; top: 20px; height:80px;   right:10px ;left: 10px;  background-color: blue; color : black; padding: 5px; border-radius: 4px; font-size:30px;}
-	#accederChapitre{ position : absolute;  top: 100px; height:80px;right:10px ;left: 10px; background-color: yellow; color : black; padding: 5px; border-radius: 3px; font-size:25px;}
-	#accederChapitre:hover {position : absolute; top: 100px; height:80px;   right:10px ;left: 10px;  background-color: blue; color : black; padding: 5px; border-radius: 4px; font-size:30px;}
-	#tutoriel{ position : absolute;  top: 180px; height:80px; right:10px ;left: 10px; background-color: red; color : black; padding: 5px; border-radius: 3px; font-size:25px;}
-	#tutoriel:hover {position : absolute; top: 180px; height:80px;   right:10px ;left: 10px;  background-color: blue; color : black; padding: 5px; border-radius: 4px; font-size:30px;}
-	#historiqueScore{ position : absolute;  top: 260px; height:80px; right:10px ;left: 10px; background-color: green; color : black; padding: 5px; border-radius: 3px;font-size:25px;}
-	#historiqueScore:hover {position : absolute; top: 260px; height:80px;   right:10px ;left: 10px;  background-color: blue; color : black; padding: 5px; border-radius: 4px; font-size:30px;}
+		#choixChapitre{position : absolute; width:500px; height: 400px; left :100px; right :0px; top: 100px;   visibility:hidden}
+		.chap{ position : absolute; width:130px; height :120px; color : black; background-color:pink;  padding: 5px; border-radius: 6px; font-size:20px; }
+		.chap:hover{ background-color: blue;}
+		#chap1{top:0px; left : 100px}
+		#chap2{top:0px; left : 400px}
+		#chap3{top:150px; left : 100px}
+		#chap4{top:150px; left : 400px}
 	
-	#restart{position : absolute; margin: auto; top: 50%;  left: 50%; z-index:4; transform: translate(-50%, -50%); background-color: grey; border: 20px  grey solid; color : black; font-size: 25px; border-radius: 3px; visibility:hidden;}
-	
-	#imgs{ position: relative; left:0; right:0;margin:auto; }
+	/* La forme du login et le message d'erreur eventuel*/ 
 	form {position:absolute; background-color: grey; width: 350px; height: 200px; border: 3px solid white; margin:auto; left:0; right:0; top:0; bottom:0; text-align: center; padding: 10; color:black;}
 	#errCnxn {position :relative; margin:auto; border:groove 2px; width: 350px; left:0;  right:0; top: 90px ; font-size:20px ;color: red; font-weight: bold;background-color:white;}
