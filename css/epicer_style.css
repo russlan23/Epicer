@@ -39,7 +39,7 @@
 			.bcGreen{background-color: green;} 
 			.bcYellow{background-color: yellow;} 
 			/*voici element par element s'il faut les editer*/
-			#reprendre {}
+			#reprendre {visibility:hidden}
 			#accederChapitre{}
 			#tutoriel{}
 			#historiqueScore{}

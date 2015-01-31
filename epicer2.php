@@ -109,7 +109,7 @@
 									
 								</div> 
 								
-								<div id="btnAccueil" onClick="accueil()"> Accueil </div>
+								<input id="btnAccueil" type="submit" name="button" value="Accueil" onClick="accueil()"/> </input>
 								
 								<input id="etapeSuivante" type="submit" name="button" value="Suivant" onClick="etapeSuivante()"/> </input>
 								<input id="etapePrecedente" type="submit" name="button" value="Precedent" onClick="etapePrecedente()"/> </input>
@@ -118,12 +118,14 @@
 							<div id="espaceJeu">
 								<div id ="accueil"> 
 								
-								<?php	if ($nouv_compte_reussi==false AND $emplacementChap!=0){ 
+					     	
+								<!--	<php	if ($emplacementChap!=0){ 
 								
-								echo '<div id = "reprendre" class ="acc bcWhite" onClick :"reprendre('. $idChapitre . ',' . $emplacementChap . ')"> Reprendre </div>'; // L'option Reprendre, mais à revoir au niveau de codage									} 
+								echo '<div id="reprendre" class ="acc bcWhite" onClick="reprendre('. $idChapitre . ',' . $emplacementChap . ')"> Reprendre </div>'; // L'option Reprendre, mais à revoir au niveau de codage									} 
 										}
-								?>
-																					
+								?>   -->
+									
+									<div id="reprendre" class ="acc bcWhite" onClick="reprendre()"> Reprendre </div>
 									<div id="accederChapitre" class = "acc bcYellow" onClick= "choixChap()"> Acceder aux chapitres </div>
 									<div id="tutoriel" class = "acc bcGreen" onClick= "accdrTuto()"> Tutoriel </div>
 									<div id="historiqueScore" class = "acc bcRed" onClick= "accdrHstrq()"> Historique </div>
