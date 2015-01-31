@@ -9,7 +9,7 @@
 		<script src="/Epicer/js/general.js"> </script>  
 		</head>
 
-		<body onkeydown="keydown(event)" onkeyup="keyup(event)" onkeypress = "keypress(event)">
+		<body onload ="setUpJoueur()" >
 	
 			<!-- Erika a modifie ca ; les prochaines ligne de php servent à inclure le Header et la barre de navigation du site WEB-->
 			<?php include ($_SERVER['DOCUMENT_ROOT']."/phpincludes/header1.php");
@@ -97,10 +97,16 @@
 							<div id ="barreInfo"> 
 							
 								<div id = "infoJoueur"> 
-									<div id="joueur" class="infoJoueur"> <?php	echo 'Joueur : '. ' ' . $_POST['pseudo']; ?>  </div>
-									<div id="scoreTotal" class="infoJoueur"> <?php echo 'Score Total : '. ' ' . $scoreTotal; ?>  </div>  
-									<div id ="etapeActuelle" class="infoJoueur"> <?php echo 'Etape Actuelle : '. ' ' . $emplacementChap; ?>  </div>
-									<div id ="chapActuel" class="infoJoueur"> <?php echo 'Chapitre Actuel : '. ' ' . $idChapitre; ?>  </div>
+								
+									<div class="infoJoueur"> Joueur: <span id="infoPseudo" > <?php	echo $_POST['pseudo']; ?>  </span> </div>
+									<div class="infoJoueur"> Score Total: <span id="infoScoreTotal"> <?php echo $scoreTotal; ?>  </span> </div>
+									<div class="infoJoueur"> Etape: <span id ="infoEmplacementActuel"> <?php echo $emplacementChap; ?>  </span> </div>
+									<div class="infoJoueur"> Chapitre: <span id ="infoChapActuel" ><?php echo $idChapitre; ?> </span></div>
+									
+									<!-- A partir d'ici les autres attriburs de la "barreInfo" sont toujour cachés et servent juste pour 
+											la communication des données et la sauvegarde-->
+									<div id ="infoEtapeActuelle"> <?php echo $idEtape; ?>  </div>     
+									
 								</div> 
 								
 								<div id="btnAccueil" onClick="accueil()"> Accueil </div>
@@ -108,9 +114,6 @@
 								<input id="etapeSuivante" type="submit" name="button" value="Suivant" onClick="etapeSuivante()"/> </input>
 								<input id="etapePrecedente" type="submit" name="button" value="Precedent" onClick="etapePrecedente()"/> </input>
 							</div>
-							
-							
-							
 							
 							<div id="espaceJeu">
 								<div id ="accueil"> 

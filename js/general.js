@@ -1,3 +1,6 @@
+
+
+
 // variables 
 		var mode="";
 		var chapActuel;
@@ -5,24 +8,29 @@
 	    var emplacementChap;
 		var scoreTotal;
 		
-			
+	
 	// definition de variable joueur 
-	 var joueurConstr ={
+		 var joueurConstr ={
 
-			pseudo:"", 
-			motPass:"",
-			//gagnerPnts: function() {},
-			scoreTotal:0,
-			chapActl:1,
-			socreActChap:0
-			}
+				pseudo:"", 
+				//gagnerPnts: function() {},
+				scoreTotal:0,
+				chapActl:1,
+				socreActChap:0
+				}
+				
+		var joueur=Object.create(joueurConstr);
+		 
+		function setUpJoueur(){	
+		joueur.pseudo=document.getElementById("infoPseudo").innerText;
+	
+		}
+	
+	
+		function miseAJour(){
+		document.getElementById("joueur").innerHTML = joueur;
 			
-	  // a faire en sorte qu'il recupère les donnes du site qui les a recupéré de la BDD
-
-	var joueur=Object.create(joueurConstr);
-	joueur.pseudo="Jessie";
-
-		
+		}
 		
 		
 		function choixChap(){
@@ -61,7 +69,7 @@
 				case 0: tableChap = [0];  // l'accueil
 					break;
 				case 1: tableChap = [1,2,3,101,102,4,5,6,103,104,7];   // 1,2,3... sont les numéros d'image dans ce chapitre, quand >100 c'est un mini jeu
-						document.getElementById("chapActuel").innerHTML= "Chapitre Actuel :" + 1;	
+						document.getElementById("infoChapActuel").innerText= 1;	
 					break;
 				case 2: tableChap =  [];
 					break;
@@ -89,6 +97,7 @@
 						emplacementChap=emplacementChap+1;
 						imageFond="url('/Epicer/images/im" + tableChap[emplacementChap] + ".jpg')";
 						document.getElementById("espaceJeu").style.backgroundImage=imageFond;	
+						document.getElementById("infoEmplacementActuel").innerText= emplacementChap;	
 					}
 				}
 		
@@ -102,6 +111,7 @@
 					
 					imageFond="url('/Epicer/images/im" + tableChap[emplacementChap] + ".jpg')";
 					document.getElementById("espaceJeu").style.backgroundImage=imageFond;	
+					document.getElementById("infoEmplacementActuel").innerText= emplacementChap;
 				}
 			}
 		}
@@ -136,5 +146,6 @@
 		
 		
 	//
+
 	
 		
