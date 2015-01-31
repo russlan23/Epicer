@@ -90,6 +90,9 @@
 					if ($log_reussie==true OR $nouv_compte_reussi==true ){
 					
 				?> 		
+						
+							
+							
 							
 							<div id ="barreInfo"> 
 							
@@ -102,14 +105,19 @@
 								
 								<div id="btnAccueil" onClick="accueil()"> Accueil </div>
 								
+								<input id="etapeSuivante" type="submit" name="button" value="Suivant" onClick="etapeSuivante()"/> </input>
+								<input id="etapePrecedente" type="submit" name="button" value="Precedent" onClick="etapePrecedente()"/> </input>
 							</div>
+							
+							
+							
 							
 							<div id="espaceJeu">
 								<div id ="accueil"> 
 								
 								<?php	if ($nouv_compte_reussi==false AND $emplacementChap!=0){ 
 								
-											echo '<div id = "reprendre" class ="acc bcWhite" onClick :"reprendre()"> Reprendre </div>'; // L'option Reprendre, mais à revoir au niveau de codage									} 
+								echo '<div id = "reprendre" class ="acc bcWhite" onClick :"reprendre('. $idChapitre . ',' . $emplacementChap . ')"> Reprendre </div>'; // L'option Reprendre, mais à revoir au niveau de codage									} 
 										}
 								?>
 																					
@@ -121,13 +129,14 @@
 								
 								<div id="choixChapitre"> 
 								
-									<div id="chap1" class ="chap"> <h3>Chapitre I </h3> Temps estimé : 6 min  </div>
-									<div id="chap2" class ="chap"> <h3>Chapitre II </h3> Temps estimé : 3 min  </div>
-									<div id="chap3" class ="chap"> <h3>Chapitre III</h3>Temps estimé : 8 min  </div>
-									<div id="chap4" class ="chap"> <h3>Chapitre IV </h3> Temps estimé : 5 min  </div>
+									<div id="chap1" class ="chap" onClick=start(1,0)> <h3>Chapitre I </h3> Temps estimé : 6 min  </div>
+									<div id="chap2" class ="chap" > <h3>Chapitre II </h3> Temps estimé : 3 min  </div>
+									<div id="chap3" class ="chap" > <h3>Chapitre III</h3>Temps estimé : 8 min  </div>
+									<div id="chap4" class ="chap" > <h3>Chapitre IV </h3> Temps estimé : 5 min  </div>
 								
 								</div>
-							
+								
+								<div id="chapFond"							
 							</div>
 							
 							

@@ -18,6 +18,13 @@
 		#btnAccueil{ position: absolute ; text-align: center; width: 90px; top:150px; left:25px;  background-color:red;  height: 40px; color: black; font-size:25px; border-radius: 10px; visibility:hidden}
 		#btnAccueil:hover{ background-color:blue;}
 		
+		#etapeSuivante{ position: absolute ; text-align: center; width: 100px; top:250px; left:25px;  background-color:green;  height: 40px; color: black; font-size:25px; border-radius: 10px; visibility:hidden}
+		#etapeSuivante:hover{ background-color:blue;}
+		
+		#etapePrecedente{ position: absolute ; text-align: center; width: 100px; top:310px; left:25px;  background-color:green;  height: 40px; color: black; font-size:25px; border-radius: 10px; visibility:hidden}
+		#etapePrecedente:hover{ background-color:blue;}
+		
+		
 	/* le div de espace Jeu et tout ce qui est dedans :  */
 	#espaceJeu{width: 850px; position: relative; height: 500px; background-color: white; background-size: cover; background: url('/Epicer/images/accueil.jpg'); }
 		
