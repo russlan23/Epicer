@@ -16,45 +16,78 @@
 			#infoEtapeActuelle{visibility:hidden}
 		
 		/* le bouton de reviens vers l'acceuil:  */
-		#btnAccueil{ position: absolute ; text-align: center; width: 90px; top:150px; left:25px;  background-color:red;  height: 40px; color: black; font-size:25px; border-radius: 10px; visibility:hidden}
+		#btnAccueil{ position: absolute ; text-align: center; width: 110px; top:150px; left:25px; outline:none; background-color:red;  height: 40px; color: black; font-size:25px; border-radius: 8px; visibility:hidden}
 		#btnAccueil:hover{ background-color:blue;}
 		
-		#etapeSuivante{ position: absolute ; text-align: center; width: 100px; top:250px; left:25px;  background-color:green;  height: 40px; color: black; font-size:25px; border-radius: 10px; visibility:hidden}
-		#etapeSuivante:hover{ background-color:blue;}
-		
-		#etapePrecedente{ position: absolute ; text-align: center; width: 100px; top:310px; left:25px;  background-color:green;  height: 40px; color: black; font-size:25px; border-radius: 10px; visibility:hidden}
-		#etapePrecedente:hover{ background-color:blue;}
+	
 		
 		
 	/* le div de espace Jeu et tout ce qui est dedans :  */
-	#espaceJeu{width: 850px; position: relative; height: 500px; background-color: white; background-size: cover; background: url('/Epicer/images/accueil.jpg'); }
+	#espaceJeu{width: 850px; position: relative; height: 500px; background-color: white; background-size: cover; background-repeat: no-repeat; background-image: url('/Epicer/images/accueil.jpg'); }
 		
-		#accueil{position : absolute;  top:80px;  left:50px;  width :200px;  height: 320px; background-color: rgba(143,143,143, 0.8); border-radius: 10px; }
+		#etapeSuivante{ position: absolute ; text-align: center; width: 80px; bottom:25px; right:0px; outline:none; background-color:green;  height: 60px; color: black; font-size:40px; border-radius: 15px; visibility:hidden ;  -webkit-animation: clignote 2s linear infinite alternate; animation: clignote 2s linear infinite alternate;}
+		#etapeSuivante:hover{ background-color:blue;}
+		#etapePrecedente{ position: absolute ; text-align: center; width: 80px; bottom:25px; left:0px; outline:none; background-color:green;  height: 60px; color: black; font-size:40px; border-radius: 15px; visibility:hidden; -webkit-animation: clignote 2s linear infinite alternate; animation: clignote 2s linear infinite alternate;}
+		#etapePrecedente:hover{ background-color:blue;}
+		
+		#accueil{position : absolute; padding: 20px 20px 20px 20px; top:80px; left:50px;  width :200px;   background-color: rgba(143,143,143, 0.8); border-radius: 10px;  -webkit-animation: appear 2s; animation: appear 2s;}
+			
 			
 			/*le Menu dans l'acceuil */
-			.acc{ position :relative;  height:65px; width : 160px; left: 20px; top:10px; color : black; padding: 5px; border-radius: 7px; font-size:25px;}
-			.acc:hover{font-size:30px; background-color: blue;}
-			.bcWhite{background-color: white;} 
-			.bcRed{background-color: red;} 
-			.bcGreen{background-color: green;} 
-			.bcYellow{background-color: yellow;} 
+			.acc{ position :relative; height:65px; width : 160px;  left: 20px;   padding:10px 10px 10px 5px;  color : black; border-radius: 7px; font-size:25px; }
+			.acc:hover{font-size:28px; background: blue;}
+			.bcWhite{background:#FFF; background: -moz-linear-gradient(#FFF, #1C1C1C);	background: -webkit-linear-gradient(#FFF, #1C1C1C); background: -o-linear-gradient(#FFF, #1C1C1C);} 
+			.bcRed{background:red; background: -moz-linear-gradient(red, #1C1C1C);	background: -webkit-linear-gradient(red, #1C1C1C); background: -o-linear-gradient(red, #1C1C1C);} 
+			.bcGreen{background:#04B404; background: -moz-linear-gradient(#04B404, #1C1C1C); background: -webkit-linear-gradient(#04B404, #1C1C1C); background: -o-linear-gradient(#04B404,#1C1C1C);} 
+			.bcYellow{background:#FFFF00; background: -moz-linear-gradient(#FFFF00, #1C1C1C); background: -webkit-linear-gradient(#FFFF00, #1C1C1C); background: -o-linear-gradient(#FFFF00,#1C1C1C);} 
 			/*voici element par element s'il faut les editer*/
-			#reprendre {visibility:hidden}
+			#reprendre {}
 			#accederChapitre{}
 			#tutoriel{}
 			#historiqueScore{}
-	
-	
-		#choixChapitre{position : absolute; width:500px; height: 400px; left :100px; right :0px; top: 100px;   visibility:hidden}
-		.chap{ position : absolute; width:130px; height :120px; color : black; background-color:pink;  padding: 5px; border-radius: 6px; font-size:20px; }
-		.chap:hover{ background-color: blue;}
-		#chap1{top:0px; left : 100px}
-		#chap2{top:0px; left : 400px}
-		#chap3{top:150px; left : 100px}
-		#chap4{top:150px; left : 400px}
+		
+			
+		#choixChapitre{position : absolute; width:500px; height: 400px; left :100px; right :0px; top: 100px; visibility:hidden;}
+			.chap{ position : absolute; width:130px; height :120px; color : black; background-color:pink;  padding: 5px; border-radius: 6px; font-size:20px; }
+			.chap:hover{ background-color: blue;}
+			#chap1{top:0px; left : 100px;}
+			#chap2{top:0px; left : 400px;}
+			#chap3{top:150px; left : 100px;}
+			#chap4{top:150px; left : 400px;}
+			
+	/* Le texte qui sera affiché dans le jeu*/	
+	.textChap{ position: absolute; height: 130px; width: 650px; left: 100px; bottom: 5px; border: 3px dashed blue; display:none;  background-color: rgba(143,143,143, 0.9); -webkit-animation: appear 2s; animation: appear 2s; }
+	.avatar{padding:10px 30px 20px 40px ; height: 15px;  background-position: 0px 10px ; background-repeat: no-repeat; font-size: 20px; font-weight:bold}
+	.Doc {color: black; background-image: url('/Epicer/images/Doc.jpg');}
+	.Paul{color: white; background-image: url('/Epicer/images/Paul.gif');}
 	
 	/* La forme du login et le message d'erreur eventuel*/ 
 	form {position:absolute; background-color: grey; width: 350px; height: 200px; border: 3px solid white; margin:auto; left:0; right:0; top:0; bottom:0; text-align: center; padding: 10; color:black;}
-	#errCnxn {position :relative; margin:auto; border:groove 2px; width: 350px; left:0;  right:0; top: 90px ; font-size:20px ;color: red; font-weight: bold;background-color:white;}
+	.error{color: #D8000C; padding:10px 10px 10px 50px ; font-weight: bold; background-color: #FFBABA; background-image: url('/Epicer/images/error.png'); background-repeat: no-repeat; background-position: 10px center;font-size:20px ;}
+	#errCnxn {position :relative; margin:auto; width: 295px; left:0;  right:0; top: 80px ;}
 	
-	#joueur{visibility:hidden}
+	
+	/* pour faire apparaitre les elements doucement : */ 
+	@-webkit-keyframes appear {
+		from {opacity : 0;}
+		to {opacity: 1;}
+	}
+
+	@keyframes appear {
+		from {opacity: 0;}
+		to {opacity: 1;}
+	}
+	
+	
+	@-webkit-keyframes clignote {
+		0% {opacity : 0.8;}
+		50% {opacity: 0.2;}
+		100% {opacity: 0.8}
+	}
+
+	@keyframes clignote {
+		0% {opacity : 0.8;}
+		50% {opacity: 0.2;}
+		100% {opacity: 0.8;}
+	}
+	

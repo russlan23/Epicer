@@ -8,6 +8,9 @@
 		var tableChap = [];
 	    var emplacementChap;
 		var scoreTotal;
+		var scoreChapitre;
+		var imageFond="";
+		var idText;
 		
 		
 	// definition de variable joueur 
@@ -17,7 +20,6 @@
 			scoreTotal=parseInt(document.getElementById("infoScoreTotal").innerText);
 			emplacementChap=parseInt(document.getElementById("infoEmplacementActuel").innerText);
 			chapActuel=parseInt(document.getElementById("infoChapActuel").innerText);
-		
 			accueil();
 		}
 	
@@ -28,25 +30,52 @@
 		}
 		
 		
-		function choixChap(){
-		document.getElementById("accueil").style.visibility="hidden";	
-		document.getElementById("choixChapitre").style.visibility="visible";
-		document.getElementById("btnAccueil").style.visibility="visible";	
-		document.getElementById("espaceJeu").style.backgroundImage="url('/Epicer/images/choixChapitre.jpg')";  
+		function choixChap(){	
+		
+			if(emplacementChap>0){   // si on veut choisir un chapitre alors qu'on est au milieu d'un autre on fait apparaître une demande de 
+									 // confirmation de la mise d'étape à 0
+				 location.href='#attentionConfirme';  
+			}
+			document.getElementById("accueil").style.visibility="hidden";	
+			document.getElementById("choixChapitre").style.visibility="visible";
+			document.getElementById("btnAccueil").style.visibility="visible";	
+			document.getElementById("espaceJeu").style.backgroundImage="url('/Epicer/images/choixChapitre.jpg')";  
+			document.getElementById("reprendre").style.display="none";
+			 
+		}
+		
+		function miseEtapeNulle(){  // cette etape met l'étape à 0 si dans choixChap on confirme que l'on veut commencer un nouveau chapitre
+			location.href='#'
+			emplacementChap=0; 
+			scoreChapitre=0;
+			chapActuel=0;
+			document.getElementById("infoChapActuel").innerText=chapActuel;	
+			document.getElementById("infoEmplacementActuel").innerText= emplacementChap;
+			
+		}
+		
+		 
+		function nonConf(){  // cette etape met l'étape à 0 si dans choixChap on confirme que l'on veut commencer un nouveau chapitre
+			location.href='#'
+			accueil();
 		}
 		
 		function accueil(){
 		// à gerer si le joueur a cliqué sur l'accueil en milieu du jeu 
-		document.getElementById("accueil").style.visibility="visible";	
-		document.getElementById("choixChapitre").style.visibility="hidden";
-		document.getElementById("espaceJeu").style.backgroundImage= "url('/Epicer/images/accueil.jpg')";
-		document.getElementById("etapeSuivante").style.visibility="hidden";
-		document.getElementById("etapePrecedente").style.visibility="hidden";
-		document.getElementById("btnAccueil").style.visibility="hidden";
-		
-		if(emplacementChap>0) {
-		 document.getElementById("reprendre").style.visibility="visible";
-		} 
+			document.getElementById("accueil").style.visibility="visible";	
+			document.getElementById("choixChapitre").style.visibility="hidden";
+			document.getElementById("espaceJeu").style.backgroundImage= "url('/Epicer/images/accueil.jpg')";
+			document.getElementById("etapeSuivante").style.visibility="hidden";
+			document.getElementById("etapePrecedente").style.visibility="hidden";
+			document.getElementById("btnAccueil").style.visibility="hidden";
+			if(document.getElementById(idText)){
+				document.getElementById(idText).style.display="none";
+			}
+			if(emplacementChap>0) {
+			 document.getElementById("reprendre").style.display="";
+			}else{
+			 document.getElementById("reprendre").style.display="none";
+			}
 		// rajouter la sauvegarde !
 		}
 		
@@ -61,7 +90,7 @@
 			switch(chp){
 				case 0: tableChap = [0];  // l'accueil
 					break;
-				case 1: tableChap = [1,2,3,101,201,4,5,6,103,104,7];   // 1,2,3... sont les numéros d'image dans ce chapitre, quand >100 c'est un mini jeu
+				case 1: tableChap = [1,2,3,4,5,101,201,6,7];   // 1,2,3... sont les numéros d'image dans ce chapitre, quand >100 c'est un mini jeu
 						chapActuel=1;
 						document.getElementById("infoChapActuel").innerText=chapActuel;	
 						
@@ -91,6 +120,16 @@
 					if (tableChap[emplacementChap+1]<100){ // <100 pour dire que ce n'est pas un mini jeu
 						emplacementChap=emplacementChap+1;
 						imageFond="url('/Epicer/images/im" + tableChap[emplacementChap] + ".jpg')";
+
+						if(document.getElementById(idText)){
+							document.getElementById(idText).style.display="none";;
+						}
+						
+						idText="text"+chapActuel+"_"+emplacementChap;
+						
+						if(document.getElementById(idText)){
+							document.getElementById(idText).style.display="initial";
+						}
 						document.getElementById("espaceJeu").style.backgroundImage=imageFond;	
 						document.getElementById("infoEmplacementActuel").innerText= emplacementChap;	
 					}
@@ -103,8 +142,15 @@
 			if(emplacementChap>0){
 				if (tableChap[emplacementChap-1]<100){ // <100 pour dire que ce n'est pas un mini jeu
 					emplacementChap=emplacementChap-1;
-					
 					imageFond="url('/Epicer/images/im" + tableChap[emplacementChap] + ".jpg')";
+					if(document.getElementById(idText)){
+							document.getElementById(idText).style.display="none";
+					}	
+						idText="text"+chapActuel+"_"+emplacementChap;
+						
+					if(document.getElementById(idText)){
+							document.getElementById(idText).style.display="initial";
+					}
 					document.getElementById("espaceJeu").style.backgroundImage=imageFond;	
 					document.getElementById("infoEmplacementActuel").innerText= emplacementChap;
 				}
@@ -115,22 +161,26 @@
 			var chapitre=chapActuel;
 			var emplcmnt=emplacementChap;
 			start(chapitre,emplcmnt);
-		
 		}
 	
 		function start(chapitre, emplcmnt){
 			document.getElementById("choixChapitre").style.visibility="hidden";	
 			document.getElementById("accueil").style.visibility="hidden";
-			document.getElementById("reprendre").style.visibility="hidden";
+			document.getElementById("reprendre").style.display="none";
 			document.getElementById("btnAccueil").style.visibility="visible";
-			//.... tous ce qui est à hide ou visible
-			
-			mode="play";
+		
 			emplacementChap=emplcmnt;
 			changeChapitre(chapitre);
-			var imageFond="url('/Epicer/images/im" + tableChap[emplacementChap] + ".jpg')";
-		//	document.getElementById("espaceJeu").style.visibility="true";
+			
+			imageFond="url('/Epicer/images/im" + tableChap[emplacementChap] + ".jpg')";
+			idText="text"+chapitre+"_"+emplacementChap;
+			
+			
 			document.getElementById("espaceJeu").style.backgroundImage=imageFond;
+			
+			if(document.getElementById(idText)){
+							document.getElementById(idText).style.display="initial";
+					}
 			
 			document.getElementById("etapeSuivante").style.visibility="visible";
 			document.getElementById("etapePrecedente").style.visibility="visible";

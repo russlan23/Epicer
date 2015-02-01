@@ -1,0 +1,68 @@
+
+/* ce code creer les modalDialog, souvent utilisé dans le jeu pour confirmer les étapes delicates, comme de commencer un chapitre alors qu'on a pas fini un autre  */ 
+
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalDialog > div {
+	color: #9F6000;
+	top:100px;
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 10px 20px 15px 20px;
+	border-radius: 10px;
+	text-align:center;
+	background-color:  #FEEFB3;
+	background-image: url('/Epicer/images/attention.png'); 
+	background-position: 125px 27px;
+	background-repeat: no-repeat; 
+	
+}
+
+
+.btnConf{ 
+	position: relative; 
+	width: 60px; 
+	height: 30px; 
+	background-color:#9F6000;  
+	font-size:20px; 
+}
+.btnConf:hover{ background-color:green;}
+
+
+#confNon{
+	position:relative;
+	left:60px;
+}
+#confOui{
+	position:relative;
+	left:20px;
+}
+
+
+
+
+/*	si on veut en gradient : 
+	background:#FFF
+	background: -moz-linear-gradient(#FFF, #999);
+	background: -webkit-linear-gradient(#FFF, #999);
+	background: -o-linear-gradient(#FFF, #999); */

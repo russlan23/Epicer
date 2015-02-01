@@ -5,8 +5,10 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="/css/style.css" /> 
 		<link rel="stylesheet" href="/Epicer/css/epicer_style.css" />
+		<link rel="stylesheet" href="/Epicer/css/modalDialog.css" />
 		<title>  Jeu Epicer </title>
 		<script src="/Epicer/js/general.js"> </script>  
+		<script src="/Epicer/js/appear.js"> </script>  
 		</head>
 
 		<body onload ="setUpJoueur()" >
@@ -25,7 +27,7 @@
 				$pseudo=""; $motPass=""; $scoreTotal=0;	$scoreActChap=0; $idEtape=0; $emplacementChap=0; $idChapitre=0;
 				
 				
-				 // si l'utilisateur a clické sur le bouton "se connecter"
+				 // si l'utilisateur a cliqué sur le bouton "se connecter"
 					
 					if(!empty($_POST['mot_pass']) AND !empty($_POST['pseudo'])){
 						
@@ -39,11 +41,10 @@
 						}
 
 						// la requete
-	$req = $bdd->prepare('SELECT joueur.pseudo ,joueur.motPass, joueur.idEtape, joueur.scoreTotal,chapitre.idChapitre, etape.emplacementChap FROM joueur,etape,chapitre WHERE joueur.idEtape=etape.idEtape AND etape.idChapitre=chapitre.idChapitre AND joueur.pseudo= ?');
-				//		SELECT joueur.pseudo ,joueur.motPass, joueur.idEtape, joueur.scoreTotal,chapitre.idChapitre, etape.emplacementChap FROM joueur,etape,chapitre,joue WHERE joueur.idEtape=etape.idEtape AND joue.idJoueur=joueur.idJoueur AND joue.idEtape=etape.idEtape AND etape.idChapitre=chapitre.idChapitre AND joueur.pseudo= 'baba' 
-						
-											
-						//$req = $bdd->prepare('SELECT * FROM joueur WHERE pseudo=?');
+						$req = $bdd->prepare('SELECT joueur.pseudo ,joueur.motPass, joueur.idEtape, joueur.scoreTotal,chapitre.idChapitre, etape.emplacementChap
+											  FROM joueur,etape,chapitre 
+											  WHERE joueur.idEtape=etape.idEtape AND etape.idChapitre=chapitre.idChapitre AND joueur.pseudo= ?');
+			
 						$req->execute(array($_POST['pseudo']));
 						
 							$donnees = $req->fetch();
@@ -65,16 +66,16 @@
 					}
 						
 					if ($_POST['action'] == 'Se connecter' AND $log_reussie==false) {
-								echo "<div id =\"errCnxn\" > Le pseudo n'est pas existant ou mot de passe incorrecte </div>"; //cette ligne affiche le message d'erreur
+								echo "<div id =\"errCnxn\" class= \"error\"> Le pseudo n'est pas existant ou mot de passe incorrecte </div>"; //cette ligne affiche le message d'erreur
 								include ($_SERVER['DOCUMENT_ROOT']."/Epicer/login.php");	 // cela remet la demande de login
 					}		
 					if(	$_POST['action'] == 'Creer nouveau joueur' AND $nouv_compte_reussi==false ){
 								if(empty($_POST['pseudo']) OR empty($_POST['mot_pass'])){
-									echo "<div id =\"errCnxn\" > Vous n'aviez pas remplis un des champs  </div>"; //cette ligne affiche le message d'erreur
+									echo "<div id =\"errCnxn\" class= \"error\" > Vous n'aviez pas remplis un des champs  </div>"; //cette ligne affiche le message d'erreur
 									include ($_SERVER['DOCUMENT_ROOT']."/Epicer/login.php");	 // cela remet la demande de login
 								}else { 
 									if($pseudo_existant==true ){
-										echo "<div id =\"errCnxn\" > Ce pseudo existe déjà, veuillez choisir un autre </div>"; //cette ligne affiche le message d'erreur
+										echo "<div id =\"errCnxn\" class= \"error\"> Ce pseudo existe déjà, veuillez choisir un autre </div>"; //cette ligne affiche le message d'erreur
 										include ($_SERVER['DOCUMENT_ROOT']."/Epicer/login.php");	 // cela remet la demande de login
 									}else{
 										// Insertion du message à l'aide d'une requête préparée
@@ -111,20 +112,16 @@
 								
 								<input id="btnAccueil" type="submit" name="button" value="Accueil" onClick="accueil()"/> </input>
 								
-								<input id="etapeSuivante" type="submit" name="button" value="Suivant" onClick="etapeSuivante()"/> </input>
-								<input id="etapePrecedente" type="submit" name="button" value="Precedent" onClick="etapePrecedente()"/> </input>
-							</div>
+							</div>						
 							
 							<div id="espaceJeu">
+							
+							<input id="etapeSuivante" type="submit" name="button" value=">" onClick="etapeSuivante()"/> </input>
+							<input id="etapePrecedente" type="submit" name="button" value="<" onClick="etapePrecedente()"/> </input>
+								
+								<!-- La page d'accueil: -->
 								<div id ="accueil"> 
-								
-					     	
-								<!--	<php	if ($emplacementChap!=0){ 
-								
-								echo '<div id="reprendre" class ="acc bcWhite" onClick="reprendre('. $idChapitre . ',' . $emplacementChap . ')"> Reprendre </div>'; // L'option Reprendre, mais à revoir au niveau de codage									} 
-										}
-								?>   -->
-									
+																
 									<div id="reprendre" class ="acc bcWhite" onClick="reprendre()"> Reprendre </div>
 									<div id="accederChapitre" class = "acc bcYellow" onClick= "choixChap()"> Acceder aux chapitres </div>
 									<div id="tutoriel" class = "acc bcGreen" onClick= "accdrTuto()"> Tutoriel </div>
@@ -132,6 +129,7 @@
 									
 								</div>
 								
+								<!-- La page de choix de chapitre : -->
 								<div id="choixChapitre"> 
 								
 									<div id="chap1" class ="chap" onClick=start(1,0)> <h3>Chapitre I </h3> Temps estimé : 6 min  </div>
@@ -141,10 +139,22 @@
 								
 								</div>
 								
-								<div id="chapFond"							
+								<?php include ($_SERVER['DOCUMENT_ROOT']."/Epicer/text.php"); ?>
+								
+								<!-- Dialogue de confirmation si le joueur decide de commencer le nouveau chapitre sans finir le precedent : -->
+								<div id="attentionConfirme" class="modalDialog">
+									<div>
+										<h2>Attention</h2>
+										<p>Si vous decidez de continuer vers le Choix de Chapitre alors l'avancement du dernier chapitre sera effacé </p>
+										<p> Voulez vous continuer tout de même  ? </p> 
+										<input id="confOui" class="btnConf" type="submit" name="button" value="Oui" onClick="miseEtapeNulle()"/> 
+										<input  id="confNon" class="btnConf" type="submit" name="button" value="Non" onClick="nonConf()"/>
+									</div>
+								</div> 
+
+								
 							</div>
-							
-							
+						
 							
 			<?php } ?>
 			</div>    <!-- pour fermer la frame-->
