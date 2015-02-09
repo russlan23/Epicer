@@ -7,11 +7,14 @@
 		<link rel="stylesheet" href="/Epicer/css/epicer_style.css" />
 		<link rel="stylesheet" href="/Epicer/css/modalDialog.css" />
 		<title>  Jeu Epicer </title>
+		<script src="/Epicer/js/jquery-1.11.2.js"> </script> 
 		<script src="/Epicer/js/general.js"> </script>  
 		<script src="/Epicer/js/appear.js"> </script>  
+	 
+		
 		</head>
 
-		<body onload ="setUpJoueur()" >
+		<body>  <!--onload ="setUpJoueur()"-->
 	
 			<!-- Erika a modifie ca ; les prochaines ligne de php servent à inclure le Header et la barre de navigation du site WEB-->
 			<?php include ($_SERVER['DOCUMENT_ROOT']."/phpincludes/header1.php");
@@ -92,9 +95,11 @@
 					
 				?> 		
 						
-							
-							
-							
+							<div id = "imageAcceuil">
+								<img src="/Epicer/images/accueil.jpg" />
+								<img src="/Epicer/images/choixChapitre.jpg" />
+							</div>
+													
 							<div id ="barreInfo"> 
 							
 								<div id = "infoJoueur"> 
@@ -116,6 +121,7 @@
 							
 							<div id="espaceJeu">
 							
+							
 							<input id="etapeSuivante" type="submit" name="button" value=">" onClick="etapeSuivante()"/> </input>
 							<input id="etapePrecedente" type="submit" name="button" value="<" onClick="etapePrecedente()"/> </input>
 								
@@ -124,8 +130,8 @@
 																
 									<div id="reprendre" class ="acc bcWhite" onClick="reprendre()"> Reprendre </div>
 									<div id="accederChapitre" class = "acc bcYellow" onClick= "choixChap()"> Acceder aux chapitres </div>
-									<div id="tutoriel" class = "acc bcGreen" onClick= "accdrTuto()"> Tutoriel </div>
-									<div id="historiqueScore" class = "acc bcRed" onClick= "accdrHstrq()"> Historique </div>
+									<div id="tutoriel" class = "acc bcGreen" > Tutoriel </div>
+									<div id="historiqueScore" class = "acc bcRed" > Historique </div>
 									
 								</div>
 								
@@ -141,6 +147,8 @@
 								
 								<?php include ($_SERVER['DOCUMENT_ROOT']."/Epicer/text.php"); ?>
 								
+								<div id="imagesChap"> </div>
+								
 								<!-- Dialogue de confirmation si le joueur decide de commencer le nouveau chapitre sans finir le precedent : -->
 								<div id="attentionConfirme" class="modalDialog">
 									<div>
@@ -151,6 +159,7 @@
 										<input  id="confNon" class="btnConf" type="submit" name="button" value="Non" onClick="nonConf()"/>
 									</div>
 								</div> 
+								
 
 								
 							</div>
@@ -158,6 +167,8 @@
 							
 			<?php } ?>
 			</div>    <!-- pour fermer la frame-->
+			
+				
 		</body>
 		
 	</html>

@@ -1,7 +1,4 @@
-
-
-
-// variables 
+		// variables 
 		var mode="";
 		var pseudo="";
 		var chapActuel;
@@ -11,10 +8,18 @@
 		var scoreChapitre;
 		var imageFond="";
 		var idText;
+		var imageCharge;
 		
-		
+	
 	// definition de variable joueur 
+	
+	$(document).ready(function()
+		{
+		setUpJoueur();
+	  });
+		
 
+			
 		function setUpJoueur(){	
 			pseudo=document.getElementById("infoPseudo").innerText;
 			scoreTotal=parseInt(document.getElementById("infoScoreTotal").innerText);
@@ -22,7 +27,6 @@
 			chapActuel=parseInt(document.getElementById("infoChapActuel").innerText);
 			accueil();
 		}
-	
 	
 		function miseAJour(){
 		document.getElementById("joueur").innerHTML = joueur;
@@ -163,33 +167,42 @@
 			start(chapitre,emplcmnt);
 		}
 	
+		var chargement; 
 		function start(chapitre, emplcmnt){
+		
+			imageCharge=false;
+			
+			updateImagesChap(chapitre);
+			
 			document.getElementById("choixChapitre").style.visibility="hidden";	
 			document.getElementById("accueil").style.visibility="hidden";
 			document.getElementById("reprendre").style.display="none";
 			document.getElementById("btnAccueil").style.visibility="visible";
-		
-			emplacementChap=emplcmnt;
-			changeChapitre(chapitre);
+			progressBar.init(); 
+			  // execute la bar de progression pour suivre combien d'images ont été telechargés
+			 
+				emplacementChap=emplcmnt;
+				changeChapitre(chapitre);
+				
+				imageFond="url('/Epicer/images/im" + tableChap[emplacementChap] + ".jpg')";
+				idText="text"+chapitre+"_"+emplacementChap;
+				
+				
+				document.getElementById("espaceJeu").style.backgroundImage=imageFond;
+				
+				if(document.getElementById(idText)){
+								document.getElementById(idText).style.display="initial";
+						}
+				
+				document.getElementById("etapeSuivante").style.visibility="visible";
+				document.getElementById("etapePrecedente").style.visibility="visible";
 			
-			imageFond="url('/Epicer/images/im" + tableChap[emplacementChap] + ".jpg')";
-			idText="text"+chapitre+"_"+emplacementChap;
 			
-			
-			document.getElementById("espaceJeu").style.backgroundImage=imageFond;
-			
-			if(document.getElementById(idText)){
-							document.getElementById(idText).style.display="initial";
-					}
-			
-			document.getElementById("etapeSuivante").style.visibility="visible";
-			document.getElementById("etapePrecedente").style.visibility="visible";
-			
-			
+		}
 			
 					//gerer la fin du chapitre et revient vers l'accueil 
-			}
-		 // a revoir 
+
+		
 		
 		
 	// fonction de sauvegarde 
@@ -197,9 +210,75 @@
 		function save(){
 		// du code
 		} // a faire 
-		
-		
-	//
 
+		// fonction de chargement d'images
+		function updateImagesChap(chap){
+			switch(chap){
+			
+				case 1: 	$('#imagesChap').append ('<img src ="/Epicer/images/im1.jpg"/>');
+							$('#imagesChap').append ('<img src ="/Epicer/images/im1.jpg"/>');
+							$('#imagesChap').append ("<img src ='/Epicer/images/im3.jpg'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images/im4.jpg'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images/im5.jpg'/>");
+					break;
+				case 2: 
+					break;
+				case 3: 
+					break;
+				case 4: 
+					break;
+				default:
+					break;
+			}			
 	
 		
+		} 
+		
+	
+		
+	progressBar = {
+		
+		init: function(){
+			var that=this;
+			countElmt =$('img').length;
+			loadedElmt=0;
+			var $progressBarContainer = $('<div/>').attr('id','progress-bar-container');
+			 $progressBarContainer.append($('<div/>').attr('id','progress-bar'));
+			 $progressBarContainer.appendTo($('#espaceJeu'));
+			
+			$container=$('<div/>').attr('id','progress-bar-elements');
+			$container.appendTo($('imagesChap'));
+			
+			$('img').each(function(){
+				$('<img/>')
+				.attr('src',$(this).attr('src'))
+				.on('load error', function(){
+					loadedElmt++;
+					that.updateProgressBar();
+					
+				})
+				.appendTo($container)
+				;
+			});
+		
+		},
+		
+		updateProgressBar : function(l,c){
+			
+			$('#progress-bar').stop().animate({
+			'width':( loadedElmt/countElmt)*100 +'%'
+			}, function(){
+				if(loadedElmt==countElmt){
+					setTimeout(function(){
+						$('#progress-bar-container').animate({
+							'top' : '-8px'
+ 						},function (){
+							$('#progress-bar-container').remove();
+							$('#progress-bar-elements').remove();
+						});
+					},750);
+				}	
+			});
+		}
+	};
+	 

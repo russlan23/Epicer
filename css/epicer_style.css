@@ -4,7 +4,17 @@
 #frame {width: 1000px; margin:auto; left:0; right:0; height: 500px; position: relative;  border: groove 10px; background-color: black ; background-size: cover;}
 	
 	/* le div de barre Info et tout ce qui est dedans :  */
-	#barreInfo{width: 150px; margin:auto; left:850px; height: 500px;  position: absolute; background-color: rgba(143,143,143, 0.7);}
+	
+	#imageAcceuil{position: absolute; visibility:hidden;}
+	
+	#progress-bar-container{position:relative;	top:0px;left:0px; width:100%; height:5px;}
+	
+		#progress-bar{position:relative; height:5px; width:0%; background:green; box-shadow: 0 0 4px rgba(0 ,0 ,0 , .5) ;}
+		#progress-bar-elements{display:none;}
+		#imagesChap{position: absolute; visibility:hidden;}
+		
+	
+	#barreInfo{width: 150px; margin:auto; left:850px; height: 500px;  position: absolute; background-color: rgba(243, 214, 23, 0.7);}
 	
 	
 			/* les infos en haut à droite :  */
@@ -24,11 +34,11 @@
 		
 	/* le div de espace Jeu et tout ce qui est dedans :  */
 	#espaceJeu{width: 850px; position: relative; height: 500px; background-color: white; background-size: cover; background-repeat: no-repeat; background-image: url('/Epicer/images/accueil.jpg'); }
-		
+				
 		#etapeSuivante{ position: absolute ; text-align: center; width: 80px; bottom:25px; right:0px; outline:none; background-color:green;  height: 60px; color: black; font-size:40px; border-radius: 15px; visibility:hidden ;  -webkit-animation: clignote 2s linear infinite alternate; animation: clignote 2s linear infinite alternate;}
-		#etapeSuivante:hover{ background-color:blue;}
+		#etapeSuivante:hover{ background-color:blue; }
 		#etapePrecedente{ position: absolute ; text-align: center; width: 80px; bottom:25px; left:0px; outline:none; background-color:green;  height: 60px; color: black; font-size:40px; border-radius: 15px; visibility:hidden; -webkit-animation: clignote 2s linear infinite alternate; animation: clignote 2s linear infinite alternate;}
-		#etapePrecedente:hover{ background-color:blue;}
+		#etapePrecedente:hover{ background-color:blue; }
 		
 		#accueil{position : absolute; padding: 20px 20px 20px 20px; top:80px; left:50px;  width :200px;   background-color: rgba(143,143,143, 0.8); border-radius: 10px;  -webkit-animation: appear 2s; animation: appear 2s;}
 			
@@ -56,8 +66,8 @@
 			#chap4{top:150px; left : 400px;}
 			
 	/* Le texte qui sera affiché dans le jeu*/	
-	.textChap{ position: absolute; height: 130px; width: 650px; left: 100px; bottom: 5px; border: 3px dashed blue; display:none;  background-color: rgba(143,143,143, 0.9); -webkit-animation: appear 2s; animation: appear 2s; }
-	.avatar{padding:10px 30px 20px 40px ; height: 15px;  background-position: 0px 10px ; background-repeat: no-repeat; font-size: 20px; font-weight:bold}
+	.textChap{ position: absolute; height: 130px; width: 600px; left: 120px; bottom: 5px; border: 3px dashed rgb(34, 120, 15); display:none;  background-color: rgba(1, 215, 88, 0.9); -webkit-animation: appear 2s; animation: appear 2s; }
+	.avatar{padding:10px 30px 20px 40px ; height: 15px;  background-position: 0px 10px ; background-repeat: no-repeat; font-size: 15px; font-weight:bold}
 	.Doc {color: black; background-image: url('/Epicer/images/Doc.jpg');}
 	.Paul{color: white; background-image: url('/Epicer/images/Paul.gif');}
 	
