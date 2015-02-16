@@ -4,7 +4,7 @@
 		<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="/css/style.css" /> 
-		<link rel="stylesheet" href="/Epicer/css/epicer_style.css" />
+		<link rel="stylesheet" href="/Epicer/css/jeu_style.css" />
 		<title>  Jeu Epicer </title>
 		</head>
 
@@ -18,7 +18,7 @@
 			<!-- on rentre dans l'onglet principal du jeu  -->
 			<div id="frame" >	
 			
-			<?php	include ($_SERVER['DOCUMENT_ROOT']."/Epicer/login.php"); ?>
+			<?php	include ($_SERVER['DOCUMENT_ROOT']."/Epicer/loginInclude.php"); ?>
 			
 		</body>
 		

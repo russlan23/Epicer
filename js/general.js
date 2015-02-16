@@ -168,6 +168,7 @@
 		}
 	
 		var chargement; 
+		
 		function start(chapitre, emplcmnt){
 		
 			imageCharge=false;
