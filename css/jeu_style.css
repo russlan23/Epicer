@@ -64,6 +64,14 @@
 			#chap2{top:0px; left : 400px;}
 			#chap3{top:150px; left : 100px;}
 			#chap4{top:150px; left : 400px;}
+
+		#backgroundJeuPointRouge{width: 850px; position: absolute; height: 500px;background-image: url("neurone.png");}
+			#sommet1{position: relative;left: 170px;top: 320px;}
+			#sommet2{position: relative;left: 260px;top: 300px;}
+			#sommet3{position: relative;left: 450px;top: 350px;}
+			#sommet4{position: relative;left: 550px;top: 340px;}
+			#sommet5{position: relative;left: 690px;top: 190px;}
+			
 			
 	/* Le texte qui sera affiché dans le jeu*/	
 	.textChap{ position: absolute; height: 130px; width: 600px; left: 120px; bottom: 5px; border: 3px dashed rgb(34, 120, 15); display:none;  background-color: rgba(1, 215, 88, 0.9); -webkit-animation: appear 2s; animation: appear 2s; }
