@@ -40,6 +40,12 @@
 		#etapePrecedente{ position: absolute ; text-align: center; width: 80px; bottom:25px; left:0px; outline:none; background-color:green;  height: 60px; color: black; font-size:40px; border-radius: 15px; visibility:hidden; -webkit-animation: clignote 2s linear infinite alternate; animation: clignote 2s linear infinite alternate;}
 		#etapePrecedente:hover{ background-color:blue; }
 		
+		#startMiniJeu{ position: absolute ; text-align: center; width: 200px; bottom:25px; left:100px; outline:none; background-color:green;  height: 60px; color: black; font-size:30px; border-radius: 10px; visibility:hidden;}
+		#startMiniJeu:hover{ background-color:blue; }
+		
+		#continuer{ position: absolute ; text-align: center; width: 200px; bottom:25px; left:100px; outline:none; background-color:green;  height: 60px; color: black; font-size:30px; border-radius: 10px; visibility:hidden;}
+		#continuer:hover{ background-color:blue; }
+		
 		#accueil{position : absolute; padding: 20px 20px 20px 20px; top:80px; left:50px;  width :200px;   background-color: rgba(143,143,143, 0.8); border-radius: 10px;  -webkit-animation: appear 2s; animation: appear 2s;}
 			
 			

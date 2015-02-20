@@ -9,7 +9,7 @@
 		<title>  Jeu Epicer </title>
 		<script src="/Epicer/js/jquery-1.11.2.js"> </script> 
 		<script src="/Epicer/js/general.js"> </script>  
-		<script src="/Epicer/js/appear.js"> </script>  
+		<script src="/Epicer/js/progressBar.js"> </script>  
 	 
 		
 		</head>
@@ -124,6 +124,10 @@
 							
 							<input id="etapeSuivante" type="submit" name="button" value=">" onClick="etapeSuivante()"/> </input>
 							<input id="etapePrecedente" type="submit" name="button" value="<" onClick="etapePrecedente()"/> </input>
+							
+							<input id="startMiniJeu" type="submit" name="button" value="Commencer" onClick="startMiniJeu()"/> </input>
+							<input id="continuer" type="submit" name="button" value="Continuer" onClick="etapeSuivante()"/> </input>
+							
 								
 								<!-- La page d'accueil: -->
 								<div id ="accueil"> 

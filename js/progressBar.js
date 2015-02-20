@@ -1,41 +1,46 @@
-
-progresBar = {
-	countElmt: 0,
-	loadedElmt:0,
-
-	init: function(){
-		var that = this;
-		countElmt =$('img').length;
+progressBar = {
 		
-		
-		var $progressBarContainer = $('<div/>').attr('id','progress-bar-container');
-		 $progressBarContainer.append($('<div/>').attr('id','progress-bar'));
-		 $progressBarContainer.appendTo($('#espaceJeu'));
-		
+		init: function(){
+			var that=this;
+			countElmt =$('img').length;
+			loadedElmt=0;
+			var $progressBarContainer = $('<div/>').attr('id','progress-bar-container');
+			 $progressBarContainer.append($('<div/>').attr('id','progress-bar'));
+			 $progressBarContainer.appendTo($('#espaceJeu'));
 			
-		$container=$('<div/>').attr('id','progres-bar-elements');
-		$container.appendTo($('#espaceJeu'));
+			$container=$('<div/>').attr('id','progress-bar-elements');
+			$container.appendTo($('imagesChap'));
+			
+			$('img').each(function(){
+				$('<img/>')
+				.attr('src',$(this).attr('src'))
+				.on('load error', function(){
+					loadedElmt++;
+					that.updateProgressBar();
+					
+				})
+				.appendTo($container)
+				;
+			});
 		
-		$('img').each(function(){
-			$('<img/'>)
-			.attr('src',$(this).attr('src'))
-			.on('load error', function(){
-				that.loadedElmt++;
-				that.updateProgressBar();
-			})
-			.appendTo($container)
-			;
-		});
-	
-	}
-	
-	updateProgressBar : function(){
-		$('#progress-bar').stop().animate({
-		'width':( progresBar.loadedElmt/progresBar.countElmt)*100 +'%'
-		});
-	}
-	
-};
-
-progresBar.init();
-
+		},
+		
+		updateProgressBar : function(l,c){
+			
+			$('#progress-bar').stop().animate({
+			'width':( loadedElmt/countElmt)*100 +'%'
+			}, function(){
+				if(loadedElmt==countElmt){
+					setTimeout(function(){
+						$('#progress-bar-container').animate({
+							'top' : '-8px'
+ 						},function (){
+							$('#progress-bar-container').remove();
+							$('#progress-bar-elements').remove();
+						});
+					},750);
+				}	
+			});
+		}
+	};
+	 

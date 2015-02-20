@@ -22,3 +22,7 @@
 		
 		</div>
 		
+		<div id ="text1_6" class="textChap">
+			<div class =" avatar Doc">tu est en train de lire le text du etape 6 du chapitre 1</div> 
+		
+		</div>

@@ -94,21 +94,24 @@
 			switch(chp){
 				case 0: tableChap = [0];  // l'accueil
 					break;
-				case 1: tableChap = [1,2,3,4,5,101,201,6,7];   // 1,2,3... sont les numéros d'image dans ce chapitre, quand >100 c'est un mini jeu
+				case 1: tableChap = [100,101,102,103,1001,2001,104,105];   // 1,2,3... sont les numéros d'image dans ce chapitre, quand >100 c'est un mini jeu
 						chapActuel=1;
-						document.getElementById("infoChapActuel").innerText=chapActuel;	
-						
 					break;
 				case 2: tableChap =  [];
+						chapActuel=2;
 					break;
 				case 3: tableChap =  [];
+						chapActuel=3;
 					break;
 				case 4: tableChap =  [];
+						chapActuel=4;
 					break;
 				default:
 					tableChap = [0];
 					break;
-			}			
+			}
+
+			document.getElementById("infoChapActuel").innerText=chapActuel;
 		} // fin du changeChap//
 				
 	
@@ -118,17 +121,25 @@
 	//	} //fin de setPosChaptr
 		
 		function etapeSuivante(){ // lorsque le joueur clique sur le bouton suivant
+						
+				if(emplacementChap<tableChap.length-1){
 				
-				if(emplacementChap<tableChap.length){
-				
-					if (tableChap[emplacementChap+1]<100){ // <100 pour dire que ce n'est pas un mini jeu
-						emplacementChap=emplacementChap+1;
-						imageFond="url('/Epicer/images/im" + tableChap[emplacementChap] + ".jpg')";
-
-						if(document.getElementById(idText)){
-							document.getElementById(idText).style.display="none";;
+					emplacementChap=emplacementChap+1;
+					
+					if(tableChap[emplacementChap]<1000){ // <100 pour dire que ce n'est pas un mini jeu
+					
+						if(tableChap[emplacementChap-1]>2000){
+							document.getElementById("btnAccueil").style.visibility="visible";
+							document.getElementById("etapeSuivante").style.visibility="visible";
+							document.getElementById("etapePrecedente").style.visibility="visible";
+							document.getElementById("continuer").style.visibility="hidden";
 						}
 						
+						imageFond="url('/Epicer/images/im" + tableChap[emplacementChap] + ".jpg')";
+						if(document.getElementById(idText)){
+							document.getElementById(idText).style.display="none";
+						}
+							
 						idText="text"+chapActuel+"_"+emplacementChap;
 						
 						if(document.getElementById(idText)){
@@ -137,6 +148,13 @@
 						document.getElementById("espaceJeu").style.backgroundImage=imageFond;	
 						document.getElementById("infoEmplacementActuel").innerText= emplacementChap;	
 					}
+					
+					if (tableChap[emplacementChap]<2000 && tableChap[emplacementChap]>1000){
+						if(document.getElementById(idText)){
+								document.getElementById(idText).style.display="none";
+						}
+						showNotice(tableChap[emplacementChap]);
+					}
 				}
 		
 		} 
@@ -144,8 +162,10 @@
 		function etapePrecedente(){
 		
 			if(emplacementChap>0){
-				if (tableChap[emplacementChap-1]<100){ // <100 pour dire que ce n'est pas un mini jeu
-					emplacementChap=emplacementChap-1;
+			
+				emplacementChap=emplacementChap-1;
+				if (tableChap[emplacementChap]<1000){ // <100 pour dire que ce n'est pas un mini jeu
+					
 					imageFond="url('/Epicer/images/im" + tableChap[emplacementChap] + ".jpg')";
 					if(document.getElementById(idText)){
 							document.getElementById(idText).style.display="none";
@@ -157,6 +177,10 @@
 					}
 					document.getElementById("espaceJeu").style.backgroundImage=imageFond;	
 					document.getElementById("infoEmplacementActuel").innerText= emplacementChap;
+				}
+				
+				if(tableChap[emplacementChap]>1000){
+					etapePrecedente();	
 				}
 			}
 		}
@@ -171,7 +195,6 @@
 		
 		function start(chapitre, emplcmnt){
 		
-			imageCharge=false;
 			
 			updateImagesChap(chapitre);
 			
@@ -179,30 +202,79 @@
 			document.getElementById("accueil").style.visibility="hidden";
 			document.getElementById("reprendre").style.display="none";
 			document.getElementById("btnAccueil").style.visibility="visible";
-			progressBar.init(); 
-			  // execute la bar de progression pour suivre combien d'images ont été telechargés
-			 
-				emplacementChap=emplcmnt;
-				changeChapitre(chapitre);
-				
-				imageFond="url('/Epicer/images/im" + tableChap[emplacementChap] + ".jpg')";
-				idText="text"+chapitre+"_"+emplacementChap;
-				
-				
-				document.getElementById("espaceJeu").style.backgroundImage=imageFond;
-				
-				if(document.getElementById(idText)){
-								document.getElementById(idText).style.display="initial";
-						}
-				
-				document.getElementById("etapeSuivante").style.visibility="visible";
-				document.getElementById("etapePrecedente").style.visibility="visible";
+			progressBar.init();  // execute la bar de progression pour suivre combien d'images ont été telechargés
+			  
+			emplacementChap=emplcmnt;
+			changeChapitre(chapitre);
+			
+			imageFond="url('/Epicer/images/im" + tableChap[emplacementChap] + ".jpg')";
+			idText="text"+chapitre+"_"+emplacementChap;
+			
+			
+			document.getElementById("espaceJeu").style.backgroundImage=imageFond;
+			
+			if(document.getElementById(idText)){
+							document.getElementById(idText).style.display="initial";
+					}
+			
+			document.getElementById("etapeSuivante").style.visibility="visible";
+			document.getElementById("etapePrecedente").style.visibility="visible";
 			
 			
 		}
 			
-					//gerer la fin du chapitre et revient vers l'accueil 
+					
 
+		function showNotice(nNotice){
+		
+			// imageFond="url('/Epicer/images/im" + nNotice + ".jpg')";
+			document.getElementById("espaceJeu").style.background="";
+			document.getElementById("espaceJeu").style.backgroundColor="black";
+			document.getElementById("etapeSuivante").style.visibility="hidden";
+			document.getElementById("etapePrecedente").style.visibility="hidden";
+			document.getElementById("startMiniJeu").style.visibility="visible";
+			
+			document.getElementById("infoEmplacementActuel").innerText= emplacementChap;
+		}
+		
+		function startMiniJeu(){   // la fonction generale qui suit le click "commencer" et qui commence le mini jeu en question
+		
+			document.getElementById("startMiniJeu").style.visibility="hidden";
+			
+			emplacementChap=emplacementChap+1;
+			
+			document.getElementById("infoEmplacementActuel").innerText= emplacementChap;
+			
+			switch(tableChap[emplacementChap]){
+					case 2001: 
+							startMJ1();
+						break;
+					case 2002: 
+						break;
+					case 2003: 
+						break;
+					case 2004: 
+						break;
+					case 2005: 
+						break;	
+					default:
+						break;
+				}
+			
+		
+		
+		}
+		
+		function startMJ1(){
+		
+			document.getElementById("espaceJeu").style.backgroundColor="white";
+			document.getElementById("startMiniJeu").style.visibility="hidden";
+			document.getElementById("startMiniJeu").style.visibility="hidden";
+			document.getElementById("continuer").style.visibility="visible";
+		}
+		
+		
+		
 		
 		
 		
@@ -212,6 +284,12 @@
 		// du code
 		} // a faire 
 
+		
+		
+		//gerer la fin du chapitre et revient vers l'accueil 
+		
+		
+		
 		// fonction de chargement d'images
 		function updateImagesChap(chap){
 			switch(chap){
@@ -233,53 +311,4 @@
 			}			
 	
 		
-		} 
-		
-	
-		
-	progressBar = {
-		
-		init: function(){
-			var that=this;
-			countElmt =$('img').length;
-			loadedElmt=0;
-			var $progressBarContainer = $('<div/>').attr('id','progress-bar-container');
-			 $progressBarContainer.append($('<div/>').attr('id','progress-bar'));
-			 $progressBarContainer.appendTo($('#espaceJeu'));
-			
-			$container=$('<div/>').attr('id','progress-bar-elements');
-			$container.appendTo($('imagesChap'));
-			
-			$('img').each(function(){
-				$('<img/>')
-				.attr('src',$(this).attr('src'))
-				.on('load error', function(){
-					loadedElmt++;
-					that.updateProgressBar();
-					
-				})
-				.appendTo($container)
-				;
-			});
-		
-		},
-		
-		updateProgressBar : function(l,c){
-			
-			$('#progress-bar').stop().animate({
-			'width':( loadedElmt/countElmt)*100 +'%'
-			}, function(){
-				if(loadedElmt==countElmt){
-					setTimeout(function(){
-						$('#progress-bar-container').animate({
-							'top' : '-8px'
- 						},function (){
-							$('#progress-bar-container').remove();
-							$('#progress-bar-elements').remove();
-						});
-					},750);
-				}	
-			});
 		}
-	};
-	 
