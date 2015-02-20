@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 23 Janvier 2015 à 11:19
+-- Généré le :  Lun 02 Février 2015 à 17:47
 -- Version du serveur :  5.6.20
 -- Version de PHP :  5.5.15
 
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `etape` (
   `nomEtape` varchar(25) NOT NULL,
   `idChapitre` int(11) NOT NULL,
   `emplacementChap` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=202 ;
 
 --
 -- Contenu de la table `etape`
@@ -61,16 +61,17 @@ CREATE TABLE IF NOT EXISTS `etape` (
 
 INSERT INTO `etape` (`idEtape`, `nomEtape`, `idChapitre`, `emplacementChap`) VALUES
 (0, 'Accueil', 0, 0),
-(1, 'narration', 1, 1),
-(2, 'narration', 1, 2),
-(3, 'miniJeuNotice', 1, 3),
-(4, 'miniJeuPlay', 1, 4),
-(5, 'narration', 2, 1),
-(6, 'narration', 2, 2),
-(7, 'narration', 2, 3),
-(8, 'finChapitre', 2, 4),
-(9, 'narration', 3, 1),
-(10, 'narration', 3, 2);
+(100, 'Introduction', 1, 0),
+(101, 'narration', 1, 1),
+(102, 'narration', 1, 2),
+(103, 'narration', 1, 3),
+(104, 'narration', 1, 6),
+(105, 'narration', 1, 7),
+(108, 'FinChapitre', 1, 8),
+(200, 'Introduction', 2, 0),
+(201, 'narration', 2, 1),
+(1001, 'miniJeuNotice', 1, 4),
+(2001, 'miniJeuPlay', 1, 5);
 
 -- --------------------------------------------------------
 
@@ -90,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `joue` (
 --
 
 INSERT INTO `joue` (`idJoue`, `idJoueur`, `idEtape`, `scoreEtape`) VALUES
-(1, 2, 1, 5);
+(1, 2, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -105,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `joueur` (
   `scoreTotal` int(11) NOT NULL DEFAULT '0',
   `idEtape` int(11) NOT NULL DEFAULT '0',
   `scoreActChap` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `joueur`
@@ -113,7 +114,8 @@ CREATE TABLE IF NOT EXISTS `joueur` (
 
 INSERT INTO `joueur` (`idJoueur`, `pseudo`, `motPass`, `scoreTotal`, `idEtape`, `scoreActChap`) VALUES
 (1, 'russlan', 'rus', 0, 0, 0),
-(2, 'baba', 'baba', 100, 2, 10);
+(2, 'baba', 'baba', 100, 3, 10),
+(3, 'rus', 'rus', 0, 0, 0);
 
 --
 -- Index pour les tables exportées
@@ -151,7 +153,7 @@ ALTER TABLE `joueur`
 -- AUTO_INCREMENT pour la table `etape`
 --
 ALTER TABLE `etape`
-MODIFY `idEtape` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `idEtape` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=202;
 --
 -- AUTO_INCREMENT pour la table `joue`
 --
@@ -161,7 +163,7 @@ MODIFY `idJoue` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT pour la table `joueur`
 --
 ALTER TABLE `joueur`
-MODIFY `idJoueur` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `idJoueur` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

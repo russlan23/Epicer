@@ -4,16 +4,20 @@
 		<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="/css/style.css" /> 
-		<link rel="stylesheet" href="/Epicer/css/epicer_style.css" />
+		<link rel="stylesheet" href="/Epicer/css/jeu_style.css" />
 		<link rel="stylesheet" href="/Epicer/css/modalDialog.css" />
 		<title>  Jeu Epicer </title>
+		<script src="/Epicer/js/jquery-1.11.2.js"> </script> 
 		<script src="/Epicer/js/general.js"> </script>  
 		<script src="/Epicer/js/appear.js"> </script>  
+	 
+		
 		</head>
 
-		<body onload ="setUpJoueur()" >
-	
-			<!-- Vanda a modifie ca ; les prochaines ligne de php servent à inclure le Header et la barre de navigation du site WEB-->
+		<body>  <!--onload ="setUpJoueur()"-->
+
+			<!-- les prochaines ligne de php servent à inclure le Header et la barre de navigation du site WEB-->
+
 			<?php include ($_SERVER['DOCUMENT_ROOT']."/phpincludes/header1.php");
 				  include($_SERVER['DOCUMENT_ROOT']."/phpincludes/nav1.php");
 			?>
@@ -67,16 +71,16 @@
 						
 					if ($_POST['action'] == 'Se connecter' AND $log_reussie==false) {
 								echo "<div id =\"errCnxn\" class= \"error\"> Le pseudo n'est pas existant ou mot de passe incorrecte </div>"; //cette ligne affiche le message d'erreur
-								include ($_SERVER['DOCUMENT_ROOT']."/Epicer/login.php");	 // cela remet la demande de login
+								include ($_SERVER['DOCUMENT_ROOT']."/Epicer/loginInclude.php");	 // cela remet la demande de login
 					}		
 					if(	$_POST['action'] == 'Creer nouveau joueur' AND $nouv_compte_reussi==false ){
 								if(empty($_POST['pseudo']) OR empty($_POST['mot_pass'])){
 									echo "<div id =\"errCnxn\" class= \"error\" > Vous n'aviez pas remplis un des champs  </div>"; //cette ligne affiche le message d'erreur
-									include ($_SERVER['DOCUMENT_ROOT']."/Epicer/login.php");	 // cela remet la demande de login
+									include ($_SERVER['DOCUMENT_ROOT']."/Epicer/loginInclude.php");	 // cela remet la demande de login
 								}else { 
 									if($pseudo_existant==true ){
 										echo "<div id =\"errCnxn\" class= \"error\"> Ce pseudo existe déjà, veuillez choisir un autre </div>"; //cette ligne affiche le message d'erreur
-										include ($_SERVER['DOCUMENT_ROOT']."/Epicer/login.php");	 // cela remet la demande de login
+										include ($_SERVER['DOCUMENT_ROOT']."/Epicer/loginInclude.php");	 // cela remet la demande de login
 									}else{
 										// Insertion du message à l'aide d'une requête préparée
 										$res = $bdd->prepare('INSERT INTO joueur (pseudo, motPass) VALUES(?, ?)');
@@ -92,9 +96,11 @@
 					
 				?> 		
 						
-							
-							
-							
+							<div id = "imageAcceuil">
+								<img src="/Epicer/images/accueil.jpg" />
+								<img src="/Epicer/images/choixChapitre.jpg" />
+							</div>
+													
 							<div id ="barreInfo"> 
 							
 								<div id = "infoJoueur"> 
@@ -116,6 +122,7 @@
 							
 							<div id="espaceJeu">
 							
+							
 							<input id="etapeSuivante" type="submit" name="button" value=">" onClick="etapeSuivante()"/> </input>
 							<input id="etapePrecedente" type="submit" name="button" value="<" onClick="etapePrecedente()"/> </input>
 								
@@ -124,8 +131,8 @@
 																
 									<div id="reprendre" class ="acc bcWhite" onClick="reprendre()"> Reprendre </div>
 									<div id="accederChapitre" class = "acc bcYellow" onClick= "choixChap()"> Acceder aux chapitres </div>
-									<div id="tutoriel" class = "acc bcGreen" onClick= "accdrTuto()"> Tutoriel </div>
-									<div id="historiqueScore" class = "acc bcRed" onClick= "accdrHstrq()"> Historique </div>
+									<div id="tutoriel" class = "acc bcGreen" > Tutoriel </div>
+									<div id="historiqueScore" class = "acc bcRed" > Historique </div>
 									
 								</div>
 								
@@ -139,7 +146,9 @@
 								
 								</div>
 								
-								<?php include ($_SERVER['DOCUMENT_ROOT']."/Epicer/text.php"); ?>
+								<?php include ($_SERVER['DOCUMENT_ROOT']."/Epicer/textInclude.php"); ?>
+								
+								<div id="imagesChap"> </div>
 								
 								<!-- Dialogue de confirmation si le joueur decide de commencer le nouveau chapitre sans finir le precedent : -->
 								<div id="attentionConfirme" class="modalDialog">
@@ -151,6 +160,7 @@
 										<input  id="confNon" class="btnConf" type="submit" name="button" value="Non" onClick="nonConf()"/>
 									</div>
 								</div> 
+								
 
 								
 							</div>
@@ -158,6 +168,8 @@
 							
 			<?php } ?>
 			</div>    <!-- pour fermer la frame-->
+			
+				
 		</body>
 		
 	</html>
