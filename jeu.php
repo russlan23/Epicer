@@ -15,8 +15,9 @@
 		</head>
 
 		<body>  <!--onload ="setUpJoueur()"-->
-	
+
 			<!-- les prochaines ligne de php servent à inclure le Header et la barre de navigation du site WEB-->
+
 			<?php include ($_SERVER['DOCUMENT_ROOT']."/phpincludes/header1.php");
 				  include($_SERVER['DOCUMENT_ROOT']."/phpincludes/nav1.php");
 			?>
