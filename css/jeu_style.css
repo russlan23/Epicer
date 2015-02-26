@@ -23,8 +23,15 @@
 			#infoScoreTotal {}
 			#infoEmplacementActuel{}
 			#infoChapActuel{}
+			#infoEtapeActuelle{display:none;}
+			#infoIdJoueur{display:none;}
+			#infoScoreChapitre{display:none;}
+			/*#rechercheChapitre{display:none;}
 			#infoEtapeActuelle{visibility:hidden}
-		
+			#infoIdJoueur{visibility:hidden}
+			#infoScoreChapitre{visibility:hidden}*/
+			
+			
 		/* le bouton de reviens vers l'acceuil:  */
 		#btnAccueil{ position: absolute ; text-align: center; width: 110px; top:150px; left:25px; outline:none; background-color:red;  height: 40px; color: black; font-size:25px; border-radius: 8px; visibility:hidden}
 		#btnAccueil:hover{ background-color:blue;}
