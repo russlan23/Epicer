@@ -9,7 +9,8 @@
 		<title>  Jeu Epicer </title>
 		<script src="/Epicer/js/jquery-1.11.2.js"> </script> 
 		<script src="/Epicer/js/general.js"> </script>  
-		<script src="/Epicer/js/progressBar.js"> </script>  
+		<script src="/Epicer/js/progressBar.js"> </script> 
+		<script src="/Epicer/js/PointRouge1.js"></script>
 	 
 		
 		</head>
