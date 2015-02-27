@@ -28,7 +28,7 @@
 			<?php	
 				
 				$log_reussie=false;	 $nouv_compte_reussi=false; $pseudo_existant=false;
-				$pseudo=""; $motPass=""; $scoreTotal=0;	$scoreActChap=0; $idEtape=0; $emplacementChap=0; $idChapitre=0;
+				$idJoueur=0;$pseudo=""; $motPass=""; $scoreTotal=0;	$scoreActChap=0; $idEtape=0; $emplacementChap=0; $idChapitre=0;
 				
 				
 				 // si l'utilisateur a cliqué sur le bouton "se connecter"
@@ -45,7 +45,7 @@
 						}
 
 						// la requete
-						$req = $bdd->prepare('SELECT joueur.pseudo ,joueur.motPass, joueur.idEtape, joueur.scoreTotal,chapitre.idChapitre, etape.emplacementChap
+						$req = $bdd->prepare('SELECT joueur.idJoueur, joueur.pseudo ,joueur.motPass, joueur.idEtape, joueur.scoreTotal, joueur.scoreActChap, chapitre.idChapitre, etape.emplacementChap
 											  FROM joueur,etape,chapitre 
 											  WHERE joueur.idEtape=etape.idEtape AND etape.idChapitre=chapitre.idChapitre AND joueur.pseudo= ?');
 			
@@ -63,9 +63,10 @@
 									$idEtape=$donnees['idEtape'];
 									$idChapitre=$donnees['idChapitre'];
 									$emplacementChap=$donnees['emplacementChap'];
+									$idJoueur=$donnees['idJoueur'];
+									$scoreActChap=$donnees['scoreActChap'];
 									$req->closeCursor();	
-								}
-							
+								}		
 							}
 					}
 						
@@ -112,7 +113,9 @@
 									
 									<!-- A partir d'ici les autres attriburs de la "barreInfo" sont toujour cachés et servent juste pour 
 											la communication des données et la sauvegarde-->
-									<div id ="infoEtapeActuelle"> <?php echo $idEtape; ?>  </div>     
+									<div id ="infoEtapeActuelle"> <?php echo $idEtape; ?>  </div>
+									<div id ="infoIdJoueur"> <?php echo $idJoueur; ?>  </div>  
+									<div id ="infoScoreChapitre"> <?php echo $scoreActChap; ?>  </div>  
 									
 								</div> 
 								

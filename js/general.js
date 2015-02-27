@@ -4,16 +4,17 @@
 		var chapActuel;
 		var tableChap = [];
 	    var emplacementChap;
-		var scoreTotal=50;
-		var scoreChapitre=10;
+		var scoreTotal;
+		var scoreChapitre;
 		var imageFond="";
 		var idText;
 		var imageCharge;
+		var recherche;
 		
 		/*Nouvelles variables crées pour envoyer les infos à la BDD*/
-		var idJoueur=3;
-		var idEtape=3;
-		var scoreEtape=500;
+		var idJoueur;
+		var idEtape;
+		var scoreEtape=0;
 		
 	
 	// definition de variable joueur 
@@ -27,9 +28,12 @@
 			
 		function setUpJoueur(){	
 			pseudo=document.getElementById("infoPseudo").innerText;
-			//scoreTotal=parseInt(document.getElementById("infoScoreTotal").innerText);
+			scoreTotal=parseInt(document.getElementById("infoScoreTotal").innerText);
 			emplacementChap=parseInt(document.getElementById("infoEmplacementActuel").innerText);
 			chapActuel=parseInt(document.getElementById("infoChapActuel").innerText);
+			idJoueur=parseInt(document.getElementById("infoIdJoueur").innerText);
+			idEtape=parseInt(document.getElementById("infoEtapeActuelle").innerText);
+			scoreChapitre=parseInt(document.getElementById("infoScoreChapitre").innerText);
 			accueil();
 		}
 	
@@ -37,11 +41,16 @@
 		document.getElementById("joueur").innerHTML = joueur;
 			
 		}
-		
+		/*function recupererRechercheChapFaits(){	
+			recherche=document.getElementById("rechercheChapitre").innerText;
+		}*/
 		
 		function choixChap(){
-		sauvegardeJoueur ();
-		sauvegardeJoue (); // J'ai mis la sauvegarde ici comme une facon de voir si la sauvegarde marche ou pas
+		setUpJoueur();
+		rechercheChapFaits();
+		//recupererRechercheChapFaits();
+		//sauvegardeJoueur ();
+		//sauvegardeJoue (); // J'ai mis la sauvegarde ici comme une facon de voir si la sauvegarde marche ou pas
 		
 			if(emplacementChap>0){   // si on veut choisir un chapitre alors qu'on est au milieu d'un autre on fait apparaître une demande de 
 									 // confirmation de la mise d'étape à 0
@@ -370,72 +379,92 @@
 	 
 	 
 	 
-/* cette fonction permet de creer une instance qui nous permet d'utiliser AJAX pour l'envoi des données de JavaScripts à la BDD
- Fonction prise de https://www.tutorielsenfolie.com/tutoriels-66-ajax-php-envoi-donnees.html */
- 
-function creerInstance(){
-  if(window.XMLHttpRequest){
-    return new XMLHttpRequest();  /* Firefox, Opera, Google Chrome */
-  }else if(window.ActiveXObject){ /* Internet Explorer */
-    var names = [
-      "Msxml2.XMLHTTP.6.0",
-      "Msxml2.XMLHTTP.3.0",
-      "Msxml2.XMLHTTP",
-      "Microsoft.XMLHTTP"
-    ];
-    for(var i in names){
-      try{ return new ActiveXObject(names[i]); } /* On test les différentes versions */
-      catch(e){}
-    }
-    alert("Non supporte");
-    return null; // non supporté
-  }
-}
+	/* cette fonction permet de creer une instance qui nous permet d'utiliser AJAX pour l'envoi des données de JavaScripts à la BDD
+	 Fonction prise de https://www.tutorielsenfolie.com/tutoriels-66-ajax-php-envoi-donnees.html */
+	 
+	function creerInstance(){
+	  if(window.XMLHttpRequest){
+		return new XMLHttpRequest();  /* Firefox, Opera, Google Chrome */
+	  }else if(window.ActiveXObject){ /* Internet Explorer */
+		var names = [
+		  "Msxml2.XMLHTTP.6.0",
+		  "Msxml2.XMLHTTP.3.0",
+		  "Msxml2.XMLHTTP",
+		  "Microsoft.XMLHTTP"
+		];
+		for(var i in names){
+		  try{ return new ActiveXObject(names[i]); } /* On test les différentes versions */
+		  catch(e){}
+		}
+		alert("Non supporte");
+		return null; // non supporté
+	  }
+	}
 
-/*Cette fonction fait la preparation et l'envoi au fichier PHP des données du JOUE qui seront sauvegardées sur la BDD*/
-function sauvegardeJoue (){
-  var req =  creerInstance();
-  var donneesSauvegarder = new Array(3);						/*On créer l'array dans lequelle on va envoyer les données*/
-  donneesSauvegarder[0]=idJoueur;								/*On sauvegarde l'id du joueur dans l'array*/
-  donneesSauvegarder[1]=idEtape;								/*On sauvegarde l'id de l'étape dans l'array*/
-  donneesSauvegarder[2]=scoreEtape;								/*On sauvegarde le score de l'étape dans l'array*/
-  req.onreadystatechange = function(){
-  if(req.readyState == 4){ 		/* Si l'état = terminé */
-    if(req.status == 200){		/* Si le statut = OK */
-      alert(req.responseText);  /* On affiche la réponse */
-    }else{
-      alert("Error: returned status code " + req.status + " " + req.statusText);
-    }
-  }
-}
-    
-donneesSauvegarder = "donnees="+donneesSauvegarder ;			/*On dit au serveur que les données du formulaire doivent se trouver dans la variable « donnees »*/
-req.open("POST", "sauvegardeJoue.php", true);					/*On indique quel est le fichier PHP où seront envoyées les données*/
-req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); /* Pour la commande POST les données sont mises dans le corps du message et donc passées en argument dans la fonction send */
-req.send(donneesSauvegarder);									/*On envoi les données*/
-}
+	/*Cette fonction fait la preparation et l'envoi au fichier PHP des données du JOUE qui seront sauvegardées sur la BDD*/
+	function sauvegardeJoue (){
+	  var req =  creerInstance();
+	  var donneesSauvegarder = new Array(3);						/*On créer l'array dans lequelle on va envoyer les données*/
+	  donneesSauvegarder[0]=idJoueur;								/*On sauvegarde l'id du joueur dans l'array*/
+	  donneesSauvegarder[1]=idEtape;								/*On sauvegarde l'id de l'étape dans l'array*/
+	  donneesSauvegarder[2]=scoreEtape;								/*On sauvegarde le score de l'étape dans l'array*/
+	  req.onreadystatechange = function(){
+	  if(req.readyState == 4){ 		/* Si l'état = terminé */
+		if(req.status == 200){		/* Si le statut = OK */
+		  alert(req.responseText);  /* On affiche la réponse */
+		}else{
+		  alert("Error: returned status code " + req.status + " " + req.statusText);
+		}
+	  }
+	}
+		
+	donneesSauvegarder = "donnees="+donneesSauvegarder ;			/*On dit au serveur que les données du formulaire doivent se trouver dans la variable « donnees »*/
+	req.open("POST", "sauvegardeJoue.php", true);					/*On indique quel est le fichier PHP où seront envoyées les données*/
+	req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); /* Pour la commande POST les données sont mises dans le corps du message et donc passées en argument dans la fonction send */
+	req.send(donneesSauvegarder);									/*On envoi les données*/
+	}
 
-/*Cette fonction fait la preparation et l'envoi au fichier PHP des données du JOUEUR qui seront sauvegardées sur la BDD*/
-function sauvegardeJoueur (){
-  var req =  creerInstance();
-  var donneesSauvegarder = new Array(4);						/*On créer l'array dans lequelle on va envoyer les données*/
-  donneesSauvegarder[0]=idJoueur;								/*On sauvegarde l'id du joueur dans l'array*/
-  donneesSauvegarder[1]=idEtape;								/*On sauvegarde l'id de l'étape dans l'array*/
-  donneesSauvegarder[2]=scoreTotal;								/*On sauvegarde le score dans l'array*/
-  donneesSauvegarder[3]=scoreChapitre;							/*On sauvegarde le score du chapitre actuel dans l'array*/
-  req.onreadystatechange = function(){
-  if(req.readyState == 4){ 		/* Si l'état = terminé */
-    if(req.status == 200){		/* Si le statut = OK */
-      alert(req.responseText);  /* On affiche la réponse */
-    }else{
-      alert("Error: returned status code " + req.status + " " + req.statusText);
-    }
-  }
-}
-    
-donneesSauvegarder = "donnees="+donneesSauvegarder ;			/*On dit au serveur que les données du formulaire doivent se trouver dans la variable « donnees »*/
-req.open("POST", "sauvegardeJoueur.php", true);					/*On indique quel est le fichier PHP où seront envoyées les données*/
-req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); /* Pour la commande POST les données sont mises dans le corps du message et donc passées en argument dans la fonction send */
-req.send(donneesSauvegarder);									/*On envoi les données*/
-}
+	/*Cette fonction fait la preparation et l'envoi au fichier PHP des données du JOUEUR qui seront sauvegardées sur la BDD*/
+	function sauvegardeJoueur (){
+	  var req =  creerInstance();
+	  var donneesSauvegarder = new Array(4);						/*On créer l'array dans lequelle on va envoyer les données*/
+	  donneesSauvegarder[0]=idJoueur;								/*On sauvegarde l'id du joueur dans l'array*/
+	  donneesSauvegarder[1]=idEtape;								/*On sauvegarde l'id de l'étape dans l'array*/
+	  donneesSauvegarder[2]=scoreTotal;								/*On sauvegarde le score dans l'array*/
+	  donneesSauvegarder[3]=scoreChapitre;							/*On sauvegarde le score du chapitre actuel dans l'array*/
+	  req.onreadystatechange = function(){
+	  if(req.readyState == 4){ 		/* Si l'état = terminé */
+		if(req.status == 200){		/* Si le statut = OK */
+		  alert(req.responseText);  /* On affiche la réponse */
+		}else{
+		  alert("Error: returned status code " + req.status + " " + req.statusText);
+		}
+	  }
+	}
+		
+	donneesSauvegarder = "donnees="+donneesSauvegarder ;			/*On dit au serveur que les données du formulaire doivent se trouver dans la variable « donnees »*/
+	req.open("POST", "sauvegardeJoueur.php", true);					/*On indique quel est le fichier PHP où seront envoyées les données*/
+	req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); /* Pour la commande POST les données sont mises dans le corps du message et donc passées en argument dans la fonction send */
+	req.send(donneesSauvegarder);									/*On envoi les données*/
+	}
 
+	/*Cette fonction fait la preparation et l'envoi au fichier PHP des données du JOUEUR qui seront sauvegardées sur la BDD*/
+	function rechercheChapFaits (){
+	  var req =  creerInstance();
+	  var donneesRecherche;						/*On créer l'array dans lequelle on va envoyer les données*/
+	  donneesRecherche=idJoueur;								/*On sauvegarde l'id du joueur dans l'array*/
+	  req.onreadystatechange = function(){
+	  if(req.readyState == 4){ 		/* Si l'état = terminé */
+		if(req.status == 200){		/* Si le statut = OK */
+		  alert(req.responseText);  /* On affiche la réponse */
+		}else{
+		  alert("Error: returned status code " + req.status + " " + req.statusText);
+		}
+	  }
+	}
+
+	donneesRecherche = "donnees="+donneesRecherche ;			/*On dit au serveur que les données du formulaire doivent se trouver dans la variable « donnees »*/
+	req.open("POST", "rechercheChapFaits.php", true);					/*On indique quel est le fichier PHP où seront envoyées les données*/
+	req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); /* Pour la commande POST les données sont mises dans le corps du message et donc passées en argument dans la fonction send */
+	req.send(donneesRecherche);									/*On envoi les données*/
+	}
