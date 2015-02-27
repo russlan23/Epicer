@@ -8,43 +8,43 @@
 		<link rel="stylesheet" href="/Epicer/css/modalDialog.css" />
 		<title>  Jeu Epicer </title>
 		<script src="/Epicer/js/jquery-1.11.2.js"> </script> 
-		<script src="/Epicer/js/general.js"> </script>  
+		<script src="/Epicer/js/general.js"> </script>   <!--le fichier des fonctions javascript principales-->
 		<script src="/Epicer/js/progressBar.js"> </script>  
 	 
 		
 		</head>
 
-		<body>  <!--onload ="setUpJoueur()"-->
+		<body>  
 
-			<!-- les prochaines ligne de php servent à inclure le Header et la barre de navigation du site WEB-->
-
+			<!-- 2 prochaines lignes de php servent à inclure le Header et la barre de navigation du site WEB-->
 			<?php include ($_SERVER['DOCUMENT_ROOT']."/phpincludes/header1.php");
 				  include($_SERVER['DOCUMENT_ROOT']."/phpincludes/nav1.php");
 			?>
 			
-			<!-- on rentre dans l'onglet principal du jeu !!!!!!!!!!!!! -->
+			<!-- Ici on rentre dans l'onglet principal du jeu -->
 			<div id="frame" >
 			
 			<?php	
-				
+				//inititalisation des variables 
 				$log_reussie=false;	 $nouv_compte_reussi=false; $pseudo_existant=false;
 				$idJoueur=0;$pseudo=""; $motPass=""; $scoreTotal=0;	$scoreActChap=0; $idEtape=0; $emplacementChap=0; $idChapitre=0;
 				
 				
-				 // si l'utilisateur a cliqué sur le bouton "se connecter"
-					
-					if(!empty($_POST['mot_pass']) AND !empty($_POST['pseudo'])){
+				 // Ici le code verifie sur quel bouton du login le joueur a cliqué et procède en fonction 
+				 
+				   //si l'utilisateur a cliqué sur le bouton "se connecter"
+					if(!empty($_POST['mot_pass']) AND !empty($_POST['pseudo'])){   // si les deux données ont été remplis
 						
 						try
 						{
-							$bdd = new PDO('mysql:host=localhost;dbname=joueur;charset=utf8', 'root', ''); // a mettre les donnes du site lors de mise en ligne
+							$bdd = new PDO('mysql:host=localhost;dbname=joueur;charset=utf8', 'root', ''); // a mettre les donnes du site web lors de mise en ligne
 						}
 						catch(Exception $e)
 						{
 								die('Erreur : '.$e->getMessage());
 						}
 
-						// la requete
+						// la requete vers la base de donnée pour récuperer les données du joueur 
 						$req = $bdd->prepare('SELECT joueur.idJoueur, joueur.pseudo ,joueur.motPass, joueur.idEtape, joueur.scoreTotal, joueur.scoreActChap, chapitre.idChapitre, etape.emplacementChap
 											  FROM joueur,etape,chapitre 
 											  WHERE joueur.idEtape=etape.idEtape AND etape.idChapitre=chapitre.idChapitre AND joueur.pseudo= ?');
@@ -57,8 +57,8 @@
 								$pseudo_existant=true;
 								
 								if($donnees['motPass']==$_POST['mot_pass']){
-									$log_reussie=true;
-									
+									$log_reussie=true; // si le mot de passe rempli est bon 
+									// affectation des variables 
 									$scoreTotal=$donnees['scoreTotal'];
 									$idEtape=$donnees['idEtape'];
 									$idChapitre=$donnees['idChapitre'];
@@ -69,21 +69,23 @@
 								}		
 							}
 					}
-						
-					if ($_POST['action'] == 'Se connecter' AND $log_reussie==false) {
+					//si mot de passe est faut 	
+					if ($_POST['action'] == 'Se connecter' AND $log_reussie==false) { 
 								echo "<div id =\"errCnxn\" class= \"error\"> Le pseudo n'est pas existant ou mot de passe incorrecte </div>"; //cette ligne affiche le message d'erreur
 								include ($_SERVER['DOCUMENT_ROOT']."/Epicer/loginInclude.php");	 // cela remet la demande de login
-					}		
+					} // si l'utilisateur a cliqué sur le bouton " creer 
 					if(	$_POST['action'] == 'Creer nouveau joueur' AND $nouv_compte_reussi==false ){
+								// si une des données n'est pas remplie	alors s'affiche un message d'erreur
 								if(empty($_POST['pseudo']) OR empty($_POST['mot_pass'])){
 									echo "<div id =\"errCnxn\" class= \"error\" > Vous n'aviez pas remplis un des champs  </div>"; //cette ligne affiche le message d'erreur
 									include ($_SERVER['DOCUMENT_ROOT']."/Epicer/loginInclude.php");	 // cela remet la demande de login
 								}else { 
+									// si le pseudo rentré existe déjà alors s'affiche un msg d'erreur
 									if($pseudo_existant==true ){
 										echo "<div id =\"errCnxn\" class= \"error\"> Ce pseudo existe déjà, veuillez choisir un autre </div>"; //cette ligne affiche le message d'erreur
 										include ($_SERVER['DOCUMENT_ROOT']."/Epicer/loginInclude.php");	 // cela remet la demande de login
 									}else{
-										// Insertion du message à l'aide d'une requête préparée
+										// Tout va bien , l'insertion du joueur dans la base de donnée
 										$res = $bdd->prepare('INSERT INTO joueur (pseudo, motPass) VALUES(?, ?)');
 										$res->execute(array($_POST['pseudo'], $_POST['mot_pass']));
 										$nouv_compte_reussi=true;
@@ -93,15 +95,15 @@
 					}	
 								
 			 
-					if ($log_reussie==true OR $nouv_compte_reussi==true ){
+					if ($log_reussie==true OR $nouv_compte_reussi==true ){ // si le joueur s'est connécté ou a crée un nouveau compte avec succès
 					
 				?> 		
-						
+							<!--Ici s'affiche l'acceuil avec le fond correspondant-->
 							<div id = "imageAcceuil">
 								<img src="/Epicer/images/accueil.jpg" />
 								<img src="/Epicer/images/choixChapitre.jpg" />
 							</div>
-													
+							<!--C'est l'info qui s'affiche dans la barre à droite, tout au long du jeu-->						
 							<div id ="barreInfo"> 
 							
 								<div id = "infoJoueur"> 
