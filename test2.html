@@ -1,0 +1,20 @@
+<html>
+<body onload = "drawPoint()">
+
+<canvas id ="myCanvas" width="850" height="500" style="border:1px">
+</canvas>
+
+<script type="text/javascript">
+
+
+
+function drawPoint(){
+	var cer=document.getElementById("myCanvas");
+	var ctx=cer.getContext("2d");
+	ctx.arc(170,320,10,0,Math.PI*2,true);
+	ctx.fillStyle="red";
+	ctx.fill();
+}
+
+</script>
+</body>
