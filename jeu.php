@@ -6,10 +6,12 @@
 		<link rel="stylesheet" href="/css/style.css" /> 
 		<link rel="stylesheet" href="/Epicer/css/jeu_style.css" />
 		<link rel="stylesheet" href="/Epicer/css/modalDialog.css" />
+		<link rel="stylesheet" href="/Epicer/css/miniJeux_style.css" />
 		<title>  Jeu Epicer </title>
 		<script src="/Epicer/js/jquery-1.11.2.js"> </script> 
 		<script src="/Epicer/js/general.js"> </script>   <!--le fichier des fonctions javascript principales-->
 		<script src="/Epicer/js/progressBar.js"> </script>  
+		<script src="/Epicer/js/miniJeu5.js"> </script>  
 	 
 		
 		</head>
@@ -44,7 +46,7 @@
 								die('Erreur : '.$e->getMessage());
 						}
 
-						// la requete vers la base de donnée pour récuperer les données du joueur 
+						// la requete vers la base de donnée pour récuperer les donnés du joueur 
 						$req = $bdd->prepare('SELECT joueur.idJoueur, joueur.pseudo ,joueur.motPass, joueur.idEtape, joueur.scoreTotal, joueur.scoreActChap, chapitre.idChapitre, etape.emplacementChap
 											  FROM joueur,etape,chapitre 
 											  WHERE joueur.idEtape=etape.idEtape AND etape.idChapitre=chapitre.idChapitre AND joueur.pseudo= ?');
@@ -112,12 +114,12 @@
 									<div class="infoJoueur"> Score Total: <span id="infoScoreTotal"> <?php echo $scoreTotal; ?>  </span> </div>
 									<div class="infoJoueur"> Etape: <span id ="infoEmplacementActuel"> <?php echo $emplacementChap; ?>  </span> </div>
 									<div class="infoJoueur"> Chapitre: <span id ="infoChapActuel" ><?php echo $idChapitre; ?> </span></div>
+									<div class="infoJoueur"> Score au Chapitre: <span id ="infoScoreChapitre" ><?php echo $scoreActChap; ?>  </span></div> 
 									
 									<!-- A partir d'ici les autres attriburs de la "barreInfo" sont toujour cachés et servent juste pour 
 											la communication des données et la sauvegarde-->
 									<div id ="infoEtapeActuelle"> <?php echo $idEtape; ?>  </div>
-									<div id ="infoIdJoueur"> <?php echo $idJoueur; ?>  </div>  
-									<div id ="infoScoreChapitre"> <?php echo $scoreActChap; ?>  </div>  
+									<div id ="infoIdJoueur"> <?php echo $idJoueur; ?>  </div>   
 									
 								</div> 
 								
@@ -127,11 +129,11 @@
 							
 							<div id="espaceJeu">
 							
-							
+							<div id="imgesChargmnt"> Veuillez patienter svp, les images du chapitre sont en cours de chargement </div>
 							<input id="etapeSuivante" type="submit" name="button" value=">" onClick="etapeSuivante()"/> </input>
 							<input id="etapePrecedente" type="submit" name="button" value="<" onClick="etapePrecedente()"/> </input>
 							
-							<input id="startMiniJeu" type="submit" name="button" value="Commencer" onClick="startMiniJeu()"/> </input>
+							<input id="strtMiniJeu" type="submit" name="button" value="Commencer" onClick="startMiniJeu()"/> </input>
 							<input id="continuer" type="submit" name="button" value="Continuer" onClick="etapeSuivante()"/> </input>
 							
 								
@@ -170,7 +172,28 @@
 									</div>
 								</div> 
 								
-
+								<div id="confEtpPreced" class="modalDialog">
+									<div>
+										<h2>Attention</h2>
+										<p>Si vous decidez de revenir en arrière vous devriez refaire le Mini Jeu</p>
+										<p> Voulez vous continuer tout de même  ? </p> 
+										<input id="confOui" class="btnConf" type="submit" name="button" value="Oui" onClick="revenirEtpe()"/> 
+										<input  id="confNon" class="btnConf" type="submit" name="button" value="Non" onClick="resterEtpe()"/>
+									</div>
+								</div> 
+								
+								<div id="miniJeu5"> 
+									<div id="question">Est ce que cette activité est autorisée : </div>
+									<div id="activite"> </div>
+									<div id="reponseOui" class="reponse" onClick="verifReponse(true)"> </div>
+									<div id="reponseNon" class="reponse" onClick="verifReponse(false)"> </div>
+									<input id="actvtSuivante" type="submit" name="button" value=">" onClick="actSuiv()"/> </input>
+									<div id="repBonne" class="repMJ5"> Tu as raison ! </div>
+									<div id="repFausse" class="repMJ5"> Tu n'a pas raison ! </div>
+									<div id="infoScoreMJ5">  Score: <span id ="scoreMJ5" > </div>
+									
+								</div>
+								
 								
 							</div>
 						

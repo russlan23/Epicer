@@ -1,0 +1,42 @@
+/* ce fichier css est destiné aux données des mini jeux */ 
+
+	
+	#strtMiniJeu{ position: absolute ; text-align: center; width: 200px; bottom:25px; left:100px;  background-color:green;  height: 60px; color: black; font-size:30px; border-radius: 10px; visibility:hidden;}
+	#strtMiniJeu:hover{ background-color:blue; }
+		
+	#continuer{ position: absolute ; text-align: center; width: 240px; bottom:25px; left:325px; background-color:green;  height: 60px; color: black; font-size:30px; border-radius: 10px; visibility:hidden;}
+	#continuer:hover{ background-color:blue; }
+	
+
+	/* Mini jeu 1 */ 
+	
+
+	/* Mini jeu 2 */ 
+	
+
+	/* Mini jeu 3 */ 
+	
+
+	/* Mini jeu 4 */ 
+	
+
+	/* Mini jeu 5 */ 
+	
+		#question {position: absolute ; top:20px; left: 125px; width: 600px; height: 40px; background-color: #33CCCC; color: black; text-align: center; border-radius:15px;  visibility:hidden; font-size:30px}
+		#activite {position: absolute ; top:80px; left: 200px; width: 450px; height: 400px; color: black; text-align: center; visibility:hidden; font-size:35px}	
+		
+		#reponseOui{left:50px; background-image: url('/Epicer/images/mj5/mj5Oui.png');}
+		#reponseNon{right:50px; background-image: url('/Epicer/images/mj5/mj5Non.png');}
+		.reponse {position: absolute ; width: 100px; height: 100px ; top:250px; background-size: 100%; outline:none; background-repeat: no-repeat; border-radius: 15px; visibility:hidden; cursor :pointer;} 
+		.reponse:hover{ width: 130px; height: 130px }
+
+		.feedback { position: absolute ; top:150px; left: 200px; width: 450px; height: 200px; color: black; text-align: center; display:none; font-size:35px } 
+		
+		.repMJ5{ position: absolute ; top:30px; left: 275px; width: 300px; height: 100px; color: black; text-align: center; visibility:hidden; font-size:35px }
+		#repBonne{ background-color: #7FDD4C; } 
+		#repFausse { background-color: #D8000C; } 
+		
+		#infoScoreMJ5{ position: absolute ; bottom:30px; left: 395px; width: 100px; height: 40px; color: black; text-align: center; visibility:hidden; font-size:25px }
+		
+		#actvtSuivante{ position: absolute ; text-align: center; width: 80px; height: 60px; top:220px; right:60px; background-color:green; color: black; font-size:40px; border-radius: 15px; visibility:hidden ;  -webkit-animation: clignote 2s linear infinite alternate; animation: clignote 2s linear infinite alternate;}
+		#actvtSuivante:hover{ background-color:blue; }

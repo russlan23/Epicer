@@ -5,6 +5,8 @@
 	
 	/* le div de barre Info et tout ce qui est dedans :  */
 	
+	.clickble{ cursor:pointer; outline:none; }
+	
 	#imageAcceuil{position: absolute; visibility:hidden;}
 	
 	#progress-bar-container{position:relative;	top:0px;left:0px; width:100%; height:5px;}
@@ -23,17 +25,12 @@
 			#infoScoreTotal {}
 			#infoEmplacementActuel{}
 			#infoChapActuel{}
+			#infoScoreChapitre{}
 			#infoEtapeActuelle{display:none;}
 			#infoIdJoueur{display:none;}
-			#infoScoreChapitre{display:none;}
-			/*#rechercheChapitre{display:none;}
-			#infoEtapeActuelle{visibility:hidden}
-			#infoIdJoueur{visibility:hidden}
-			#infoScoreChapitre{visibility:hidden}*/
-			
 			
 		/* le bouton de reviens vers l'acceuil:  */
-		#btnAccueil{ position: absolute ; text-align: center; width: 110px; top:150px; left:25px; outline:none; background-color:red;  height: 40px; color: black; font-size:25px; border-radius: 8px; visibility:hidden}
+		#btnAccueil{ position: absolute ; text-align: center; width: 110px; top:180px; left:25px; background-color:red;  height: 40px; color: black; font-size:25px; border-radius: 8px; visibility:hidden}
 		#btnAccueil:hover{ background-color:blue;}
 		
 	
@@ -42,16 +39,12 @@
 	/* le div de espace Jeu et tout ce qui est dedans :  */
 	#espaceJeu{width: 850px; position: relative; height: 500px; background-color: white; background-size: cover; background-repeat: no-repeat; background-image: url('/Epicer/images/accueil.jpg'); }
 				
-		#etapeSuivante{ position: absolute ; text-align: center; width: 80px; bottom:25px; right:0px; outline:none; background-color:green;  height: 60px; color: black; font-size:40px; border-radius: 15px; visibility:hidden ;  -webkit-animation: clignote 2s linear infinite alternate; animation: clignote 2s linear infinite alternate;}
+		#etapeSuivante{ position: absolute ; text-align: center; width: 80px; bottom:25px; right:0px; background-color:green;  height: 60px; color: black; font-size:40px; border-radius: 15px; visibility:hidden ;  -webkit-animation: clignote 2s linear infinite alternate; animation: clignote 2s linear infinite alternate;}
 		#etapeSuivante:hover{ background-color:blue; }
-		#etapePrecedente{ position: absolute ; text-align: center; width: 80px; bottom:25px; left:0px; outline:none; background-color:green;  height: 60px; color: black; font-size:40px; border-radius: 15px; visibility:hidden; -webkit-animation: clignote 2s linear infinite alternate; animation: clignote 2s linear infinite alternate;}
+		#etapePrecedente{ position: absolute ; text-align: center; width: 80px; bottom:25px; left:0px; background-color:green;  height: 60px; color: black; font-size:40px; border-radius: 15px; visibility:hidden; -webkit-animation: clignote 2s linear infinite alternate; animation: clignote 2s linear infinite alternate;}
 		#etapePrecedente:hover{ background-color:blue; }
 		
-		#startMiniJeu{ position: absolute ; text-align: center; width: 200px; bottom:25px; left:100px; outline:none; background-color:green;  height: 60px; color: black; font-size:30px; border-radius: 10px; visibility:hidden;}
-		#startMiniJeu:hover{ background-color:blue; }
-		
-		#continuer{ position: absolute ; text-align: center; width: 200px; bottom:25px; left:100px; outline:none; background-color:green;  height: 60px; color: black; font-size:30px; border-radius: 10px; visibility:hidden;}
-		#continuer:hover{ background-color:blue; }
+		#imgesChargmnt{width: 550px; height: 300px;  position: absolute; top: 100px; left:200px; background-color: white; color:black;  cursor:progress;  font-size:25px; visibility:hidden;}
 		
 		#accueil{position : absolute; padding: 20px 20px 20px 20px; top:80px; left:50px;  width :200px;   background-color: rgba(143,143,143, 0.8); border-radius: 10px;  -webkit-animation: appear 2s; animation: appear 2s;}
 			

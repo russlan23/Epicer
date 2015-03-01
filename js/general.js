@@ -15,10 +15,10 @@
 		var idJoueur;
 		var idEtape;
 		var scoreEtape=0;
-		
+		var imLoad=false;
+		var imLoaded=false;
 	
 	// definition de variable joueur 
-	
 	$(document).ready(function()
 		{
 		setUpJoueur();
@@ -65,18 +65,19 @@
 		}
 		
 		function miseEtapeNulle(){  // cette etape met l'étape à 0 si dans choixChap on confirme que l'on veut commencer un nouveau chapitre
-			location.href='#'
+			location.href='#';
 			emplacementChap=0; 
 			scoreChapitre=0;
 			chapActuel=0;
 			document.getElementById("infoChapActuel").innerText=chapActuel;	
+			document.getElementById("infoScoreChapitre").innerText=scoreChapitre;	
 			document.getElementById("infoEmplacementActuel").innerText= emplacementChap;
 			
 		}
 		
 		 
 		function nonConf(){  // cette etape met l'étape à 0 si dans choixChap on confirme que l'on veut commencer un nouveau chapitre
-			location.href='#'
+			location.href='#';
 			accueil();
 		}
 		
@@ -149,6 +150,7 @@
 							document.getElementById("etapeSuivante").style.visibility="visible";
 							document.getElementById("etapePrecedente").style.visibility="visible";
 							document.getElementById("continuer").style.visibility="hidden";
+							document.getElementById("feedbackFinalMJ").style.display="none";
 						}
 						
 						imageFond="url('/Epicer/images/im" + tableChap[emplacementChap] + ".jpg')";
@@ -196,9 +198,19 @@
 				}
 				
 				if(tableChap[emplacementChap]>1000){
-					etapePrecedente();	
+				 location.href='#confEtpPreced';  // si on revenir dans l'étape avant mini jeu 
 				}
 			}
+		}
+		
+		function resterEtpe(){   //dans la cas ou après la fenetre de question de revenir en arrière d'un mini jeu le joueur decide de ne pas le faire 
+			location.href="#";
+		}
+		function revenirEtpe(){  //dans la cas ou après la fenetre de question de revenir en arrière d'un mini jeu le joueur decide de revenir 
+			emplacementChap=emplacementChap-1;
+			etapePrecedente();
+			location.href="#";
+			
 		}
 	
 		function reprendre(){
@@ -207,35 +219,42 @@
 			start(chapitre,emplcmnt);
 		}
 	
-		var chargement; 
-		
 		function start(chapitre, emplcmnt){
 		
-			
-			updateImagesChap(chapitre);
-			
-			document.getElementById("choixChapitre").style.visibility="hidden";	
-			document.getElementById("accueil").style.visibility="hidden";
-			document.getElementById("reprendre").style.display="none";
-			document.getElementById("btnAccueil").style.visibility="visible";
-			progressBar.init();  // execute la bar de progression pour suivre combien d'images ont été telechargés
-			  
 			emplacementChap=emplcmnt;
 			changeChapitre(chapitre);
+			document.getElementById("choixChapitre").style.visibility="hidden";	
+			document.getElementById("reprendre").style.display="none";
+			document.getElementById("espaceJeu").style.backgroundImage="none";
+			document.getElementById("btnAccueil").style.visibility="hidden";
 			
-			imageFond="url('/Epicer/images/im" + tableChap[emplacementChap] + ".jpg')";
-			idText="text"+chapitre+"_"+emplacementChap;
+			if (imLoad==false){
+				updateImagesChap(chapitre);
+				document.getElementById("imgesChargmnt").style.visibility="visible";
+				progressBar.init(); 
+			}
+				
+			if (imLoaded==true){
 			
-			
-			document.getElementById("espaceJeu").style.backgroundImage=imageFond;
-			
-			if(document.getElementById(idText)){
-							document.getElementById(idText).style.display="initial";
-					}
-			
-			document.getElementById("etapeSuivante").style.visibility="visible";
-			document.getElementById("etapePrecedente").style.visibility="visible";
-			
+				document.getElementById("imgesChargmnt").style.visibility="hidden";
+				document.getElementById("btnAccueil").style.visibility="visible";
+				 // execute la bar de progression pour suivre combien d'images ont été telechargés
+				  
+				imageFond="url('/Epicer/images/im" + tableChap[emplacementChap] + ".jpg')";
+				idText="text"+chapitre+"_"+emplacementChap;
+				
+				
+				document.getElementById("espaceJeu").style.backgroundImage=imageFond;
+				
+				if(document.getElementById(idText)){
+								document.getElementById(idText).style.display="initial";
+						}
+				
+				document.getElementById("etapeSuivante").style.visibility="visible";
+				document.getElementById("etapePrecedente").style.visibility="visible";
+				imLoaded=false;
+				imLoad=false;
+			}
 			
 		}
 			
@@ -248,14 +267,14 @@
 			document.getElementById("espaceJeu").style.backgroundColor="black";
 			document.getElementById("etapeSuivante").style.visibility="hidden";
 			document.getElementById("etapePrecedente").style.visibility="hidden";
-			document.getElementById("startMiniJeu").style.visibility="visible";
+			document.getElementById("strtMiniJeu").style.visibility="visible";
 			
 			document.getElementById("infoEmplacementActuel").innerText= emplacementChap;
 		}
 		
 		function startMiniJeu(){   // la fonction generale qui suit le click "commencer" et qui commence le mini jeu en question
 		
-			document.getElementById("startMiniJeu").style.visibility="hidden";
+			document.getElementById("strtMiniJeu").style.visibility="hidden";
 			
 			emplacementChap=emplacementChap+1;
 			
@@ -263,7 +282,7 @@
 			
 			switch(tableChap[emplacementChap]){
 					case 2001: 
-							startMJ1();
+						startMJ5();
 						break;
 					case 2002: 
 						break;
@@ -276,106 +295,10 @@
 					default:
 						break;
 				}
-			
-		
-		
-		}
-		
-		function startMJ1(){
-		
-			document.getElementById("espaceJeu").style.backgroundColor="white";
-			document.getElementById("startMiniJeu").style.visibility="hidden";
-			document.getElementById("startMiniJeu").style.visibility="hidden";
-			document.getElementById("continuer").style.visibility="visible";
-		}
-		
-		
-		
-		
-		
-		
-	// fonction de sauvegarde 
-	
-		function save(){
-		// du code
-		} // a faire 
-
-		
+		}		
 		
 		//gerer la fin du chapitre et revient vers l'accueil 
 		
-		
-		
-		// fonction de chargement d'images
-		function updateImagesChap(chap){
-			switch(chap){
-			
-				case 1: 	$('#imagesChap').append ('<img src ="/Epicer/images/im1.jpg"/>');
-							$('#imagesChap').append ('<img src ="/Epicer/images/im1.jpg"/>');
-							$('#imagesChap').append ("<img src ='/Epicer/images/im3.jpg'/>");
-							$('#imagesChap').append ("<img src ='/Epicer/images/im4.jpg'/>");
-							$('#imagesChap').append ("<img src ='/Epicer/images/im5.jpg'/>");
-					break;
-				case 2: 
-					break;
-				case 3: 
-					break;
-				case 4: 
-					break;
-				default:
-					break;
-			}			
-
-		}
-
-		
-	
-		
-	progressBar = {
-		
-		init: function(){
-			var that=this;
-			countElmt =$('img').length;
-			loadedElmt=0;
-			var $progressBarContainer = $('<div/>').attr('id','progress-bar-container');
-			 $progressBarContainer.append($('<div/>').attr('id','progress-bar'));
-			 $progressBarContainer.appendTo($('#espaceJeu'));
-			
-			$container=$('<div/>').attr('id','progress-bar-elements');
-			$container.appendTo($('imagesChap'));
-			
-			$('img').each(function(){
-				$('<img/>')
-				.attr('src',$(this).attr('src'))
-				.on('load error', function(){
-					loadedElmt++;
-					that.updateProgressBar();
-					
-				})
-				.appendTo($container)
-				;
-			});
-		
-		},
-		
-		updateProgressBar : function(l,c){
-			
-			$('#progress-bar').stop().animate({
-			'width':( loadedElmt/countElmt)*100 +'%'
-			}, function(){
-				if(loadedElmt==countElmt){
-					setTimeout(function(){
-						$('#progress-bar-container').animate({
-							'top' : '-8px'
- 						},function (){
-							$('#progress-bar-container').remove();
-							$('#progress-bar-elements').remove();
-						});
-					},750);
-				}	
-			});
-		}
-	};
 	 
 	 
 	 
@@ -468,3 +391,5 @@
 	req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); /* Pour la commande POST les données sont mises dans le corps du message et donc passées en argument dans la fonction send */
 	req.send(donneesRecherche);									/*On envoi les données*/
 	}
+	
+	
