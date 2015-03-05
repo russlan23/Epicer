@@ -50,16 +50,21 @@ function actSuiv(){
 		actNode.nodeValue=activites[numAct];
 		
 	}else{
-		document.getElementById("infoScoreMJ5").style.visibility="hidden";
-		document.getElementById("feedbackFinalMJ").innerText="Bravo tu as fini ce Mini Jeu avec un score total de " + scoreMJ5 + ". Pour continuer le chapitre appuis sur le bouton";
-		document.getElementById("feedbackFinalMJ").style.display="initial";
-		document.getElementById("continuer").style.visibility="visible";
-		scoreEtape=scoreMJ5;
-		scoreChapitre=scoreChapitre+scoreMJ5;
-		document.getElementById("infoScoreChapitre").innerText=scoreChapitre;
+		finChapitre();
 	}
 }
 
+
+function finChapitre(){
+	document.getElementById("infoScoreMJ5").style.visibility="hidden";
+	document.getElementById("feedbackFinalMJ").innerText="Bravo tu as fini ce Mini Jeu avec un score total de " + scoreMJ5 + ". Pour continuer le chapitre appuis sur le bouton";
+	document.getElementById("feedbackFinalMJ").style.display="initial";
+	document.getElementById("continuer").style.visibility="visible";
+	scoreEtape=scoreMJ5;
+	scoreChapitre=scoreChapitre+scoreMJ5;
+	document.getElementById("infoScoreChapitre").innerText=scoreChapitre;
+
+}
 
 function verifReponse(choix){
 	
