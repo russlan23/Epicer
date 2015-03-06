@@ -141,7 +141,7 @@
 								<div id ="accueil"> 
 																
 									<div id="reprendre" class ="acc bcWhite" onClick="reprendre()"> Reprendre </div>
-									<div id="accederChapitre" class = "acc bcYellow" onClick= "choixChap()"> Acceder aux chapitres </div>
+									<div id="accederChapitre" class = "acc bcYellow" onClick= "choixChap()"> Accéder aux chapitres </div>
 									<div id="tutoriel" class = "acc bcGreen" > Tutoriel </div>
 									<div id="historiqueScore" class = "acc bcRed" > Historique </div>
 									
@@ -159,14 +159,16 @@
 								
 								<?php include ($_SERVER['DOCUMENT_ROOT']."/Epicer/textInclude.php"); ?>
 								
+								
+								
 								<div id="imagesChap"> </div>
 								
 								<!-- Dialogue de confirmation si le joueur decide de commencer le nouveau chapitre sans finir le precedent : -->
 								<div id="attentionConfirme" class="modalDialog">
 									<div>
 										<h2>Attention</h2>
-										<p>Si vous decidez de continuer vers le Choix de Chapitre alors l'avancement du dernier chapitre sera effacé </p>
-										<p> Voulez vous continuer tout de même  ? </p> 
+										<p>Si vous décidez de continuer vers le Choix de Chapitre alors l'avancement du dernier chapitre sera effacé </p>
+										<p> Voulez-vous continuer tout de même  ? </p> 
 										<input id="confOui" class="btnConf" type="submit" name="button" value="Oui" onClick="miseEtapeNulle()"/> 
 										<input  id="confNon" class="btnConf" type="submit" name="button" value="Non" onClick="nonConf()"/>
 									</div>
@@ -175,26 +177,29 @@
 								<div id="confEtpPreced" class="modalDialog">
 									<div>
 										<h2>Attention</h2>
-										<p>Si vous decidez de revenir en arrière vous devriez refaire le Mini Jeu</p>
-										<p> Voulez vous continuer tout de même  ? </p> 
+										<p>Si vous décidez de revenir en arrière vous devrez refaire le Mini Jeu</p>
+										<p> Voulez-vous continuer tout de même  ? </p> 
 										<input id="confOui" class="btnConf" type="submit" name="button" value="Oui" onClick="revenirEtpe()"/> 
 										<input  id="confNon" class="btnConf" type="submit" name="button" value="Non" onClick="resterEtpe()"/>
 									</div>
 								</div> 
 								
 								<div id="miniJeu5"> 
-									<div id="question">Est ce que cette activité est autorisée : </div>
+									<div id="question">Est-ce que cette activité est autorisée : </div>
 									<div id="activite"> </div>
 									<div id="reponseOui" class="reponse" onClick="verifReponse(true)"> </div>
 									<div id="reponseNon" class="reponse" onClick="verifReponse(false)"> </div>
 									<input id="actvtSuivante" type="submit" name="button" value=">" onClick="actSuiv()"/> </input>
 									<div id="repBonne" class="repMJ5"> Tu as raison ! </div>
-									<div id="repFausse" class="repMJ5"> Tu n'a pas raison ! </div>
+									<div id="repFausse" class="repMJ5"> Tu n'as pas raison ! </div>
 									<div id="infoScoreMJ5">  Score: <span id ="scoreMJ5" > </div>
 									
 								</div>
 								
 								
+							<!-- code php pour rechercher les chapitres faits -->	
+							<?php include ($_SERVER['DOCUMENT_ROOT']."/Epicer/rechercheChapFaits.php"); ?>
+							
 							</div>
 						
 							

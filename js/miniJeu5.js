@@ -3,7 +3,7 @@ var imgActvt = new Image();
 var nomActivite="";
 var textNode;
 var paraphAct;
-var activites = [" " , "Athletisme ?", "Professeur à l'ecole ?", "Peintre ?" , "Natation ?" , "Danse ?", "Football ?", "Pompier ?", "Pilote d'avion ?", "Plongee sous-marine", "Conducteur de transport en commun"  ];
+var activites = [" " , "Athlétisme ?", "Professeur à l'école ?", "Peintre ?" , "Natation ?" , "Danse ?", "Football ?", "Pompier ?", "Pilote d'avion ?", "Plongée sous-marine", "Conducteur de transport en commun"  ];
 var reponses= [true, true, true, true, true, true, true, false, false, false, false]; // attention de ne pas prendre en compte le premier qui correspond à l'espace vide
 var numAct=0;
 var scoreMJ5=0;
@@ -57,7 +57,7 @@ function actSuiv(){
 
 function finChapitre(){
 	document.getElementById("infoScoreMJ5").style.visibility="hidden";
-	document.getElementById("feedbackFinalMJ").innerText="Bravo tu as fini ce Mini Jeu avec un score total de " + scoreMJ5 + ". Pour continuer le chapitre appuis sur le bouton";
+	document.getElementById("feedbackFinalMJ").innerText="Bravo tu as fini ce Mini Jeu avec un score total de " + scoreMJ5 + ". Pour continuer le chapitre appuie sur le bouton";
 	document.getElementById("feedbackFinalMJ").style.display="initial";
 	document.getElementById("continuer").style.visibility="visible";
 	scoreEtape=scoreMJ5;

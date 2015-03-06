@@ -29,6 +29,7 @@
 		function setUpJoueur(){	
 			pseudo=document.getElementById("infoPseudo").innerText;
 			scoreTotal=parseInt(document.getElementById("infoScoreTotal").innerText);
+			//scoreTotal=parseInt(document.getElementById("chapFaits").innerText);
 			emplacementChap=parseInt(document.getElementById("infoEmplacementActuel").innerText);
 			chapActuel=parseInt(document.getElementById("infoChapActuel").innerText);
 			idJoueur=parseInt(document.getElementById("infoIdJoueur").innerText);

@@ -12,7 +12,8 @@
 	}
 	
 	//--traitement des données reçues --//
-	$idJoueurRecu=$_POST["donnees"];														//On capture les données reçues du fichier JavaScripts
+	//$idJoueurRecu=$_POST["donnees"];		
+	$idJoueurRecu=1;		//On capture les données reçues du fichier JavaScripts
 	//echo "id joueur: ".$idJoueurRecu; //SUPPRIMER
 		
 		$req = $bdd->prepare('SELECT idJoue, idJoueur, idEtape
@@ -43,4 +44,6 @@
 		//echo " ex: ".var_dump($infoRecu[0][0]);	//SUPPRIMER
 		// echo " taile: ".count($infoRecu); //SUPPRIMER
 		//echo " ex3: ".var_dump($infoRecu); //SUPPRIMER
+		
+		echo "<div id='chapFaits'>". $idJoueurRecu . "</div>" 
 ?>
