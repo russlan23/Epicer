@@ -62,14 +62,15 @@
 			#tutoriel{}
 			#historiqueScore{display:none;}
 		
+		#chapFaits{visibility:hidden;}
 			
-		#choixChapitre{position : absolute; width:500px; height: 400px; left :100px; right :0px; top: 100px; visibility:hidden;}
-			.chap{ position : absolute; left: 250; width:350px; height :50px; color : black; background-color:green; padding: 5px; border-radius: 6px; font-size:20px; }
+		#choixChapitre{position:absolute;  visibility:hidden;}
+			.chap{ position : absolute; left: 275px; width:300px; text-align:center; height :70px; color:black; background-color:green; padding: 5px; border-radius: 6px; font-size:20px; }
 			.chap:hover{ background-color: blue;}
-			#chap1{top:0px;}
-			#chap2{top:0px;}
-			#chap3{top:150px;}
-			#chap4{top:150px;}
+			#chap1{top:30px;}
+			#chap2{top:120px;}
+			#chap3{top:210px;}
+			#chap4{top:300px;}
 
 		#PointRouge1{width: 850px; position: relative; height: 500px; background-color: white; background-size: cover; background-repeat: no-repeat; background-image: url('/Epicer/images/neurone.png');}
 			.debut{position: relative;left: 170px;top: 320px;}

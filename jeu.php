@@ -150,10 +150,10 @@
 								<!-- La page de choix de chapitre : -->
 								<div id="choixChapitre"> 
 								
-									<div id="chap1" class ="chap" onClick=start(1,0)> <h3>Chapitre I </h3> Temps estimé : 6 min  </div>
-									<div id="chap2" class ="chap" > <h3>Chapitre II </h3> Temps estimé : 3 min  </div>
-									<div id="chap3" class ="chap" > <h3>Chapitre III</h3>Temps estimé : 8 min  </div>
-									<div id="chap4" class ="chap" > <h3>Chapitre IV </h3> Temps estimé : 5 min  </div>
+									<div id="chap1" class ="chap" onClick=start(1,0)> Chapitre I </br> Temps estimé: 11min  </div>
+									<div id="chap2" class ="chap" onClick=start(2,0)> Chapitre II </br> Temps estimé: 13min </div>
+									<div id="chap3" class ="chap" onClick=start(3,0)> Chapitre III </br> Temps estimé: 7min  </div>
+									<div id="chap4" class ="chap" onClick=start(4,0)> Chapitre IV </br>Temps estimé: 9min </div>
 								
 								</div>
 								
