@@ -48,10 +48,7 @@
 		
 		function choixChap(){
 		setUpJoueur();
-		rechercheChapFaits();
-		//recupererRechercheChapFaits();
-		//sauvegardeJoueur ();
-		//sauvegardeJoue (); // J'ai mis la sauvegarde ici comme une facon de voir si la sauvegarde marche ou pas
+
 		
 			if(emplacementChap>0){   // si on veut choisir un chapitre alors qu'on est au milieu d'un autre on fait apparaître une demande de 
 									 // confirmation de la mise d'étape à 0
@@ -371,26 +368,3 @@
 	req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); /* Pour la commande POST les données sont mises dans le corps du message et donc passées en argument dans la fonction send */
 	req.send(donneesSauvegarder);									/*On envoi les données*/
 	}
-
-	/*Cette fonction fait la preparation et l'envoi au fichier PHP des données du JOUEUR qui seront sauvegardées sur la BDD*/
-	function rechercheChapFaits (){
-	  var req =  creerInstance();
-	  var donneesRecherche;						/*On créer l'array dans lequelle on va envoyer les données*/
-	  donneesRecherche=idJoueur;								/*On sauvegarde l'id du joueur dans l'array*/
-	  req.onreadystatechange = function(){
-	  if(req.readyState == 4){ 		/* Si l'état = terminé */
-		if(req.status == 200){		/* Si le statut = OK */
-		  alert(req.responseText);  /* On affiche la réponse */
-		}else{
-		  alert("Error: returned status code " + req.status + " " + req.statusText);
-		}
-	  }
-	}
-
-	donneesRecherche = "donnees="+donneesRecherche ;			/*On dit au serveur que les données du formulaire doivent se trouver dans la variable « donnees »*/
-	req.open("POST", "rechercheChapFaits.php", true);					/*On indique quel est le fichier PHP où seront envoyées les données*/
-	req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); /* Pour la commande POST les données sont mises dans le corps du message et donc passées en argument dans la fonction send */
-	req.send(donneesRecherche);									/*On envoi les données*/
-	}
-	
-	
