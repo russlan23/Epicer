@@ -75,12 +75,6 @@
 			#chap3{top:210px;}
 			#chap4{top:300px;}
 
-		#PointRouge1{width: 850px; position: relative; height: 500px; background-color: white; background-size: cover; background-repeat: no-repeat; background-image: url('/Epicer/images/neurone.png');}
-			.debut{position: relative;left: 170px;top: 320px;}
-			.sommet1{position: relative;left: 260px;top: 300px;}
-			.sommet2{position: relative;left: 450px;top: 350px;}
-			.sommet3{position: relative;left: 550px;top: 340px;}
-			.fin{position: relative;left: 690px;top: 190px;}
 
 						
 	/* Le texte qui sera affiché dans le jeu*/	
