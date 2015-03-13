@@ -118,7 +118,7 @@
 				case 3: tableChap =  [];
 						chapActuel=3;
 					break;
-				case 4: tableChap =  [];
+				case 4: tableChap =  [400,401,402,1005,2005,403,404,405,406,407,408,409,410,411];
 						chapActuel=4;
 					break;
 				default:
@@ -280,7 +280,6 @@
 			
 			switch(tableChap[emplacementChap]){
 					case 2001: 
-						startMJ5();
 						break;
 					case 2002: 
 						break;
@@ -289,6 +288,7 @@
 					case 2004: 
 						break;
 					case 2005: 
+						startMJ5();
 						break;	
 					default:
 						break;

@@ -48,9 +48,33 @@
 		<!-- Chapitre 4 -->
 		
 			<div id ="text4_1" class="textChap ">
-				<div class =" avatar Paul"> Salut , je suis Paul, tu est en train de lire le text du etape 0 du chapitre 1, c'est l'Introduction. Le max du texte qu'on peut mettre se resume un peu près à ça </div> 
-				<div class =" avatar Doc"> Je suis le Docteur </div> 
-				<div class =" avatar Paul"> D'accord ! </div> 
+				<div class =" avatar Paul"> Docteur, avant de partir, j’aimerais savoir si je peux encore continuer à jouer au foot </div> 
+				<div class =" avatar Doc"> Oui, il n’y a absolument pas de problème ! </div> 
+				<div class =" avatar Paul"> Et est- ce que je pourrai faire de la plongée avec mon père quand j’irai en vacances à Hawaï ? </div> 
+			</div>
+			
+			<div id ="text4_2" class="textChap ">
+				<div class =" avatar Doc"> Pour la plongée, cela va être compliqué. Asseyons-nous je vais t’expliquer. Imagine que tu fasses une crise lorsque tu es sous l’eau. Tu risques de te mettre en danger ! 
+					C’est comme l’alpinisme et le sport automobile, tu risques de tomber ou bien de faire un accident en voiture. </br>	Je te propose un petit jeu, afin que tu découvres les activités qui ne sont pas conseillées lorsque tu es épileptique.
+					 </div> 
+			</div>
+			
+			<div id ="text4_3" class="textChap ">
+				<div class =" avatar Paul"> Mais du coup Docteur, ça veut dire que je ne pourrai jamais conduire une voiture ? </div> 
+				<div class =" avatar Doc"> Pas obligatoirement, si les médicaments fonctionnent correctement il te sera possible de conduire une voiture et de nager dans une piscine. </div> 
+				<div class =" avatar Paul"> Ah cool ! </div> 
+			</div>
+			
+			<div id ="text4_4" class="textChap ">
+				<div class =" avatar Doc"> Et puis, je te conseille d’avoir un rythme de sommeil régulier. Ensuite, tes parents vont devoir adapter ta maison afin que tu ne te blesses pas au cas où tu tombes.  </div> 
+				<div class =" avatar Paul"> On va devoir déménager ? </div> 
+				<div class =" avatar Doc"> Non non, je vais t’expliquer. </div> 
+			</div>
+			
+			<div id ="text4_5" class="textChap ">
+				<div class =" avatar Doc"> Et puis, je te conseille d’avoir un rythme de sommeil régulier. Ensuite, tes parents vont devoir adapter ta maison afin que tu ne te blesses pas au cas où tu tombes.  </div> 
+				<div class =" avatar Paul"> On va devoir déménager ? </div> 
+				<div class =" avatar Doc"> Non non, je vais t’expliquer. </div> 
 			</div>
 			
 			

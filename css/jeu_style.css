@@ -16,11 +16,11 @@
 		#imagesChap{position: absolute; visibility:hidden;}
 		
 	
-	#barreInfo{width: 150px; margin:auto; left:850px; height: 500px;  position: absolute; background-color: rgba(243, 214, 23, 0.7);}
+	#barreInfo{width: 150px; margin:auto; left:850px; height: 500px;  font-style: italic; position: absolute; background-color: rgba(243, 214, 23, 0.7);}
 	
 	
 			/* les infos en haut à droite :  */
-			.infoJoueur{position :relative ; top:20px; left : 5px;  height: 22px; color: black; } 
+			.infoJoueur{position :relative ; top:20px; left : 5px; font-family:almendra; height: 22px; color: black; } 
 			#infoPseudo{}
 			#infoScoreTotal {}
 			#infoEmplacementActuel{}
