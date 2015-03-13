@@ -9,13 +9,31 @@
 	
 
 	/* Mini jeu 1 */ 
-	
+	#PointRouge1{width: 850px; position: relative; height: 500px; background-size: cover; background-repeat: no-repeat; background-image: url('/Epicer/images/im100.JPG');}
+		.debut{position: relative;left: 170px;top: 320px;}
+		.sommet1{position: relative;left: 260px;top: 300px;}
+		.sommet2{position: relative;left: 450px;top: 350px;}
+		.sommet3{position: relative;left: 550px;top: 340px;}
+		.fin{position: relative;left: 690px;top: 190px;}
+
+	#rouge{width:85px; height: 50px; position: relative; background-image: url('/Epicer/images/envelope_rouge.png');}
+
+	#blanc{width: 85px; height: 50px; position: relative; background-image: url('/Epicer/images/nvelope_blanc.png');}
 
 	/* Mini jeu 2 */ 
 	
 
 	/* Mini jeu 3 */ 
-	
+	#PointRouge2{width: 850px; position: relative; height: 500px; background-color: white; background-size: cover; background-repeat: no-repeat; background-image: url('/Epicer/images/neurone.jpg');}
+		.debut{position: relative;left: 385px;top: 125px;}
+		.fin1{position: relative;left: 795px;top: 150px;}
+		.fin2{position: relative;left: 510px;top: 420px;}
+		.fin3{position: relative;left: 55px;top: 445px;}
+		.fin4{position: relative;left: 130px;top: 125px;}
+
+	#rouge{width:85px; height: 50px; position: relative; background-image: url('/Epicer/images/envelope_rouge.png');}
+
+	#blanc{width: 85px; height: 50px; position: relative; background-image: url('/Epicer/images/nvelope_blanc.png');}
 
 	/* Mini jeu 4 */ 
 	
