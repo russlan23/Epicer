@@ -6,7 +6,11 @@
 		<link rel="stylesheet" href="/css/style.css" /> 
 		<link rel="stylesheet" href="/Epicer/css/jeu_style.css" />
 		<link rel="stylesheet" href="/Epicer/css/modalDialog.css" />
+<<<<<<< Updated upstream
 		<link rel="stylesheet" href="/Epicer/css/miniJeux_style.css" />
+=======
+		<link rel="stylesheet" type="text/css" href="/Epicer/css/point_rouge">
+>>>>>>> Stashed changes
 		<title>  Jeu Epicer </title>
 		<script src="/Epicer/js/jquery-1.11.2.js"> </script> 
 		<script src="/Epicer/js/general.js"> </script>   <!--le fichier des fonctions javascript principales-->
