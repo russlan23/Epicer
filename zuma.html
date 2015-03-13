@@ -3,8 +3,8 @@
 	<title>Zuma</title>
 	<style>
 	*{margin:0;padding: 0;}
-	body{background: black;}
-	#div1{background: white; width: 850px; margin: 20px auto;}
+	body{background: white;}
+	#div1{background: black; width: 850px; margin: 20px auto;}
 	</style>
 	<script>
 	window.onload = function() {
@@ -32,10 +32,12 @@
 
 				oGC.beginPath();
 				oGC.arc(400,250,20,0,360*Math.PI/180,false);
-				oGC.stroke();
+				oGC.fillStyle = 'yellow';
+				oGC.fill();
 
 				for (var i = 0;i<ball.length; i++) {
 					oGC.beginPath();
+					oGC.fillStyle = 'white';
 					oGC.moveTo(ball[i].x,ball[i].y);
 					oGC.arc(ball[i].x,ball[i].y,20,0,360*Math.PI/180,false);
 					oGC.fill();
