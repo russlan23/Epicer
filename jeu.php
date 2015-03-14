@@ -16,7 +16,6 @@
 		<script src="/Epicer/js/general.js"> </script>   <!--le fichier des fonctions javascript principales-->
 		<script src="/Epicer/js/progressBar.js"> </script>  
 		<script src="/Epicer/js/miniJeu5.js"> </script>  
-		<script src="/Epicer/js/quizz.js"> </script> 	
 	 
 		
 		</head>
@@ -200,20 +199,6 @@
 									<div id="infoScoreMJ5">  Score: <span id ="scoreMJ5" > </div>
 									
 								</div>
-								
-								<div id="quizz"> 
-									<!--<div id="question">Est-ce que cette activité est autorisée : </div>-->
-									<div id="questionQuizz"> </div>
-									<div id="reponseOuiQuizz" class="reponseQuizz" onClick="verifReponseQuizz(true)"> </div>
-									<div id="reponseNonQuizz" class="reponseQuizz" onClick="verifReponseQuizz(false)"> </div>
-									<input id="questionSuivanteQuizz" type="submit" name="button" value=">" onClick="quesSuivQuizz()"/> </input>
-									<div id="repBonneQuizz" class="repQuizz"> Tu as raison ! </div>
-									<div id="repFausseQuizz" class="repQuizz"> Tu n'as pas raison ! </div>
-									<div id="infoScoreQuizz">  Score: <span id ="scoreQuizz" > </div>
-									<div id="etoile1" class="etoiles" > </div>
-									<div id="etoile2" class="etoiles" > </div>
-									<div id="etoile3" class="etoiles" > </div>
-								</div>									
 								
 								
 							<!-- code php pour rechercher les chapitres faits -->	
