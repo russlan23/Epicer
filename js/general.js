@@ -149,6 +149,10 @@
 							document.getElementById("etapePrecedente").style.visibility="visible";
 							document.getElementById("continuer").style.visibility="hidden";
 							document.getElementById("feedbackFinalMJ").style.display="none";
+							document.getElementById("feedbackFinalQF").style.display="none";
+							document.getElementById("etoile1").style.visibility="hidden";
+							document.getElementById("etoile2").style.visibility="hidden";
+							document.getElementById("etoile3").style.visibility="hidden";
 						}
 						
 						imageFond="url('/Epicer/images/im" + tableChap[emplacementChap] + ".jpg')";

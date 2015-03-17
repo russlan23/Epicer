@@ -70,12 +70,12 @@
 		#choixChapitre{position:absolute;  visibility:hidden;}
 			.chap{ position : absolute; left: 275px; width:300px; text-align:center; height :70px; color:black; background-color:green; padding: 5px; border-radius: 20px; font-size:20px; }
 			.chap:hover{ background-color: blue;}
+
 			#chap1{top:60px;}
 			#chap2{top:160px;}
 			#chap3{top:260px;}
 			#chap4{top:360px;}
-
-						
+			
 	/* Le texte qui sera affiché dans le jeu*/	
 	.textChap{ position: absolute; height: 135px; width: 620px; left: 120px; bottom: 5px; border: 3px groove rgb(34, 120, 15); display:none;  background-color: rgba(1, 215, 88, 0.9); -webkit-animation: appear 2s; animation: appear 2s; }
 	.avatar{padding:10px 30px 20px 40px ; height: 15px;  background-position: 0px 5px ; background-repeat: no-repeat; font-size: 15px; font-weight:bold}

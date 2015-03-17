@@ -9,12 +9,12 @@
 	
 
 	/* Mini jeu 1 */ 
-	#PointRouge1{width: 850px; position: relative; height: 500px; background-size: cover; background-repeat: no-repeat; background-image: url('/Epicer/images/im100.JPG');}
-		.debut{position: relative;left: 170px;top: 320px;}
-		.sommet1{position: relative;left: 260px;top: 300px;}
-		.sommet2{position: relative;left: 450px;top: 350px;}
-		.sommet3{position: relative;left: 550px;top: 340px;}
-		.fin{position: relative;left: 690px;top: 190px;}
+	#PointRouge1{width: 850px; position: relative; height: 500px; background-size: cover; background-repeat: no-repeat; background-image: url('/Epicer/images/bg_point rouge1.jpg');}
+		.debut{position: relative;left: 170px;top: 320px;} /* pas encore change */
+		.sommet1{position: relative;left: 260px;top: 300px;} /* pas encore change */
+		.sommet2{position: relative;left: 450px;top: 350px;} /* pas encore change */
+		.sommet3{position: relative;left: 550px;top: 340px;} /* pas encore change */
+		.fin{position: relative;left: 690px;top: 190px;} /* pas encore change */
 
 	#rouge{width:85px; height: 50px; position: relative; background-image: url('/Epicer/images/envelope_rouge.png');}
 
@@ -25,11 +25,11 @@
 
 	/* Mini jeu 3 */ 
 	#PointRouge2{width: 850px; position: relative; height: 500px; background-color: white; background-size: cover; background-repeat: no-repeat; background-image: url('/Epicer/images/neurone.jpg');}
-		.debut{position: relative;left: 385px;top: 125px;}
-		.fin1{position: relative;left: 795px;top: 150px;}
-		.fin2{position: relative;left: 510px;top: 420px;}
-		.fin3{position: relative;left: 55px;top: 445px;}
-		.fin4{position: relative;left: 130px;top: 125px;}
+		.debut{position: relative;left: 385px;top: 125px;} /* pas encore change */
+		.fin1{position: relative;left: 795px;top: 150px;} /* pas encore change */
+		.fin2{position: relative;left: 510px;top: 420px;} /* pas encore change */
+		.fin3{position: relative;left: 55px;top: 445px;} /* pas encore change */
+		.fin4{position: relative;left: 130px;top: 125px;} /* pas encore change */
 
 	#rouge{width:85px; height: 50px; position: relative; background-image: url('/Epicer/images/envelope_rouge.png');}
 
@@ -58,3 +58,30 @@
 		
 		#actvtSuivante{ position: absolute ; text-align: center; width: 80px; height: 60px; top:220px; right:60px; background-color:green; color: black; font-size:40px; border-radius: 15px; visibility:hidden ;  -webkit-animation: clignote 2s linear infinite alternate; animation: clignote 2s linear infinite alternate;}
 		#actvtSuivante:hover{ background-color:blue; }
+		
+		
+		/* Quizz */ 
+	
+		/*#questionQuizz {position: absolute ; top:20px; left: 125px; width: 600px; height: 40px; background-color: #33CCCC; color: black; text-align: center; border-radius:15px;  visibility:hidden; font-size:30px}*/
+		#questionQuizz {position: absolute ; top:100px; left: 120px; width: 600px; height: 200px; color: black; text-align:center; visibility:hidden; font-size:35px;}	
+		
+		#reponseOuiQuizz{top:320px; left:250px; background-image: url('/Epicer/images/quizz/quizzOui.png');}
+		#reponseNonQuizz{top:320px; right:250px; background-image: url('/Epicer/images/quizz/quizzNon.png');}
+		.reponseQuizz {position: absolute ; width: 100px; height: 100px ; top:250px; background-size: 100%; top:50%; outline:none; background-repeat: no-repeat; border-radius: 15px; visibility:hidden; cursor :pointer;} 
+		.reponseQuizz:hover{ width: 130px; height: 130px }
+
+		.feedbackQuizz { position: absolute ; top:150px; left: 180px; width: 470px; height: 240px; color: black; text-align: center; display: table-cell;vertical-align: middle; display:none; font-size:30px; } 
+		
+		.repQuizz{ position: absolute ; top:50px; left: 275px; width: 300px; height: 50px;  text-align: center; visibility:hidden; font-size:35px }
+		#repBonneQuizz{ color: green; } 
+		#repFausseQuizz { color: red; } 
+		
+		#infoScoreQuizz{ position: absolute ; bottom:30px; left: 365px; width: 130px; height: 40px; color: black; text-align: center; visibility:hidden; font-size:25px }
+		
+		#questionSuivanteQuizz{ position: absolute ; text-align: center; width: 80px; height: 60px; top:220px; right:60px; background-color:green; color: black; font-size:40px; border-radius: 15px; visibility:hidden ;  -webkit-animation: clignote 2s linear infinite alternate; animation: clignote 2s linear infinite alternate;}
+		#questionSuivanteQuizz:hover{ background-color:blue; }
+		
+		.etoiles {position: absolute ; width: 75px; height: 100px ; top:300px; left:350px;  background-size: 100%; top:50%; outline:none; background-repeat: no-repeat; visibility:hidden;} 
+		#etoile1{top:300px; background-image: url('/Epicer/images/Etoiles/etoile1.png');}
+		#etoile2{top:300px; left:410px;background-image: url('/Epicer/images/Etoiles/etoile2.png');}
+		#etoile3{top:300px; left:470px;background-image: url('/Epicer/images/Etoiles/etoile3.png');}
