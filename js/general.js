@@ -260,7 +260,7 @@
 			var chapitre=chapActuel;
 			var emplcmnt=emplacementChap;
 			start(chapitre,emplcmnt);
-			cacheAcceuil();
+			cacheAccueil();
 			
 		}
 	
@@ -329,6 +329,7 @@
 					case 2001: 
 						break;
 					case 2002: 
+						startMJ2();
 						break;
 					case 2003: 
 						break;

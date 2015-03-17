@@ -31,18 +31,47 @@
 		
 		<!-- Chapitre 2 -->
 		
-			<div id ="text2_1" class="textChap ">
-				<div class =" avatar Paul"> Salut , je suis Paul, tu est en train de lire le text du etape 1 du chapitre 1, c'est l'Introduction. Le max du texte qu'on peut mettre se resume un peu près à ça </div> 
-				<div class =" avatar Doc"> Je suis le Docteur </div> 
-				<div class =" avatar Paul"> D'accord ! </div> 
-			</div>
+			
 			
 		<!-- Chapitre 3 -->
 		
 			<div id ="text3_1" class="textChap ">
-				<div class =" avatar Paul"> Salut , je suis Paul, tu est en train de lire le text du etape 0 du chapitre 1, c'est l'Introduction. Le max du texte qu'on peut mettre se resume un peu près à ça </div> 
-				<div class =" avatar Doc"> Je suis le Docteur </div> 
-				<div class =" avatar Paul"> D'accord ! </div> 
+				<div class =" avatar Doc">  Bonjour Paul, Comment vas-tu ? Tu es près pour l’examen ? On va commencer par un électroencéphalogramme. </div> 
+				<div class =" avatar Paul"> Oui je pense mais je ne sais pas vraiment à quoi m’attendre, est-ce que ce sera douloureux ? </div> 
+				<div class =" avatar Doc">  Pas du tout je vais t’expliquer. </div> 
+			</div>
+			
+			<div id ="text3_2" class="textChap ">
+				<div class =" avatar Doc">  C’est une mesure, un signal qui me permettra de connaitre plus précisément ton épilepsie et donc de mieux la traiter. Ainsi nous pourrons éviter qu’une nouvelle crise se déclenche. </div> 
+				<p> </p>
+				<p> </p>
+				<div class =" avatar Paul"> D’accord. </div> 
+			</div>
+			
+			<div id ="text3_3" class="textChap "> 
+				<div class =" avatar Doc"> Pour passer un électroencéphalogramme tu dois mettre ce casque sur ta tête. Il est plein de capteurs qui vont enregistrer les signaux qui passent dans tes neurones, nous pourrons ainsi voir les signaux anormaux et où ils se situent. 
+					Cet examen est sans danger ne t’inquiètes pas, ça ne fait absolument pas mal. Nous allons également te filmer pendant l’examen pour voir ce qu’il se passe en même temps que l’enregistrement des signaux.
+				</div>  
+			</div>
+			
+			<div id ="text3_4" class="textChap ">
+				<div class =" avatar Doc"> Les résultats d’un électroencéphalogramme ressemblent à ces courbes, elles représentent l’activité des neurones de différents endroits de ton cerveau. Chaque ligne correspond à un capteur. 
+				Nous allons essayer de repérer des pics sur les courbes qui pourraient être liés à des crises d’épilepsie.  </div> 
+				
+			</div>
+			
+			<div id ="text3_5" class="textChap ">
+				<div class =" avatar Paul">  </div> 
+				<div class =" avatar Doc">   </div> 
+				<div class =" avatar Paul">  </div> 
+				<div class =" avatar Doc">   </div> 
+			</div>
+			
+			<div id ="text3_6" class="textChap ">
+				<div class =" avatar Paul">  </div> 
+				<div class =" avatar Doc">   </div> 
+				<div class =" avatar Paul">  </div> 
+				<div class =" avatar Doc">   </div> 
 			</div>
 		
 		<!-- Chapitre 4 -->
