@@ -15,7 +15,7 @@
 
 		var Img = new Image();
 
-		Img.src = 'images/tourelle.png';
+		Img.src = 'images/mj1&3/tourelle.png';
 
 		Img.onload = function(){
 
@@ -25,10 +25,13 @@
 				oGC.beginPath();
 				oGC.arc(300,250,200,-90*Math.PI/180,180*Math.PI/180,false);
 				oGC.stroke();
+				oGC.strokeStyle = 'yellow';
 
 				oGC.beginPath();
 				oGC.arc(250,250,150,180*Math.PI/180,360*Math.PI/180,false);
 				oGC.stroke();
+				oGC.strokeStyle = 'yellow';
+
 
 				oGC.beginPath();
 				oGC.arc(400,250,20,0,360*Math.PI/180,false);
