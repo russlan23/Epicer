@@ -18,48 +18,42 @@
 		var imLoad=false;
 		var imLoaded=false;
 	
-	// definition de variable joueur 
-	$(document).ready(function()
+		//definition de variable joueur 
+		$(window).load(function()
 		{
-		setUpJoueur();
-	  });
+			setUpJoueur();
+		});
 		
 
 			
-		function setUpJoueur(){	
+		function setUpJoueur(){	  // met à jour tous les données affichés dans la barre d'info à droite, en cherchant les données dans le fichier jeu.php
 			pseudo=document.getElementById("infoPseudo").innerText;
 			scoreTotal=parseInt(document.getElementById("infoScoreTotal").innerText);
-			//scoreTotal=parseInt(document.getElementById("chapFaits").innerText);
 			emplacementChap=parseInt(document.getElementById("infoEmplacementActuel").innerText);
 			chapActuel=parseInt(document.getElementById("infoChapActuel").innerText);
-			idJoueur=parseInt(document.getElementById("infoIdJoueur").innerText);
 			idEtape=parseInt(document.getElementById("infoEtapeActuelle").innerText);
 			scoreChapitre=parseInt(document.getElementById("infoScoreChapitre").innerText);
+			idJoueur=parseInt(document.getElementById("infoIdJoueur").innerText);
 			accueil();
 		}
 	
-		function miseAJour(){
-		document.getElementById("joueur").innerHTML = joueur;
-			
-		}
-		/*function recupererRechercheChapFaits(){	
-			recherche=document.getElementById("rechercheChapitre").innerText;
-		}*/
 		
 		function choixChap(){
-		setUpJoueur();
-
-		
+			
 			if(emplacementChap>0){   // si on veut choisir un chapitre alors qu'on est au milieu d'un autre on fait apparaître une demande de 
 									 // confirmation de la mise d'étape à 0
 				 location.href='#attentionConfirme';  
 			}
-			document.getElementById("accueil").style.visibility="hidden";	
+			
 			document.getElementById("choixChapitre").style.visibility="visible";
 			document.getElementById("btnAccueil").style.visibility="visible";	
-			document.getElementById("espaceJeu").style.backgroundImage="url('/Epicer/images/choixChapitre.jpg')";  
-			document.getElementById("reprendre").style.display="none";
-			 
+			document.getElementById("espaceJeu").style.backgroundImage="url('/Epicer/images/choixChapitre.png')";  
+			cacheAccueil();
+		}
+		
+		function cacheAccueil(){
+			document.getElementById("accueil").style.visibility="hidden";	
+			document.getElementById("reprendre").style.display="none"; 
 		}
 		
 		function miseEtapeNulle(){  // cette etape met l'étape à 0 si dans choixChap on confirme que l'on veut commencer un nouveau chapitre
@@ -83,10 +77,11 @@
 		// à gerer si le joueur a cliqué sur l'accueil en milieu du jeu 
 			document.getElementById("accueil").style.visibility="visible";	
 			document.getElementById("choixChapitre").style.visibility="hidden";
-			document.getElementById("espaceJeu").style.backgroundImage= "url('/Epicer/images/accueil.jpg')";
+			document.getElementById("espaceJeu").style.backgroundImage= "url('/Epicer/images/accueil.png')";
 			document.getElementById("etapeSuivante").style.visibility="hidden";
 			document.getElementById("etapePrecedente").style.visibility="hidden";
 			document.getElementById("btnAccueil").style.visibility="hidden";
+			document.getElementById("btnFinChap").style.visibility="hidden";
 			if(document.getElementById(idText)){
 				document.getElementById(idText).style.display="none";
 			}
@@ -109,16 +104,16 @@
 			switch(chp){
 				case 0: tableChap = [0];  // l'accueil
 					break;
-				case 1: tableChap = [100,101,102,103,1001,2001,104,105];   // 1,2,3... sont les numéros d'image dans ce chapitre, quand >100 c'est un mini jeu
+				case 1: tableChap = [100,101,102,103,1001,2001,104,105,106,107,108,109,1006,2006,110];   // 1,2,3... sont les numéros d'image dans ce chapitre, quand >100 c'est un mini jeu
 						chapActuel=1;
 					break;
-				case 2: tableChap =  [];
+				case 2: tableChap =  [200,201,202,203,204,205,206,207,208];
 						chapActuel=2;
 					break;
-				case 3: tableChap =  [];
+				case 3: tableChap =  [300,301,302,303,304,1002,2002,305,306,307,1003,2003,308,309,310,311,312,1004,2004,313,314];
 						chapActuel=3;
 					break;
-				case 4: tableChap =  [];
+				case 4: tableChap =  [400,401,402,1005,2005,403,404,405,406,407,408,409,410,411,1007,2007,412];
 						chapActuel=4;
 					break;
 				default:
@@ -137,24 +132,25 @@
 		
 		function etapeSuivante(){ // lorsque le joueur clique sur le bouton suivant
 						
-				if(emplacementChap<tableChap.length-1){
+				if(emplacementChap<tableChap.length-2){
 				
 					emplacementChap=emplacementChap+1;
-					
+					augmenterScore();		
 					if(tableChap[emplacementChap]<1000){ // <100 pour dire que ce n'est pas un mini jeu
 					
+					
 						if(tableChap[emplacementChap-1]>2000){
-							document.getElementById("btnAccueil").style.visibility="visible";
+							cachMJ();
 							document.getElementById("etapeSuivante").style.visibility="visible";
 							document.getElementById("etapePrecedente").style.visibility="visible";
-							document.getElementById("continuer").style.visibility="hidden";
-							document.getElementById("feedbackFinalMJ").style.display="none";
 						}
 						
 						imageFond="url('/Epicer/images/im" + tableChap[emplacementChap] + ".jpg')";
 						if(document.getElementById(idText)){
 							document.getElementById(idText).style.display="none";
 						}
+						sauvegardeJoue();
+						sauvegardeJoueur();
 							
 						idText="text"+chapActuel+"_"+emplacementChap;
 						
@@ -172,15 +168,45 @@
 						showNotice(tableChap[emplacementChap]);
 					}
 				}
+				
+				if(emplacementChap==tableChap.length-2){
+					cachMJ();
+					document.getElementById("btnFinChap").style.visibility="visible";
+					document.getElementById("espaceJeu").style.backgroundImage= "url('/Epicer/images/finChapitre.png')";	
+					emplacementChap=emplacementChap+1;
+				}
 		
 		} 
+		
+		function cachMJ(){
+			document.getElementById("btnAccueil").style.visibility="visible";
+			document.getElementById("continuer").style.visibility="hidden";
+			document.getElementById("feedbackFinalMJ").style.display="none";
+			document.getElementById("feedbackFinalQF").style.display="none";
+			document.getElementById("etoile1").style.visibility="hidden";
+			document.getElementById("etoile2").style.visibility="hidden";
+			document.getElementById("etoile3").style.visibility="hidden";
+		}
+		
+		function augmenterScore(){
+				scoreEtape=2;
+				scoreChapitre=scoreChapitre+scoreEtape;
+				document.getElementById("infoScoreChapitre").innerText=scoreChapitre;
+		}
+		
+		function garderScore(){
+			scoreEtape=0;
+			scoreChapitre=scoreChapitre+scoreEtape;
+			document.getElementById("infoScoreChapitre").innerText=scoreChapitre;
+		}
 		
 		function etapePrecedente(){
 		
 			if(emplacementChap>0){
 			
 				emplacementChap=emplacementChap-1;
-				if (tableChap[emplacementChap]<1000){ // <100 pour dire que ce n'est pas un mini jeu
+				garderScore();
+				if (tableChap[emplacementChap]<1000){ // <1000 pour dire que ce n'est pas un mini jeu
 					
 					imageFond="url('/Epicer/images/im" + tableChap[emplacementChap] + ".jpg')";
 					if(document.getElementById(idText)){
@@ -191,6 +217,8 @@
 					if(document.getElementById(idText)){
 							document.getElementById(idText).style.display="initial";
 					}
+					sauvegardeJoue();
+					sauvegardeJoueur();
 					document.getElementById("espaceJeu").style.backgroundImage=imageFond;	
 					document.getElementById("infoEmplacementActuel").innerText= emplacementChap;
 				}
@@ -199,6 +227,23 @@
 				 location.href='#confEtpPreced';  // si on revenir dans l'étape avant mini jeu 
 				}
 			}
+		}
+		
+		function finChapitre(){
+			scoreTotal=scoreTotal+scoreChapitre;
+			emplacementChap=0;
+			chapActuel=0;
+			idEtape=0;
+			scoreEtape=0;
+			scoreChapitre=0;
+			changeChapitre(0);
+			sauvegardeJoueur();
+			sauvegardeJoue();
+			document.getElementById("infoScoreChapitre").innerText=scoreChapitre;
+			document.getElementById("infoEmplacementActuel").innerText=emplacementChap;
+			document.getElementById("infoChapActuel").innerText=chapActuel;
+			document.getElementById("infoScoreTotal").innerText=scoreTotal;
+			accueil();
 		}
 		
 		function resterEtpe(){   //dans la cas ou après la fenetre de question de revenir en arrière d'un mini jeu le joueur decide de ne pas le faire 
@@ -215,6 +260,8 @@
 			var chapitre=chapActuel;
 			var emplcmnt=emplacementChap;
 			start(chapitre,emplcmnt);
+			cacheAcceuil();
+			
 		}
 	
 		function start(chapitre, emplcmnt){
@@ -266,7 +313,7 @@
 			document.getElementById("etapeSuivante").style.visibility="hidden";
 			document.getElementById("etapePrecedente").style.visibility="hidden";
 			document.getElementById("strtMiniJeu").style.visibility="visible";
-			
+			document.getElementById("btnAccueil").style.visibility="hidden";
 			document.getElementById("infoEmplacementActuel").innerText= emplacementChap;
 		}
 		
@@ -280,7 +327,6 @@
 			
 			switch(tableChap[emplacementChap]){
 					case 2001: 
-						startMJ5();
 						break;
 					case 2002: 
 						break;
@@ -289,7 +335,14 @@
 					case 2004: 
 						break;
 					case 2005: 
-						break;	
+						startMJ5();
+						break;
+					case 2006:
+						startQuizz(1);
+						break;
+					case 2007:
+						startQuizz(2);
+						break;
 					default:
 						break;
 				}
@@ -327,12 +380,11 @@
 	  var req =  creerInstance();
 	  var donneesSauvegarder = new Array(3);						/*On créer l'array dans lequelle on va envoyer les données*/
 	  donneesSauvegarder[0]=idJoueur;								/*On sauvegarde l'id du joueur dans l'array*/
-	  donneesSauvegarder[1]=idEtape;								/*On sauvegarde l'id de l'étape dans l'array*/
+	  donneesSauvegarder[1]=tableChap[emplacementChap];								/*On sauvegarde l'id de l'étape dans l'array*/
 	  donneesSauvegarder[2]=scoreEtape;								/*On sauvegarde le score de l'étape dans l'array*/
 	  req.onreadystatechange = function(){
 	  if(req.readyState == 4){ 		/* Si l'état = terminé */
 		if(req.status == 200){		/* Si le statut = OK */
-		  alert(req.responseText);  /* On affiche la réponse */
 		}else{
 		  alert("Error: returned status code " + req.status + " " + req.statusText);
 		}
@@ -350,13 +402,12 @@
 	  var req =  creerInstance();
 	  var donneesSauvegarder = new Array(4);						/*On créer l'array dans lequelle on va envoyer les données*/
 	  donneesSauvegarder[0]=idJoueur;								/*On sauvegarde l'id du joueur dans l'array*/
-	  donneesSauvegarder[1]=idEtape;								/*On sauvegarde l'id de l'étape dans l'array*/
+	  donneesSauvegarder[1]=tableChap[emplacementChap];				/*On sauvegarde l'id de l'étape dans l'array*/
 	  donneesSauvegarder[2]=scoreTotal;								/*On sauvegarde le score dans l'array*/
 	  donneesSauvegarder[3]=scoreChapitre;							/*On sauvegarde le score du chapitre actuel dans l'array*/
 	  req.onreadystatechange = function(){
 	  if(req.readyState == 4){ 		/* Si l'état = terminé */
 		if(req.status == 200){		/* Si le statut = OK */
-		  alert(req.responseText);  /* On affiche la réponse */
 		}else{
 		  alert("Error: returned status code " + req.status + " " + req.statusText);
 		}

@@ -7,11 +7,13 @@
 		<link rel="stylesheet" href="/Epicer/css/jeu_style.css" />
 		<link rel="stylesheet" href="/Epicer/css/modalDialog.css" />
 		<link rel="stylesheet" href="/Epicer/css/miniJeux_style.css" />
+		<link rel="stylesheet" type="text/css" href="/Epicer/css/point_rouge">
 		<title>  Jeu Epicer </title>
 		<script src="/Epicer/js/jquery-1.11.2.js"> </script> 
 		<script src="/Epicer/js/general.js"> </script>   <!--le fichier des fonctions javascript principales-->
 		<script src="/Epicer/js/progressBar.js"> </script>  
 		<script src="/Epicer/js/miniJeu5.js"> </script>  
+		<script src="/Epicer/js/quizz.js"> </script> 	
 	 
 		
 		</head>
@@ -89,12 +91,40 @@
 									}else{
 										// Tout va bien , l'insertion du joueur dans la base de donnée
 										$res = $bdd->prepare('INSERT INTO joueur (pseudo, motPass) VALUES(?, ?)');
-										$res->execute(array($_POST['pseudo'], $_POST['mot_pass']));
+										$res->execute(array($_POST['pseudo'], $_POST['mot_pass']));										
 										$nouv_compte_reussi=true;
 										$log_reussie=true; // il faut cette ligne sinon au rehargement la demande de login reapparaîtera
+										
+										try
+											{
+												$bdd = new PDO('mysql:host=localhost;dbname=joueur;charset=utf8', 'root', ''); // a mettre les donnes du site web lors de mise en ligne
+											}
+											catch(Exception $e)
+											{
+													die('Erreur : '.$e->getMessage());
+											}
+
+											// la requete vers la base de donnée pour récuperer les donnés du joueur 
+											$req = $bdd->prepare('SELECT joueur.idJoueur, joueur.pseudo ,joueur.motPass, joueur.idEtape, joueur.scoreTotal, joueur.scoreActChap, chapitre.idChapitre, etape.emplacementChap
+																  FROM joueur,etape,chapitre 
+																  WHERE joueur.idEtape=etape.idEtape AND etape.idChapitre=chapitre.idChapitre AND joueur.pseudo= ?');
+								
+											$req->execute(array($_POST['pseudo']));
+											
+												$donnees = $req->fetch();
+												
+												$scoreTotal=$donnees['scoreTotal'];
+												$idEtape=$donnees['idEtape'];
+												$idChapitre=$donnees['idChapitre'];
+												$emplacementChap=$donnees['emplacementChap'];
+												$idJoueur=$donnees['idJoueur'];
+												$scoreActChap=$donnees['scoreActChap'];
+												$req->closeCursor();	
+											
 									}
 								}
-					}	
+					}
+				
 								
 			 
 					if ($log_reussie==true OR $nouv_compte_reussi==true ){ // si le joueur s'est connécté ou a crée un nouveau compte avec succès
@@ -102,8 +132,8 @@
 				?> 		
 							<!--Ici s'affiche l'acceuil avec le fond correspondant-->
 							<div id = "imageAcceuil">
-								<img src="/Epicer/images/accueil.jpg" />
-								<img src="/Epicer/images/choixChapitre.jpg" />
+								<img src="/Epicer/images/accueil.png" />
+								<img src="/Epicer/images/choixChapitre.png" />
 							</div>
 							<!--C'est l'info qui s'affiche dans la barre à droite, tout au long du jeu-->						
 							<div id ="barreInfo"> 
@@ -115,45 +145,46 @@
 									<div class="infoJoueur"> Etape: <span id ="infoEmplacementActuel"> <?php echo $emplacementChap; ?>  </span> </div>
 									<div class="infoJoueur"> Chapitre: <span id ="infoChapActuel" ><?php echo $idChapitre; ?> </span></div>
 									<div class="infoJoueur"> Score au Chapitre: <span id ="infoScoreChapitre" ><?php echo $scoreActChap; ?>  </span></div> 
-									
 									<!-- A partir d'ici les autres attriburs de la "barreInfo" sont toujour cachés et servent juste pour 
 											la communication des données et la sauvegarde-->
-									<div id ="infoEtapeActuelle"> <?php echo $idEtape; ?>  </div>
-									<div id ="infoIdJoueur"> <?php echo $idJoueur; ?>  </div>   
+									<div id ="infoEtapeActuelle"><?php echo $idEtape; ?>  </div>
+									<div id ="infoIdJoueur"><?php echo $idJoueur; ?>  </div> 
 									
 								</div> 
 								
-								<input id="btnAccueil" type="submit" name="button" value="Accueil" onClick="accueil()"/> </input>
+								<input id="btnAccueil"  class="clickble" type="submit" name="button" value="Accueil" onClick="accueil()"/> </input>
 								
 							</div>						
 							
-							<div id="espaceJeu">
+							<div id="espaceJeu" >
 							
 							<div id="imgesChargmnt"> Veuillez patienter svp, les images du chapitre sont en cours de chargement </div>
-							<input id="etapeSuivante" type="submit" name="button" value=">" onClick="etapeSuivante()"/> </input>
-							<input id="etapePrecedente" type="submit" name="button" value="<" onClick="etapePrecedente()"/> </input>
+							<input id="etapeSuivante" class="clickble" type="submit" name="button" value=">" onClick="etapeSuivante()"/> </input>
+							<input id="etapePrecedente" class="clickble" type="submit" name="button" value="<" onClick="etapePrecedente()"/> </input>
 							
-							<input id="strtMiniJeu" type="submit" name="button" value="Commencer" onClick="startMiniJeu()"/> </input>
-							<input id="continuer" type="submit" name="button" value="Continuer" onClick="etapeSuivante()"/> </input>
+							<input id="btnFinChap" class="clickble" type="submit" name="button" value="Finir le Chapitre" onClick="finChapitre()"/> </input>
+							
+							<input id="strtMiniJeu" class="clickble" type="submit" name="button" value="Commencer" onClick="startMiniJeu()"/> </input>
+							<input id="continuer" class="clickble" type="submit" name="button" value="Continuer" onClick="etapeSuivante()"/> </input>
 							
 								
 								<!-- La page d'accueil: -->
-								<div id ="accueil"> 
+								<div id ="accueil" > 
 																
-									<div id="reprendre" class ="acc bcWhite" onClick="reprendre()"> Reprendre </div>
-									<div id="accederChapitre" class = "acc bcYellow" onClick= "choixChap()"> Accéder aux chapitres </div>
-									<div id="tutoriel" class = "acc bcGreen" > Tutoriel </div>
-									<div id="historiqueScore" class = "acc bcRed" > Historique </div>
+									<div id="reprendre" class ="acc bcWhite clickble" onClick="reprendre()"> Reprendre </div>
+									<div id="accederChapitre" class = "acc bcYellow clickble" onClick= "choixChap()"> Accéder aux chapitres </div>
+									<div id="tutoriel" class = "acc bcGreen clickble" > Tutoriel </div>
+									<div id="historiqueScore" class = "acc bcRed clickble" > Historique </div>
 									
 								</div>
 								
 								<!-- La page de choix de chapitre : -->
 								<div id="choixChapitre"> 
 								
-									<div id="chap1" class ="chap" onClick=start(1,0)> Chapitre I </br> Temps estimé: 11min  </div>
-									<div id="chap2" class ="chap" onClick=start(2,0)> Chapitre II </br> Temps estimé: 13min </div>
-									<div id="chap3" class ="chap" onClick=start(3,0)> Chapitre III </br> Temps estimé: 7min  </div>
-									<div id="chap4" class ="chap" onClick=start(4,0)> Chapitre IV </br>Temps estimé: 9min </div>
+									<div id="chap1" class ="chap clickble" onClick=start(1,0)> Chapitre I </br> Temps estimé: 11min  </div>
+									<div id="chap2" class ="chap clickble" onClick=start(2,0)> Chapitre II </br> Temps estimé: 5min </div>
+									<div id="chap3" class ="chap clickble" onClick=start(3,0)> Chapitre III </br> Temps estimé: 15min  </div>
+									<div id="chap4" class ="chap clickble" onClick=start(4,0)> Chapitre IV </br>Temps estimé: 9min </div>
 								
 								</div>
 								
@@ -169,8 +200,8 @@
 										<h2>Attention</h2>
 										<p>Si vous décidez de continuer vers le Choix de Chapitre alors l'avancement du dernier chapitre sera effacé </p>
 										<p> Voulez-vous continuer tout de même  ? </p> 
-										<input id="confOui" class="btnConf" type="submit" name="button" value="Oui" onClick="miseEtapeNulle()"/> 
-										<input  id="confNon" class="btnConf" type="submit" name="button" value="Non" onClick="nonConf()"/>
+										<input id="confOui" class="btnConf clickble" type="submit" name="button" value="Oui" onClick="miseEtapeNulle()"/> 
+										<input  id="confNon" class="btnConf clickble" type="submit" name="button" value="Non" onClick="nonConf()"/>
 									</div>
 								</div> 
 								
@@ -179,22 +210,36 @@
 										<h2>Attention</h2>
 										<p>Si vous décidez de revenir en arrière vous devrez refaire le Mini Jeu</p>
 										<p> Voulez-vous continuer tout de même  ? </p> 
-										<input id="confOui" class="btnConf" type="submit" name="button" value="Oui" onClick="revenirEtpe()"/> 
-										<input  id="confNon" class="btnConf" type="submit" name="button" value="Non" onClick="resterEtpe()"/>
+										<input id="confOui" class="btnConf clickble" type="submit" name="button" value="Oui" onClick="revenirEtpe()"/> 
+										<input  id="confNon" class="btnConf clickble" type="submit" name="button" value="Non" onClick="resterEtpe()"/>
 									</div>
 								</div> 
 								
 								<div id="miniJeu5"> 
 									<div id="question">Est-ce que cette activité est autorisée : </div>
 									<div id="activite"> </div>
-									<div id="reponseOui" class="reponse" onClick="verifReponse(true)"> </div>
-									<div id="reponseNon" class="reponse" onClick="verifReponse(false)"> </div>
-									<input id="actvtSuivante" type="submit" name="button" value=">" onClick="actSuiv()"/> </input>
+									<div id="reponseOui" class="reponse clickble" onClick="verifReponse(true)"> </div>
+									<div id="reponseNon" class="reponse clickble" onClick="verifReponse(false)"> </div>
+									<input id="actvtSuivante" class="clickble" type="submit" name="button" value=">" onClick="actSuiv()"/> </input>
 									<div id="repBonne" class="repMJ5"> Tu as raison ! </div>
 									<div id="repFausse" class="repMJ5"> Tu n'as pas raison ! </div>
 									<div id="infoScoreMJ5">  Score: <span id ="scoreMJ5" > </div>
 									
 								</div>
+								
+								<div id="quizz"> 
+									<!--<div id="question">Est-ce que cette activité est autorisée : </div>-->
+									<div id="questionQuizz"> </div>
+									<div id="reponseOuiQuizz" class="reponseQuizz" onClick="verifReponseQuizz(true)"> </div>
+									<div id="reponseNonQuizz" class="reponseQuizz" onClick="verifReponseQuizz(false)"> </div>
+									<input id="questionSuivanteQuizz" type="submit" name="button" value=">" onClick="quesSuivQuizz()"/> </input>
+									<div id="repBonneQuizz" class="repQuizz"> Tu as raison ! </div>
+									<div id="repFausseQuizz" class="repQuizz"> Tu n'as pas raison ! </div>
+									<div id="infoScoreQuizz">  Score: <span id ="scoreQuizz" > </div>
+									<div id="etoile1" class="etoiles" > </div>
+									<div id="etoile2" class="etoiles" > </div>
+									<div id="etoile3" class="etoiles" > </div>
+								</div>									
 								
 								
 							<!-- code php pour rechercher les chapitres faits -->	

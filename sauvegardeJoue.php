@@ -15,10 +15,10 @@
 	//--traitement des données reçues --//
 	$donneesRecus=$_POST["donnees"];														//On capture les données reçues du fichier JavaScripts
 	list ($idJoueurRecu,$idEtapeRecu,$scoreEtapeRecu)=explode(",",$donneesRecus);			//On nomme les données reçues en faisant l'extraction de la chaine reçue de JavaScripts
-	echo "donnees recues: ".$_POST["donnees"];												//Démarche de validation des données reçues: à supprimer ces 4 lignes
-	echo "etape: ".$idEtapeRecu;
-	echo "ide joueur: ".$idJoueurRecu;
-	echo "score etape: ".$scoreEtapeRecu	;
+	//echo "donnees recues: ".$_POST["donnees"];												//Démarche de validation des données reçues: à supprimer ces 4 lignes
+	//echo "etape: ".$idEtapeRecu;
+	//echo "ide joueur: ".$idJoueurRecu;
+	//echo "score etape: ".$scoreEtapeRecu	;
     
 	$res = $bdd->prepare('INSERT INTO joue (idEtape,idJoueur,scoreEtape) VALUES(?,?,?)');	//On crée l'instance pour envoyer les données à la BDD
 	$res->execute(array($idEtapeRecu, $idJoueurRecu,$scoreEtapeRecu));						//On exécute l'envoi des données avec les informations reçues du fichier JavaScripts
