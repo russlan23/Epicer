@@ -57,7 +57,7 @@
 			document.getElementById("accueil").style.visibility="hidden";	
 			document.getElementById("choixChapitre").style.visibility="visible";
 			document.getElementById("btnAccueil").style.visibility="visible";	
-			document.getElementById("espaceJeu").style.backgroundImage="url('/Epicer/images/choixChapitre.jpg')";  
+			document.getElementById("espaceJeu").style.backgroundImage="url('/Epicer/images/choixChapitre.png')";  
 			document.getElementById("reprendre").style.display="none";
 			 
 		}
@@ -83,7 +83,7 @@
 		// à gerer si le joueur a cliqué sur l'accueil en milieu du jeu 
 			document.getElementById("accueil").style.visibility="visible";	
 			document.getElementById("choixChapitre").style.visibility="hidden";
-			document.getElementById("espaceJeu").style.backgroundImage= "url('/Epicer/images/accueil.jpg')";
+			document.getElementById("espaceJeu").style.backgroundImage= "url('/Epicer/images/accueil.png')";
 			document.getElementById("etapeSuivante").style.visibility="hidden";
 			document.getElementById("etapePrecedente").style.visibility="hidden";
 			document.getElementById("btnAccueil").style.visibility="hidden";
@@ -266,7 +266,7 @@
 			document.getElementById("etapeSuivante").style.visibility="hidden";
 			document.getElementById("etapePrecedente").style.visibility="hidden";
 			document.getElementById("strtMiniJeu").style.visibility="visible";
-			
+			document.getElementById("btnAccueil").style.visibility="hidden";
 			document.getElementById("infoEmplacementActuel").innerText= emplacementChap;
 		}
 		

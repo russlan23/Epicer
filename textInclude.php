@@ -59,23 +59,56 @@
 					 </div> 
 			</div>
 			
-			<div id ="text4_3" class="textChap ">
+			<div id ="text4_5" class="textChap ">
 				<div class =" avatar Paul"> Mais du coup Docteur, ça veut dire que je ne pourrai jamais conduire une voiture ? </div> 
 				<div class =" avatar Doc"> Pas obligatoirement, si les médicaments fonctionnent correctement il te sera possible de conduire une voiture et de nager dans une piscine. </div> 
 				<div class =" avatar Paul"> Ah cool ! </div> 
 			</div>
 			
-			<div id ="text4_4" class="textChap ">
+			<div id ="text4_6" class="textChap ">
 				<div class =" avatar Doc"> Et puis, je te conseille d’avoir un rythme de sommeil régulier. Ensuite, tes parents vont devoir adapter ta maison afin que tu ne te blesses pas au cas où tu tombes.  </div> 
 				<div class =" avatar Paul"> On va devoir déménager ? </div> 
 				<div class =" avatar Doc"> Non non, je vais t’expliquer. </div> 
 			</div>
 			
-			<div id ="text4_5" class="textChap ">
-				<div class =" avatar Doc"> Et puis, je te conseille d’avoir un rythme de sommeil régulier. Ensuite, tes parents vont devoir adapter ta maison afin que tu ne te blesses pas au cas où tu tombes.  </div> 
-				<div class =" avatar Paul"> On va devoir déménager ? </div> 
-				<div class =" avatar Doc"> Non non, je vais t’expliquer. </div> 
+			<div id ="text4_7" class="textChap ">
+				<div class =" avatar Doc"> Il ne faut pas qu’il y ait de meubles avec des angles pointus, il faut mettre des limiteurs de température pour les robinets d’eau chaude afin que tu ne te blesses pas si jamais tu as une crise.  </div> 
+				<p>  </p>
+				<div class =" avatar Paul"> D’accord donc pas de gros changements ! Merci Docteur !</div> 
 			</div>
+			
+			<div id ="text4_8" class="textChap ">
+				<div class =" avatar Paul">Et lorsque je fais une crise, que doivent faire mes parents ou mes amis autour de moi ? </div> 
+				<div class =" avatar Doc"> Il faut juste qu’ils te protègent afin que tu ne te blesses pas. </div> 
+				<div class =" avatar Paul">Quel est le comportement qu’ils doivent avoir alors ? </div> 
+			</div>
+			
+			<div id ="text4_9" class="textChap ">
+				<div class =" avatar Doc"> Il faut qu’ils dégagent  l’espace pour éviter les chocs, qu’ils 
+				protègent ta tête des chocs avec un vêtement plié ou une mousse, qu’ils desserrent tes vêtements pour faciliter ta respiration, qu’ils t’aident à t’allonger, qu’ils retirent tes lunettes si tu en portes et qu’ils avertissent des secours si ta crise dure longtemps.</div> 
+				<p>  </p>
+				<p>  </p>
+				<div class =" avatar Paul"> Et s’ils ne retiennent pas tout ça ??</div> 
+			</div>
+			
+			<div id ="text4_10" class="textChap ">
+				<div class =" avatar Doc"> Alors explique leur surtout de ne jamais essayer de te déplacer durant une crise, qu’ils ne te mettent jamais rien dans la bouche et qu’ils n’essayent pas de bloquer tes mouvements. <p> </p> </div> 
+				<p>  </p>
+				<div class =" avatar Paul"> Merci pour ces conseils Docteur, je leur transmettrai !</div> 
+			
+			</div>
+			
+			<div id ="text4_11" class="textChap ">
+				<div class =" avatar Doc"> Tiens, regarde, je te donne une plaquette afin que tu puisses leur expliquer correctement. </div> 
+				<div class =" avatar Paul"> Ah super merci !</div> 
+			</div>
+			
+			<div id ="text4_13" class="textChap ">
+				<div class =" avatar Doc"> Et avant de te quitter, je te propose de tester les connaissances que tu as acquises maintenant ! </div> 
+			
+			</div>
+			
+			
 			
 			
 			<!-- Mini Jeu 5 -->	

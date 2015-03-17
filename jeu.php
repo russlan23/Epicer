@@ -106,8 +106,8 @@
 				?> 		
 							<!--Ici s'affiche l'acceuil avec le fond correspondant-->
 							<div id = "imageAcceuil">
-								<img src="/Epicer/images/accueil.jpg" />
-								<img src="/Epicer/images/choixChapitre.jpg" />
+								<img src="/Epicer/images/accueil.png" />
+								<img src="/Epicer/images/choixChapitre.png" />
 							</div>
 							<!--C'est l'info qui s'affiche dans la barre à droite, tout au long du jeu-->						
 							<div id ="barreInfo"> 
@@ -127,37 +127,37 @@
 									
 								</div> 
 								
-								<input id="btnAccueil" type="submit" name="button" value="Accueil" onClick="accueil()"/> </input>
+								<input id="btnAccueil"  class="clickble" type="submit" name="button" value="Accueil" onClick="accueil()"/> </input>
 								
 							</div>						
 							
 							<div id="espaceJeu">
 							
 							<div id="imgesChargmnt"> Veuillez patienter svp, les images du chapitre sont en cours de chargement </div>
-							<input id="etapeSuivante" type="submit" name="button" value=">" onClick="etapeSuivante()"/> </input>
-							<input id="etapePrecedente" type="submit" name="button" value="<" onClick="etapePrecedente()"/> </input>
+							<input id="etapeSuivante" class="clickble" type="submit" name="button" value=">" onClick="etapeSuivante()"/> </input>
+							<input id="etapePrecedente" class="clickble" type="submit" name="button" value="<" onClick="etapePrecedente()"/> </input>
 							
-							<input id="strtMiniJeu" type="submit" name="button" value="Commencer" onClick="startMiniJeu()"/> </input>
-							<input id="continuer" type="submit" name="button" value="Continuer" onClick="etapeSuivante()"/> </input>
+							<input id="strtMiniJeu" class="clickble" type="submit" name="button" value="Commencer" onClick="startMiniJeu()"/> </input>
+							<input id="continuer" class="clickble" type="submit" name="button" value="Continuer" onClick="etapeSuivante()"/> </input>
 							
 								
 								<!-- La page d'accueil: -->
 								<div id ="accueil"> 
 																
-									<div id="reprendre" class ="acc bcWhite" onClick="reprendre()"> Reprendre </div>
-									<div id="accederChapitre" class = "acc bcYellow" onClick= "choixChap()"> Accéder aux chapitres </div>
-									<div id="tutoriel" class = "acc bcGreen" > Tutoriel </div>
-									<div id="historiqueScore" class = "acc bcRed" > Historique </div>
+									<div id="reprendre" class ="acc bcWhite clickble" onClick="reprendre()"> Reprendre </div>
+									<div id="accederChapitre" class = "acc bcYellow clickble" onClick= "choixChap()"> Accéder aux chapitres </div>
+									<div id="tutoriel" class = "acc bcGreen clickble" > Tutoriel </div>
+									<div id="historiqueScore" class = "acc bcRed clickble" > Historique </div>
 									
 								</div>
 								
 								<!-- La page de choix de chapitre : -->
 								<div id="choixChapitre"> 
 								
-									<div id="chap1" class ="chap" onClick=start(1,0)> Chapitre I </br> Temps estimé: 11min  </div>
-									<div id="chap2" class ="chap" onClick=start(2,0)> Chapitre II </br> Temps estimé: 13min </div>
-									<div id="chap3" class ="chap" onClick=start(3,0)> Chapitre III </br> Temps estimé: 7min  </div>
-									<div id="chap4" class ="chap" onClick=start(4,0)> Chapitre IV </br>Temps estimé: 9min </div>
+									<div id="chap1" class ="chap clickble" onClick=start(1,0)> Chapitre I </br> Temps estimé: 11min  </div>
+									<div id="chap2" class ="chap clickble" onClick=start(2,0)> Chapitre II </br> Temps estimé: 13min </div>
+									<div id="chap3" class ="chap clickble" onClick=start(3,0)> Chapitre III </br> Temps estimé: 7min  </div>
+									<div id="chap4" class ="chap clickble" onClick=start(4,0)> Chapitre IV </br>Temps estimé: 9min </div>
 								
 								</div>
 								
@@ -173,8 +173,8 @@
 										<h2>Attention</h2>
 										<p>Si vous décidez de continuer vers le Choix de Chapitre alors l'avancement du dernier chapitre sera effacé </p>
 										<p> Voulez-vous continuer tout de même  ? </p> 
-										<input id="confOui" class="btnConf" type="submit" name="button" value="Oui" onClick="miseEtapeNulle()"/> 
-										<input  id="confNon" class="btnConf" type="submit" name="button" value="Non" onClick="nonConf()"/>
+										<input id="confOui" class="btnConf clickble" type="submit" name="button" value="Oui" onClick="miseEtapeNulle()"/> 
+										<input  id="confNon" class="btnConf clickble" type="submit" name="button" value="Non" onClick="nonConf()"/>
 									</div>
 								</div> 
 								
@@ -183,17 +183,17 @@
 										<h2>Attention</h2>
 										<p>Si vous décidez de revenir en arrière vous devrez refaire le Mini Jeu</p>
 										<p> Voulez-vous continuer tout de même  ? </p> 
-										<input id="confOui" class="btnConf" type="submit" name="button" value="Oui" onClick="revenirEtpe()"/> 
-										<input  id="confNon" class="btnConf" type="submit" name="button" value="Non" onClick="resterEtpe()"/>
+										<input id="confOui" class="btnConf clickble" type="submit" name="button" value="Oui" onClick="revenirEtpe()"/> 
+										<input  id="confNon" class="btnConf clickble" type="submit" name="button" value="Non" onClick="resterEtpe()"/>
 									</div>
 								</div> 
 								
 								<div id="miniJeu5"> 
 									<div id="question">Est-ce que cette activité est autorisée : </div>
 									<div id="activite"> </div>
-									<div id="reponseOui" class="reponse" onClick="verifReponse(true)"> </div>
-									<div id="reponseNon" class="reponse" onClick="verifReponse(false)"> </div>
-									<input id="actvtSuivante" type="submit" name="button" value=">" onClick="actSuiv()"/> </input>
+									<div id="reponseOui" class="reponse clickble" onClick="verifReponse(true)"> </div>
+									<div id="reponseNon" class="reponse clickble" onClick="verifReponse(false)"> </div>
+									<input id="actvtSuivante" class="clickble" type="submit" name="button" value=">" onClick="actSuiv()"/> </input>
 									<div id="repBonne" class="repMJ5"> Tu as raison ! </div>
 									<div id="repFausse" class="repMJ5"> Tu n'as pas raison ! </div>
 									<div id="infoScoreMJ5">  Score: <span id ="scoreMJ5" > </div>
