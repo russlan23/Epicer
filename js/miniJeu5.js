@@ -50,18 +50,21 @@ function actSuiv(){
 		actNode.nodeValue=activites[numAct];
 		
 	}else{
-		finChapitre();
+		finJeu();
 	}
 }
 
 
-function finChapitre(){
+function finJeu(){
 	document.getElementById("infoScoreMJ5").style.visibility="hidden";
 	document.getElementById("feedbackFinalMJ").innerText="Bravo tu as fini ce Mini Jeu avec un score total de " + scoreMJ5 + ". Pour continuer le chapitre appuie sur le bouton";
 	document.getElementById("feedbackFinalMJ").style.display="initial";
 	document.getElementById("continuer").style.visibility="visible";
 	scoreEtape=scoreMJ5;
 	scoreChapitre=scoreChapitre+scoreMJ5;
+	sauvegardeJoue();
+	sauvegardeJoueur();
+	validerEtoiles();
 	document.getElementById("infoScoreChapitre").innerText=scoreChapitre;
 
 }

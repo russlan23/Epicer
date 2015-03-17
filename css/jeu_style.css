@@ -41,8 +41,11 @@
 				
 		#etapeSuivante{ position: absolute ; text-align: center; width: 80px; bottom:25px; right:0px; background-color:green;  height: 60px; color: black; font-size:40px; border-radius: 15px; visibility:hidden ;  -webkit-animation: clignote 2s linear infinite alternate; animation: clignote 2s linear infinite alternate;}
 		#etapeSuivante:hover{ background-color:blue; }
-		#etapePrecedente{ position: absolute ; text-align: center; width: 80px; bottom:25px; left:0px; background-color:green;  height: 60px; color: black; font-size:40px; border-radius: 15px; visibility:hidden; -webkit-animation: clignote 2s linear infinite alternate; animation: clignote 2s linear infinite alternate;}
-		#etapePrecedente:hover{ background-color:blue; }
+		#etapePrecedente{position: absolute ; text-align: center; width: 80px; bottom:25px; left:0px; background-color:green;  height: 60px; color: black; font-size:40px; border-radius: 15px; visibility:hidden; -webkit-animation: clignote 2s linear infinite alternate; animation: clignote 2s linear infinite alternate;}
+		#etapePrecedente:hover{ background-color:blue;}
+		
+		#btnFinChap { position: absolute ; text-align: center; width: 300px; bottom:220px; left:275px; background-color:green;  height: 60px; color: black; font-size:35px; border-radius: 10px; visibility:hidden;}
+		#btnFinChap :hover{ background-color:blue;}
 		
 		#imgesChargmnt{width: 550px; height: 300px;  position: absolute; top: 100px; left:200px; background-color: white; color:black;  cursor:progress;  font-size:25px; visibility:hidden;}
 		

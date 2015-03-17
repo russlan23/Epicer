@@ -57,7 +57,6 @@ progressBar = {
 							$('#imagesChap').append ("<img src ='/Epicer/images/im103.jpg'/>");
 							$('#imagesChap').append ("<img src ='/Epicer/images/im104.jpg'/>");
 							$('#imagesChap').append ("<img src ='/Epicer/images/im105.jpg'/>");
-
 					break;
 				case 2: 
 					break;
