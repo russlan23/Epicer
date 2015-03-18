@@ -38,11 +38,17 @@
 		#actvtSuivante:hover{ background-color:blue; }
 		
 		/* Mauvaise réponce de la Première image*/ 
-		#txtMauvaiseRep{ position: absolute; padding: 10px 0px 0px 0px ;top:5px; left: 50px; width: 750px; height: 170px; background-color: #FF8282; color: black; text-align: center; border-radius:12px; font-size:22px; visibility:hidden;}
-		#jeu1MauvRep {position: absolute; position: absolute width: 750px; height: 400px; margin:auto; padding: 2px; visibility:hidden;}
+		.txtMauvaiseRep{ position: absolute; padding: 10px 0px 0px 0px ;top:5px; left: 50px; width: 750px; height: 170px; background-color: #FF8282; color: black; text-align: center; border-radius:12px; font-size:22px;}
+		#mj2badRep1{display:none;}
+		#mj2badRep2{display:none;}
+		#mj2badRep3{display:none;}
+		
+		#jeu1MauvRep {position: absolute; position: absolute; width: 750px; height: 400px; margin:auto; padding: 2px; visibility:hidden;}
 		#jeuFig1MauvRep{position: absolute; width: 750px; margin:0 auto; text-align:left; border-style: solid; border-color: #B20000; visibility:hidden;}
 		#contjeu {position: absolute;  margin: 0 auto; margin-bottom: 5px; top:80px; left: 425px; width: 300px; height: 50px; background-color: #B20000; color: black; text-align: center; border-radius:15px; font-size:30px; visibility:hidden;}
 		#image1signale {position: absolute;  width: 100%; height: 100% }
+		
+		#infoScoreMJ2{ position: absolute ; bottom:10px; left: 395px; width: 100px; height: 40px; color: black; text-align: center; visibility:hidden; font-size:25px }
 
 	/* Mini jeu 3 */ 
 	#PointRouge2{width: 850px; position: relative; height: 500px; background-color: white; background-size: cover; background-repeat: no-repeat; background-image: url('/Epicer/images/neurone.jpg');}

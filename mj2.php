@@ -27,10 +27,12 @@
 		</div>
 
 		
-		<div id="txtMauvaiseRep"> Désolé, vous n'aviez pas choisis les battements du cœur de Paul. Ceci son 
+		<div id= "mj2badRep1" class="txtMauvaiseRep"> Désolé, vous n'aviez pas choisis les battements du cœur de Paul. Ceci son 
 			entouré en rouge ci-dessous. Ton cœur, comme celui de Paul, est un muscle et il bat lorsqu’un neurone lui en donne l’ordre. 
 			Un message sous forme de décharge électrique passe alors dans les. A chaque battement les signaux font un « pic » qui correspond à un message pour le cœur. 
 		</div>
+		
+		<div id="infoScoreMJ2">  Score: <span id ="scoreMJ2" > </div> 
 				
 		<input id="photoSuivante" class="clickble" type="submit" name="actvtSuivante" value=">" onClick="photoSuivante()"/> </input>		
 		
