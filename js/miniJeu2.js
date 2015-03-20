@@ -12,12 +12,10 @@ function startMJ2(){
 	document.getElementById("MJ2jeu").style.visibility="visible";
 	photoSuivante();
 	
-
 }
 
 function mj2repBad(){ // s'execute si le joueur a cliqué sur la mauvaise partie de l'image
 	document.getElementById("MJ2txt").style.visibility="hidden";
-	document.getElementById("mj2badRep1").style.visibility="visible";
 	
 	document.getElementById(idFigQuest).style.visibility="hidden";
 	
@@ -29,10 +27,6 @@ function mj2repBad(){ // s'execute si le joueur a cliqué sur la mauvaise partie
 		document.getElementById(idFdbckMJ2).style.display="initial";
 	}
 	
-	//idFdbckMJ5="textmj5" +numAct;
-	//if(document.getElementById(idFdbckMJ5)){
-	//	document.getElementById(idFdbckMJ5).style.display="initial";
-	//	}
 	document.getElementById("photoSuivante").style.visibility="visible";
 }
 
@@ -40,6 +34,15 @@ function mj2repGood(){ // s'execute si le joueur a cliqué sur la bonne partie d
 	scoreMJ2=scoreMJ2+5;
 	document.getElementById("scoreMJ2").innerText=scoreMJ2;
 	document.getElementById("photoSuivante").style.visibility="visible";
+	document.getElementById("MJ2txt").style.visibility="hidden";
+	document.getElementById(idFigQuest).style.visibility="hidden";
+	
+	idFdbckMJ2="mj2goodRep"+MJ2photo; // pour indiquer quel feedback afficher; MJ2photo compte juste le numero d'étape dans ce mini-jeu
+	
+	if(document.getElementById(idFdbckMJ2)){
+		document.getElementById(idFdbckMJ2).style.display="initial";
+	}
+	document.getElementById(idFigRep).style.visibility="visible";
 }
 
 function photoSuivante(){
@@ -54,13 +57,13 @@ function photoSuivante(){
 	}
 	MJ2photo=MJ2photo+1;
 		
-	if(MJ2photo<=5) { // le nombre d'images total dans le jeu
+	if(MJ2photo<=2) { // le nombre d'images total dans le jeu
 		idFigQuest='MJ2fig'+ MJ2photo+ '_1';
-		alert(idFigQuest);
-		idFigRep='MJ2fig'+ MJ2photo+ '_2';
+		idFigRep='MJ2fig1_2'; // à remplacer le 1 par '+ MJ2photo+ ' si on met d'autres photot comme exemples
 		document.getElementById(idFigQuest).style.visibility="visible";
 		document.getElementById("MJ2txt").style.visibility="visible";
-		
+		document.getElementById("scoreMJ2").innerText=scoreMJ2;
+		document.getElementById("infoScoreMJ2").style.visibility="visible";
 		
 	}else{
 		finMJ2();
@@ -68,5 +71,17 @@ function photoSuivante(){
 }
 
 function finMJ2(){
+	scoreEtape=scoreMJ2;
+	scoreChapitre=scoreChapitre+scoreMJ2;
+	sauvegardeJoue();
+	sauvegardeJoueur();
+	document.getElementById("MJ2jeu").style.visibility="hidden";
+	// validerEtoiles(); utiliser seulement si les étoiles sont en bon format n'ont pas de fond !
+	document.getElementById("infoScoreMJ2").style.visibility="hidden";
+	document.getElementById("infoScoreChapitre").innerText=scoreChapitre;
+	document.getElementById("feedbackFinalMJ").innerText="Bravo tu as fini ce Mini Jeu avec un score total de " + scoreMJ2 + ". Pour continuer le chapitre appuie sur le bouton";
+	document.getElementById("feedbackFinalMJ").style.display="initial";
+	
+	document.getElementById("continuer").style.visibility="visible";
 
 }

@@ -7,13 +7,14 @@
 		<link rel="stylesheet" href="/Epicer/css/jeu_style.css" />
 		<link rel="stylesheet" href="/Epicer/css/modalDialog.css" />
 		<link rel="stylesheet" href="/Epicer/css/miniJeux_style.css" />
-		<link rel="stylesheet" type="text/css" href="/Epicer/css/point_rouge">
 		<title>  Jeu Epicer </title>
 		<script src="/Epicer/js/jquery-1.11.2.js"> </script> 
 		<script src="/Epicer/js/general.js"> </script>   <!--le fichier des fonctions javascript principales-->
 		<script src="/Epicer/js/progressBar.js"> </script>  
 		<script src="/Epicer/js/miniJeu5.js"> </script>  
+		<script src="/Epicer/js/miniJeu3.js"> </script> 
 		<script src="/Epicer/js/miniJeu2.js"> </script> 
+		<script src="/Epicer/js/miniJeu1.js"> </script> 
 		<script src="/Epicer/js/quizz.js"> </script> 	
 	 
 		
@@ -216,6 +217,13 @@
 									</div>
 								</div> 
 								
+								<div id="noticeMJ1" class ="noticeMJ"> <h2> Mini Jeu 1 </h2> Tu vas aider Paul à bien tirer son pénalty, pour ça il faut que ce neurone capte exactement 10 points rouges. Il existe normalement des messages qui suppriment les points rouges, mais ici c’est toi qui régulera le nombre de messages en cliquant sur les points pour les supprimer. </div>
+								<div id="noticeMJ2" class ="noticeMJ"> <h2> Mini Jeu 2 </h2> Sur chaque image tu devras trouver l’échantillon qu’on te propose, tu as 3 clicks par image pour trouver la zone correspondante.</div>
+								<div id="noticeMJ3" class ="noticeMJ"> <h2> Mini Jeu 3 </h2>  Maintenant que Paul prend son médicament, les crises sont inhibées. Tu joueras au même jeu que tout à l’heure sauf que cette fois ci tu es aidé par le médicament.</div>
+								<div id="noticeMJ4" class ="noticeMJ"> <h2> Mini Jeu 4 </h2> Trouve la différence entre les deux images. Tu as 3 clicks pour la trouver.</div>
+								<div id="noticeMJ5" class ="noticeMJ"> <h2> Mini Jeu 5 </h2> Une crise d’épilepsie peut se déclencher dans n’importe quelle situation, c’est pourquoi certaines activités ou professions ne sont pas autorisées aux personnes épileptiques. Essaye de deviner lesquelles en cliquant sur IMAGE  si tu penses qu’elles sont autorisées ou sur IMAGE si tu penses qu’elles ne le sont pas.</div>
+								<div id="noticeQuizz" class ="noticeMJ"> <h2> Quizz </h2> Réponds aux questions en cliquant sur Vrai ou Faux, pense à lire les explications si tu t’es trompé ! </div>
+								
 								<div id="miniJeu5"> 
 									<div id="question">Est-ce que cette activité est autorisée : </div>
 									<div id="activite"> </div>
@@ -224,7 +232,7 @@
 									<input id="actvtSuivante" class="clickble" type="submit" name="button" value=">" onClick="actSuiv()"/> </input>
 									<div id="repBonne" class="repMJ5"> Tu as raison ! </div>
 									<div id="repFausse" class="repMJ5"> Tu n'as pas raison ! </div>
-									<div id="infoScoreMJ5">  Score: <span id ="scoreMJ5" > </div>
+									<div id="infoScoreMJ5"> Score: <span id ="scoreMJ5" > </span></div>
 									
 								</div>
 								
@@ -238,7 +246,7 @@
 									<input id="questionSuivanteQuizz" class="clickble" type="submit"  name="button" value=">" onClick="quesSuivQuizz()"/> </input>
 									<div id="repBonneQuizz" class="repQuizz"> Tu as raison ! </div>
 									<div id="repFausseQuizz" class="repQuizz"> Tu n'as pas raison ! </div>
-									<div id="infoScoreQuizz">  Score: <span id ="scoreQuizz" > </div>
+									<div id="infoScoreQuizz">  Score: <span id ="scoreQuizz"> </span></div>
 									<div id="etoile1" class="etoiles" > </div>
 									<div id="etoile2" class="etoiles" > </div>
 									<div id="etoile3" class="etoiles" > </div>
