@@ -7,26 +7,51 @@
 		<!-- Chapitre 1 -->
 		
 			<div id ="text1_1" class="textChap">
-				<div class =" avatar Paul">tu est en train de lire le text du etape 1 du chapitre 1 je suis Paul, tu est en train de lire le text je suis Paul,
-				tu est en train de lire le textje suis Paul, tu est en train de lire le textje suis Paul, tu est en train de lire le textje suis Paul,
-				tu est en train de lire le textje suis Paul,  tu est en train de lire le textje suis Paul, tu est en train de lire le text</div> 
-				 
+				<div class =" avatar">Paul est un ado de 11 ans, il est en train de jouer au foot avec ses amis. Tu peux le voir, c’est lui là en Jaune. 
+					Le match se termine et ce penalty peut leur donner la victoire !</div> 	 
 			</div>
 			
 			<div id ="text1_2" class="textChap"> 
-				<div class =" avatar Paul"> Salut , je suis Paul, tu est en train de lire le text du etape 2 du chapitre 1. Le max du texte qu'on peut mettre se resume un peu près à ça </div> 
-				<div class =" avatar Doc"> Je suis le Docteur </div> 
-				<div class =" avatar Paul"> D'accord ! </div> 
-			
+				<div class =" avatar"> Paul se prépare à tirer le penalty. Il se concentre sur l’action.</div> 
 			</div>
 			
-			<div id ="text1_3" class="textChap">
-				<div class =" avatar Doc">tu est en train de lire le text du etape 3 du chapitre 1</div> 
-			
+			<div id ="text1_3" class="textChap"> 
+				<div class =" avatar"> Paul a la pression et soudain il sent quelque chose d’étrange dans sa tête.</div> 
 			</div>
 			
-			<div id ="text1_6" class="textChap">
-				<div class =" avatar Doc">tu est en train de lire le text du etape 6 du chapitre 1</div> 
+			<div id ="text1_6" class="textChap"> 
+				<div class =" avatar"> Paul a reçu trop de messages excitateurs. Il a fait une crise d’épilepsie. </div> 
+			</div>
+			
+			<div id ="text1_8" class="textChap"> 
+				<div class =" avatar"> Mais qu’est ce qui se passe ? A l’aide !  </div> 
+			</div>
+			
+			<div id ="text1_9" class="textChap ">
+				<div class =" avatar Gio"> Est-ce que ça va ?  </div> 
+				<div class =" avatar Paul"> Mes muscles me font un peu mal. Mais sinon, je vais bien. </div> 
+				<div class =" avatar Gio"> Tu t’appelles comment ?  </div> 
+			</div>
+			
+			<div id ="text1_10" class="textChap ">
+				<div class =" avatar Paul"> Je m’appelle Paul. Et toi ?  </div> 
+				<div class =" avatar Gio"> Moi, c’est Gio. Tu te rappelles de ce qui vient de t’arriver ?  </div> 
+				<div class =" avatar Paul"> Pas du tout ! Je n’ai aucun souvenir ! </div> 
+			</div>
+			
+			<div id ="text1_11" class="textChap ">
+				<div class =" avatar Gio"> C’est bien ce que je pensais, Je crois comprendre ce qui vient de se passer. Tu as fait une crise d’épilepsie. </div> 
+				<div class =" avatar Paul"> Mais c’est quoi ça ? Pourquoi tu penses que c’est une crise de l’épilepsie ? </div> 
+				<div class =" avatar Gio">  Parce que je suis moi-même épileptique. Ça fait 2 ans déjà. </div> 
+			</div>
+			
+			<div id ="text1_12" class="textChap ">
+				<div class =" avatar Paul">Wow J’ai peur là ! C’est quoi l’épilepsie ?  </div> 
+				<div class =" avatar Gio">  Tu n’as rien à craindre Paul, je répondrai à toutes tes questions ! Tu verras, tu peux très bien vivre avec l’épilepsie.</div> 
+			</div>
+			
+			<div id ="text1_13" class="textChap"> 
+				<div class =" avatar"> Peux-tu répondre aux questions de Paul? Essaye d’avoir un maximum de bonnes réponses pour rassurer Paul !  </div> 
 			</div>
 		
 		<!-- Chapitre 2 -->
@@ -56,24 +81,59 @@
 			
 			<div id ="text3_4" class="textChap ">
 				<div class =" avatar Doc"> Les résultats d’un électroencéphalogramme ressemblent à ces courbes, elles représentent l’activité des neurones de différents endroits de ton cerveau. Chaque ligne correspond à un capteur. 
-				Nous allons essayer de repérer des pics sur les courbes qui pourraient être liés à des crises d’épilepsie.  </div> 
+					Nous allons essayer de repérer des pics sur les courbes qui pourraient être liés à des crises d’épilepsie.  </div> 
 				
 			</div>
 			
-			<div id ="text3_5" class="textChap ">
-				<div class =" avatar Paul">  </div> 
-				<div class =" avatar Doc">   </div> 
-				<div class =" avatar Paul">  </div> 
-				<div class =" avatar Doc">   </div> 
+			<div id ="text3_7" class="textChap ">
+				<div class =" avatar Doc"> Nous venons d’étudier les résultats de tes EEG. Tu es effectivement épileptique et tes crises sont des crises généralisées. Je vais te donner un traitement pour que tu n’ais plus de crises.  </div> 
 			</div>
 			
-			<div id ="text3_6" class="textChap ">
-				<div class =" avatar Paul">  </div> 
-				<div class =" avatar Doc">   </div> 
-				<div class =" avatar Paul">  </div> 
-				<div class =" avatar Doc">   </div> 
+			<div id ="text3_8" class="textChap ">
+				<div class =" avatar Doc">  Tu vas essayer ces médicaments, nous nous reverrons dans 1 mois pour faire un point et voir si le traitement fonctionne et si aucune crise ne s’est déclenchée. 
+					Si c’est le cas c’est parfait, nous aurons trouvé le traitement qui te correspond ! Sinon je te donnerais d’autres médicaments à essayer. 
+				</div> 
+				
+			</div>
+			
+			<div id ="text3_9" class="textChap ">
+				<div class =" avatar Paul"> Alors ces médicaments vont agir sur mon cerveau pour arrêter les crises ? </div> 
+				<div class =" avatar Doc">  Comme tu le sais les crises d’épilepsie viennent de neurones qui reçoivent trop de signaux excitateurs, les médicaments régulent les messages excitateurs et i
+					nhibiteurs envoyés aux neurones pour éviter une surexcitation, cela entrainerait une crise. Voilà un jeu qui va t’aider à comprendre ! </div> 
+			</div>
+			
+			<div id ="text3_12" class="textChap ">
+				<div class =" avatar Doc"> Bonjour Paul ! Cela fait déjà 1 mois que nous nous sommes vus et que tu as commencé à prendre ton traitement. Tu n’as eu aucune crise ! C’est très bien, ton traitement a l’air de te convenir !  </div> 
+				<div class =" avatar Paul"> Oui il marche bien mais Gio m’a dit que je devais passer un autre examen pour pouvoir bien comprendre l’origine mon épilepsie, elle a dit que je devais passer une IRM... </div> 
+			</div>
+			
+			<div id ="text3_13" class="textChap ">
+				<div class =" avatar Doc"> Effectivement ton amie connaît bien les examens utilisés dans les cas d’épilepsies. Ne t’inquiète pas pour l’IRM, ton traitement marche très bien et il n’est donc pas 
+					nécessaire pour toi de passer une IRM. Mais si tu dois un jour en passer une tu n’as vraiment rien à craindre ! </div> 
 			</div>
 		
+			<div id ="text3_14" class="textChap ">
+				<div class =" avatar Doc">  L’IRM permet d’avoir une image précise d’une partie de ton corps, comme le cerveau, et essayer de voir d’où vient ton épilepsie. C’est un gros tube, dans lequel tu vas devoir patienter 10 minutes sans bouger.  </div> 
+			</div>
+			
+			<div id ="text3_15" class="textChap ">
+				<div class =" avatar Doc">  Pendant ce temps la machine va prendre des images de ton cerveau comme celle que tu vois ici grâce à l’eau contenue dans ton corps. </div> 
+			</div>
+			
+			<div id ="text3_16" class="textChap ">
+				<div class =" avatar Doc">  La machine fait beaucoup de bruit mais ne t’inquiètes pas elle ne fait que prendre des images, la personne qui passe une IRM ne 
+					sentira rien mais elle ne doit pas bouger sinon les images seront floues. Je vais te montrer quelques résultats d’IRM pour que tu voies à quoi ca ressemble. </div> 
+			</div>
+			
+			<div id ="text3_19" class="textChap ">
+				<div class =" avatar Doc">  Ca doit être beaucoup d’informations en une fois, je vais te faire un résumé.
+					Lorsqu’une personne est épileptique elle doit passer un électroencéphalogramme afin que le médecin connaisse mieux son épilepsie. 
+					Ensuite si cela est possible le médecin donnera des médicaments à cette personne afin d’éviter les crises d’épilepsie dans le futur. 
+					Si les médicaments marchent c’est parfait et le patient peu continuer à les prendre. Si les médicaments ne marchent pas la personne devra passer une IRM afin de c
+					onnaître l’origine de son épilepsie et de trouver une autre solution pour la traiter.
+				</div> 
+			</div>
+			
 		<!-- Chapitre 4 -->
 		
 			<div id ="text4_1" class="textChap ">
@@ -114,7 +174,7 @@
 			
 			<div id ="text4_9" class="textChap ">
 				<div class =" avatar Doc"> Il faut qu’ils dégagent  l’espace pour éviter les chocs, qu’ils 
-				protègent ta tête des chocs avec un vêtement plié ou une mousse, qu’ils desserrent tes vêtements pour faciliter ta respiration, qu’ils t’aident à t’allonger, qu’ils retirent tes lunettes si tu en portes et qu’ils avertissent des secours si ta crise dure longtemps.</div> 
+					protègent ta tête des chocs avec un vêtement plié ou une mousse, qu’ils desserrent tes vêtements pour faciliter ta respiration, qu’ils t’aident à t’allonger, qu’ils retirent tes lunettes si tu en portes et qu’ils avertissent des secours si ta crise dure longtemps.</div> 
 				<p>  </p>
 				<p>  </p>
 				<div class =" avatar Paul"> Et s’ils ne retiennent pas tout ça ??</div> 
