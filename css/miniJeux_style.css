@@ -16,16 +16,31 @@
 	#noticeQuizz{visibility:hidden;} 
 
 	/* Mini jeu 1 */ 
+<<<<<<< Updated upstream
 		#PointRouge1{width: 850px; position: relative; height: 500px; background-size: cover; background-repeat: no-repeat; background-image: url('/Epicer/images/bg_point rouge1.jpg');}
 		.debut{position: relative;left: 170px;top: 320px;} /* pas encore change */
 		.sommet1{position: relative;left: 260px;top: 300px;} /* pas encore change */
 		.sommet2{position: relative;left: 450px;top: 350px;} /* pas encore change */
 		.sommet3{position: relative;left: 550px;top: 340px;} /* pas encore change */
 		.fin{position: relative;left: 690px;top: 190px;} /* pas encore change */
+=======
+	#PointRouge1{background: white; width: 850px; height: 500px; background-image: url('/Epicer/images/bg_point rouge1.jpg'); margin: 20px auto;}
+	#bg{background: black; width: 850px; height: 500px; background-image: url('/Epicer/images/bg_point rouge1.jpg'); margin: 20px auto;}
+
+/*		.debut{position: relative;left: 170px;top: 320px;} 
+		.sommet1{position: relative;left: 260px;top: 300px;} 
+		.sommet2{position: relative;left: 450px;top: 350px;} 
+		.sommet3{position: relative;left: 550px;top: 340px;} 
+		.fin{position: relative;left: 690px;top: 190px;} 
+>>>>>>> Stashed changes
 
 		#rouge{width:85px; height: 50px; position: relative; background-image: url('/Epicer/images/envelope_rouge.png');}
 
+<<<<<<< Updated upstream
 		#blanc{width: 85px; height: 50px; position: relative; background-image: url('/Epicer/images/nvelope_blanc.png');}
+=======
+	#blanc{width: 85px; height: 50px; position: relative; background-image: url('/Epicer/images/nvelope_blanc.png');}*/
+>>>>>>> Stashed changes
 
 	/* Mini jeu 2 */ 
 				
@@ -60,7 +75,7 @@
 		#infoScoreMJ2{ position: absolute ; bottom:210px; left: 15px; width: 100px; height: 40px; color: black; text-align: center; visibility:hidden; font-size:25px }
 
 	/* Mini jeu 3 */ 
-	#PointRouge2{width: 850px; position: relative; height: 500px; background-color: white; background-size: cover; background-repeat: no-repeat; background-image: url('/Epicer/images/neurone.jpg');}
+	#PointRouge2{width: 850px; position: relative; height: 500px; background-color: white; background-size: cover; background-repeat: no-repeat; background-image: url('/Epicer/images/bg_point rouge1.jpg');}
 		.debut{position: relative;left: 385px;top: 125px;} /* pas encore change */
 		.fin1{position: relative;left: 795px;top: 150px;} /* pas encore change */
 		.fin2{position: relative;left: 510px;top: 420px;} /* pas encore change */
