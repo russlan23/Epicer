@@ -26,13 +26,32 @@
 			<img src="/Epicer/images/mj2/mj2Fig1_2.png" alt="Mini jeu2" >
 		</div>
 		
+
+		<div id="MJ2fig2_1" class="MJ2fig" >
+			<img id="MJ2im2" src="/Epicer/images/mj2/mj2Fig2_1.png" alt="Mini jeu2" usemap="#bot2" >
+				<map name="bot2">
+				<area shape="rect" coords="0,0,254,318" alt="fig2" onclick="mj2repBad()">
+				<area shape="rect" coords="254,0,547,318" alt="fig2" onclick="mj2repGood()">
+			</map>
+		</div>
 		
-		<div id= "mj2badRep1" class="txtMauvaiseRep"> Désolé, vous n'aviez pas choisis les battements du cœur de Paul. Ceci son 
+		<div id= "mj2badRep1" class="txtMauvaiseRep"> Désolé, vous n'as pas choisis les battements du cœur de Paul. Ceci son 
 			entouré en rouge ci-dessous. Ton cœur, comme celui de Paul, est un muscle et il bat lorsqu’un neurone lui en donne l’ordre. 
 			Un message sous forme de décharge électrique passe alors dans les. A chaque battement les signaux font un « pic » qui correspond à un message pour le cœur. 
 		</div>
 		
-		<div id="infoScoreMJ2">  Score: <span id ="scoreMJ2" > </div> 
+		
+		<div id= "mj2goodRep1" class="txtBonneRep"> Effectivement tu as trouvé un battement du cœur de Paul. Ton cœur, comme celui de Paul,
+		est un muscle et il bat lorsqu’un neurone lui en donne l’ordre. Un message sous forme de décharge électrique passe alors dans les muscles .
+		A chaque battement les signaux font un « pic » qui correspond à un message pour le cœur. 
+		</div>
+		
+		<div id= "mj2badRep2" class="txtMauvaiseRep"> Désolé, tu n'as pas choisis les battements du cœur de Paul. </div>
+		
+		<div id= "mj2goodRep2" class="txtBonneRep"> Effectivement tu as trouvé un battement du cœur de Paul. </div>
+		
+		
+		<div id="infoScoreMJ2">  Score: <span id ="scoreMJ2" > </span></div> 
 				
 		<input id="photoSuivante" class="clickble" type="submit" name="actvtSuivante" value=">" onClick="photoSuivante()"/> </input>	
 
