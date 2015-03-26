@@ -48,6 +48,9 @@ function quesSuivQuizz(){
 	document.getElementById("repBonneQuizz").style.visibility="hidden";
 	document.getElementById("repFausseQuizz").style.visibility="hidden";
 	if(numActQuizz<questionQuizz.length) {
+		var nbQuestion=questionQuizz.length-1;
+		document.getElementById("nbQuestion").innerText=" " + numActQuizz + "/"+nbQuestion;
+		document.getElementById("nbQuestion").style.visibility="visible";
 		document.getElementById("reponseOuiQuizz").style.visibility="visible";
 		document.getElementById("reponseNonQuizz").style.visibility="visible";
 		//document.getElementById("question").style.visibility="visible";
@@ -105,7 +108,10 @@ function verifReponseQuizz(choix){
 }
 
 function validerEtoiles(){
+	document.getElementById("nbQuestion").style.visibility="hidden";
+	if (scoreQuizz<=40){
 		document.getElementById("etoile1").style.visibility="visible";
+	}
 	if (scoreQuizz>40){
 		document.getElementById("etoile2").style.visibility="visible";
 	}

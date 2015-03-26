@@ -42,6 +42,9 @@ function actSuiv(){
 	document.getElementById("repBonne").style.visibility="hidden";
 	document.getElementById("repFausse").style.visibility="hidden";
 	if(numAct<activites.length) {
+		var nbQuestion=activites.length-1;
+		document.getElementById("nbQuestion").innerText=" " + numAct + "/"+nbQuestion;
+		document.getElementById("nbQuestion").style.visibility="visible";	
 		document.getElementById("reponseOui").style.visibility="visible";
 		document.getElementById("reponseNon").style.visibility="visible";
 		document.getElementById("question").style.visibility="visible";

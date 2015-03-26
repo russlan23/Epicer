@@ -250,6 +250,7 @@
 									<div id="etoile1" class="etoiles" > </div>
 									<div id="etoile2" class="etoiles" > </div>
 									<div id="etoile3" class="etoiles" > </div>
+									<div id="nbQuestion" > </div>
 								</div>									
 								
 								
