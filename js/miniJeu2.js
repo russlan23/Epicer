@@ -15,7 +15,8 @@ function startMJ2(){
 }
 
 function mj2repBad(){ // s'execute si le joueur a cliqué sur la mauvaise partie de l'image
-	document.getElementById("MJ2txt").style.visibility="hidden";
+ 
+	document.getElementById(idMJ2Txt).style.visibility="hidden";
 	
 	document.getElementById(idFigQuest).style.visibility="hidden";
 	
@@ -34,7 +35,7 @@ function mj2repGood(){ // s'execute si le joueur a cliqué sur la bonne partie d
 	scoreMJ2=scoreMJ2+5;
 	document.getElementById("scoreMJ2").innerText=scoreMJ2;
 	document.getElementById("photoSuivante").style.visibility="visible";
-	document.getElementById("MJ2txt").style.visibility="hidden";
+	document.getElementById(idMJ2Txt).style.visibility="hidden";
 	document.getElementById(idFigQuest).style.visibility="hidden";
 	
 	idFdbckMJ2="mj2goodRep"+MJ2photo; // pour indiquer quel feedback afficher; MJ2photo compte juste le numero d'étape dans ce mini-jeu
@@ -57,11 +58,12 @@ function photoSuivante(){
 	}
 	MJ2photo=MJ2photo+1;
 		
-	if(MJ2photo<=2) { // le nombre d'images total dans le jeu
+	if(MJ2photo<=8) { // le nombre d'images total dans le jeu
+		idMJ2Txt="MJ2txt"+MJ2photo;
 		idFigQuest='MJ2fig'+ MJ2photo+ '_1';
-		idFigRep='MJ2fig1_2'; // à remplacer le 1 par '+ MJ2photo+ ' si on met d'autres photot comme exemples
+		idFigRep='MJ2fig'+MJ2photo+'_2'; // à remplacer le 1 par '+ MJ2photo+ ' si on met d'autres photot comme exemples
 		document.getElementById(idFigQuest).style.visibility="visible";
-		document.getElementById("MJ2txt").style.visibility="visible";
+		document.getElementById(idMJ2Txt).style.visibility="visible";
 		document.getElementById("scoreMJ2").innerText=scoreMJ2;
 		document.getElementById("infoScoreMJ2").style.visibility="visible";
 		
