@@ -2,17 +2,23 @@
 	<div id="MJ4jeu">
 	
 		<!--Les messages explicatifs pour chaque image-->			
-		<div id="MJ4txt1">Trouver les battements du cœur de Paul. </div>		
-		<div id="MJ4txt2">Trouve l’anomalie chez ce patient. </div>			
-		<div id="MJ4txt3">Voici une première mesure de l’EEG de Paul, voit tu des crises d’épilepsie ? </div>
-		<div id="MJ4txt4">Voici une deuxième mesure de l’EEG de Paul, vois-tu des crises d’épilepsie ?  </div>
+		<div id="MJ4txt1">Observe bien ces deux résultats d’IRM, ils représentent les cerveaux de
+		deux patients. Trouve la différence entre ces deux résultats d’IRM. </div>		
+		<div id="MJ4txt2">Observe bien ces deux résultats d’IRM, ils représentent les cerveaux de
+		deux patients. Trouve la différence entre ces deux résultats d’IRM. </div>			
+		<div id="MJ4txt3">Observe bien ces deux résultats d’IRM, ils représentent les cerveaux de 
+		deux patients. Trouve la différence entre ces deux résultats d’IRM. </div>
+		<div id="MJ4txt4">Observe bien ces deux résultats d’IRM, ils représentent les cerveaux de
+		deux patients. Trouve la différence entre ces deux résultats d’IRM.  </div>
 		
 		<!--Coordonnées des images-->
 		<div id="MJ4fig1_1" class="MJ4fig" >
 			<img id="MJ4im1" src="/Epicer/images/mj4/mj4Fig1_1.png" alt="Mini jeu4" usemap="#bot1" >
 				<map name="bot1">
-					<area shape="rect" coords="0,0,26,350" alt="fig1"  onclick="mj4repBad()">
-					<area shape="rect" coords="26,0,48,350" alt="fig1"  onclick="mj4repGood()">
+					<area shape="rect" coords="0,0,297,116" alt="fig1"  onclick="mj4repBad()">
+					<area shape="rect" coords="297,0,600,128" alt="fig1"  onclick="mj4repBad()">					
+					<area shape="rect" coords="0,219,297,353" alt="fig1"  onclick="mj4repBad()">
+					<area shape="rect" coords="128,116,297,350" alt="fig1"  onclick="mj4repGood()">
 					
 				</map>
 		</div>	

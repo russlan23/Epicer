@@ -21,8 +21,8 @@
 				
 		#MJ2txt1 {position: absolute; top:20px; left: 125px; width: 600px; height: 40px; background-color: #33CCCC; color: black; text-align: center; border-radius:15px; font-size:30px; visibility:hidden;}
 		#MJ2txt2 {position: absolute; top:20px; left: 125px; width: 600px; height: 40px; background-color: #33CCCC; color: black; text-align: center; border-radius:15px; font-size:30px; visibility:hidden;}
-		#MJ2txt3 {position: absolute; top:20px; left: 125px; width: 600px; height: 40px; background-color: #33CCCC; color: black; text-align: center; border-radius:15px; font-size:30px; visibility:hidden;}
-		#MJ2txt4 {position: absolute; top:20px; left: 125px; width: 600px; height: 40px; background-color: #33CCCC; color: black; text-align: center; border-radius:15px; font-size:30px; visibility:hidden;}
+		#MJ2txt3 {position: absolute; top:20px; left: 125px; width: 600px; height: 70px; background-color: #33CCCC; color: black; text-align: center; border-radius:15px; font-size:30px; visibility:hidden;}
+		#MJ2txt4 {position: absolute; top:20px; left: 125px; width: 600px; height: 70px; background-color: #33CCCC; color: black; text-align: center; border-radius:15px; font-size:30px; visibility:hidden;}
 		
 		#MJ2jeu {position: absolute; width: 850px; height: 500px; text-align:center ;visibility:hidden;}
 		
@@ -40,8 +40,8 @@
 		#photoSuivante{ position: absolute ; text-align:center; width: 80px; height: 60px; top:220px; right:60px; background-color:green; color: black; font-size:40px; border-radius: 15px; visibility:hidden ;  -webkit-animation: clignote 2s linear infinite alternate; animation: clignote 2s linear infinite alternate;}
 		#actvtSuivante:hover{ background-color:blue; }
 		
-		/* Mauvaise réponce de la Première image*/ 
-		.txtMauvaiseRep{ position: absolute; padding: 10px 0px 0px 0px ;top:5px; left: 50px; width: 750px; height: 170px; background-color: #FF8282; color: black; text-align: center; border-radius:12px; font-size:22px;}
+		
+		.txtMauvaiseRep{ position: absolute; padding: 10px 0px 0px 0px ;top:5px; left: 50px; width: 750x; height: 175x; background-color: #FF8282; color: black; text-align: center; border-radius:12px; font-size:22px;}
 		.txtBonneRep{ position: absolute; padding: 10px 0px 0px 0px ;top:5px; left: 50px; width: 750px; height: 170px; background-color: #1AE41A; color: black; text-align: center; border-radius:12px; font-size:22px;}
 		#mj2badRep1{display:none;}
 		#mj2badRep2{display:none;}
@@ -76,8 +76,8 @@
 		
 		#MJ4jeu {position: absolute; width: 850px; height: 500px; text-align:center ;visibility:hidden;}
 		
-		.MJ2fig{position: absolute; width:600px; height:350px; left:125px; top:100px; border-style: solid; border-color: #33CCCC;}
-		.MJ2figRep {position: absolute; width:430px; height:250px; left:150px; top:200px; border-style: solid; border-color: #33CCCC;}
+		.MJ4fig{position: absolute; width:600px; height:350px; left:125px; top:100px; border-style: solid; border-color: #33CCCC;}
+		.MJ4figRep {position: absolute; width:430px; height:250px; left:150px; top:200px; border-style: solid; border-color: #33CCCC;}
 		#MJ4fig1_1{visibility:hidden;}
 		#MJ4fig1_2{visibility:hidden;}
 		#MJ4fig2_1{visibility:hidden;}
@@ -91,7 +91,7 @@
 		#actvtSuivante:hover{ background-color:blue; }
 		
 		/* Mauvaise réponce de la Première image*/ 
-		.txtMauvaiseRep{ position: absolute; padding: 10px 0px 0px 0px ;top:5px; left: 50px; width: 750px; height: 170px; background-color: #FF8282; color: black; text-align: center; border-radius:12px; font-size:22px;}
+		.txtMauvaiseRep{ position: absolute; padding: 10px 0px 0px 0px ;top:5px; left: 50px; width: 750px; height: 175x; background-color: #FF8282; color: black; text-align: center; border-radius:12px; font-size:22px;}
 		.txtBonneRep{ position: absolute; padding: 10px 0px 0px 0px ;top:5px; left: 50px; width: 750px; height: 170px; background-color: #1AE41A; color: black; text-align: center; border-radius:12px; font-size:22px;}
 		#mj4badRep1{display:none;}
 		#mj4badRep2{display:none;}

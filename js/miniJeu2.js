@@ -58,7 +58,7 @@ function photoSuivante(){
 	}
 	MJ2photo=MJ2photo+1;
 		
-	if(MJ2photo<=8) { // le nombre d'images total dans le jeu
+	if(MJ2photo<=4) { // le nombre d'images total dans le jeu
 		idMJ2Txt="MJ2txt"+MJ2photo;
 		idFigQuest='MJ2fig'+ MJ2photo+ '_1';
 		idFigRep='MJ2fig'+MJ2photo+'_2'; // à remplacer le 1 par '+ MJ2photo+ ' si on met d'autres photot comme exemples
