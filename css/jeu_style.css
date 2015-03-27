@@ -62,7 +62,7 @@
 			/*voici element par element s'il faut les editer*/
 			#reprendre {}
 			#accederChapitre{}
-			#tutoriel{}
+			#tutoriel{display:none;}
 			#historiqueScore{display:none;}
 		
 		#chap1Fait{visibility:hidden;}
@@ -84,7 +84,7 @@
 	.avatar{padding:10px 30px 20px 40px ; height: 15px;  background-position: 0px 5px ; background-repeat: no-repeat; font-size: 15px; font-weight:bold}
 	.Doc {color: black; background-image: url('/Epicer/images/Doc.png');}
 	.Paul{color: white; background-image: url('/Epicer/images/Paul.png');}
-	.Gio{color: white; background-image: url('/Epicer/images/Gio.png');}
+	.Gio{color: black; background-image: url('/Epicer/images/Gio.png');}
 	
 	/* La forme du login et le message d'erreur eventuel*/ 
 	form {position:absolute; background-color: grey; width: 350px; height: 200px; border: 3px solid white; margin:auto; left:0; right:0; top:0; bottom:0; text-align: center; padding: 10; color:black;}

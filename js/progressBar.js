@@ -52,17 +52,48 @@ progressBar = {
 	function updateImagesChap(chap){
 			switch(chap){
 			
-				case 1: 	$('#imagesChap').append ('<img src ="/Epicer/images/im101.jpg"/>');
+				case 1: 	
+							$('#imagesChap').append ('<img src ="/Epicer/images/im100.jpg"/>');
+							$('#imagesChap').append ('<img src ="/Epicer/images/im101.jpg"/>');
 							$('#imagesChap').append ('<img src ="/Epicer/images/im102.jpg"/>');
 							$('#imagesChap').append ("<img src ='/Epicer/images/im103.jpg'/>");
 							$('#imagesChap').append ("<img src ='/Epicer/images/im104.jpg'/>");
 							$('#imagesChap').append ("<img src ='/Epicer/images/im105.jpg'/>");
+							$('#imagesChap').append ('<img src ="/Epicer/images/im106.jpg"/>');
+							$('#imagesChap').append ('<img src ="/Epicer/images/im107.jpg"/>');
+							$('#imagesChap').append ("<img src ='/Epicer/images/im108.jpg'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images/im109.jpg'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images/im110.jpg'/>");
 					break;
 				case 2: 
 					break;
 				case 3: 
+				
+							$('#imagesChap').append ('<img src ="/Epicer/images/im300.jpg"/>');
+							$('#imagesChap').append ('<img src ="/Epicer/images/im301.jpg"/>');
+							$('#imagesChap').append ('<img src ="/Epicer/images/im302.jpg"/>');
+							$('#imagesChap').append ("<img src ='/Epicer/images/im303.jpg'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images/im304.jpg'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images/im305.jpg'/>");
+							$('#imagesChap').append ('<img src ="/Epicer/images/im306.jpg"/>');
+							$('#imagesChap').append ('<img src ="/Epicer/images/im307.jpg"/>');
+							$('#imagesChap').append ("<img src ='/Epicer/images/im308.jpg'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images/im309.jpg'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images/im310.jpg'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images/im311.jpg'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images/im312.jpg'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images/im313.jpg'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images//mj2/mj2Fig1_1.png'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images//mj2/mj2Fig1_2.png'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images//mj2/mj2Fig2_1.png'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images//mj2/mj2Fig2_2.png'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images//mj2/mj2Fig3_1.png'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images//mj2/mj2Fig3_2.png'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images//mj2/mj2Fig4_1.png'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images//mj2/mj2Fig4_2.png'/>");
 					break;
 				case 4: 
+							$('#imagesChap').append ('<img src ="/Epicer/images/im400.jpg"/>');
 							$('#imagesChap').append ('<img src ="/Epicer/images/im401.jpg"/>');
 							$('#imagesChap').append ('<img src ="/Epicer/images/im402.jpg"/>');
 							$('#imagesChap').append ("<img src ='/Epicer/images/im403.jpg'/>");

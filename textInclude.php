@@ -61,13 +61,13 @@
 		<!-- Chapitre 3 -->
 		
 			<div id ="text3_1" class="textChap ">
-				<div class =" avatar Doc">  Bonjour Paul, Comment vas-tu ? Tu es près pour l’examen ? On va commencer par un électroencéphalogramme. </div> 
+				<div class =" avatar Doc">  Bonjour Paul, Comment vas-tu ? Tu es prêt pour l’examen ? On va commencer par un électroencéphalogramme. </div> 
 				<div class =" avatar Paul"> Oui je pense mais je ne sais pas vraiment à quoi m’attendre, est-ce que ce sera douloureux ? </div> 
 				<div class =" avatar Doc">  Pas du tout je vais t’expliquer. </div> 
 			</div>
 			
 			<div id ="text3_2" class="textChap ">
-				<div class =" avatar Doc">  C’est une mesure, un signal qui me permettra de connaitre plus précisément ton épilepsie et donc de mieux la traiter. Ainsi nous pourrons éviter qu’une nouvelle crise se déclenche. </div> 
+				<div class =" avatar Doc">  C’est une mesure, un signal qui me permettra de connaître plus précisément ton épilepsie et donc de mieux la traiter. Ainsi nous pourrons éviter qu’une nouvelle crise se déclenche. </div> 
 				<p> </p>
 				<p> </p>
 				<div class =" avatar Paul"> D’accord. </div> 
@@ -80,13 +80,13 @@
 			</div>
 			
 			<div id ="text3_4" class="textChap ">
-				<div class =" avatar Doc"> Les résultats d’un électroencéphalogramme ressemblent à ces courbes, elles représentent l’activité des neurones de différents endroits de ton cerveau. Chaque ligne correspond à un capteur. 
+				<div class =" avatar Doc"> Les résultats d’un électroencéphalogramme ressemblent à ces courbes, elles représentent l’activité des neurones à différents endroits de ton cerveau. Chaque ligne correspond à un capteur. 
 					Nous allons essayer de repérer des pics sur les courbes qui pourraient être liés à des crises d’épilepsie.  </div> 
 				
 			</div>
 			
 			<div id ="text3_7" class="textChap ">
-				<div class =" avatar Doc"> Nous venons d’étudier les résultats de tes EEG. Tu es effectivement épileptique et tes crises sont des crises généralisées. Je vais te donner un traitement pour que tu n’ais plus de crises.  </div> 
+				<div class =" avatar Doc"> Nous venons d’étudier les résultats de ton EEG. Tu es effectivement épileptique et tes crises sont des crises généralisées. Je vais te donner un traitement pour que tu n’ais plus de crises.  </div> 
 			</div>
 			
 			<div id ="text3_8" class="textChap ">
@@ -99,21 +99,21 @@
 			<div id ="text3_9" class="textChap ">
 				<div class =" avatar Paul"> Alors ces médicaments vont agir sur mon cerveau pour arrêter les crises ? </div> 
 				<div class =" avatar Doc">  Comme tu le sais les crises d’épilepsie viennent de neurones qui reçoivent trop de signaux excitateurs, les médicaments régulent les messages excitateurs et i
-					nhibiteurs envoyés aux neurones pour éviter une surexcitation, cela entrainerait une crise. Voilà un jeu qui va t’aider à comprendre ! </div> 
+					nhibiteurs envoyés aux neurones pour éviter une surexcitation, qui entrainerait une crise. Voilà un jeu qui va t’aider à comprendre ! </div> 
 			</div>
 			
 			<div id ="text3_12" class="textChap ">
-				<div class =" avatar Doc"> Bonjour Paul ! Cela fait déjà 1 mois que nous nous sommes vus et que tu as commencé à prendre ton traitement. Tu n’as eu aucune crise ! C’est très bien, ton traitement a l’air de te convenir !  </div> 
-				<div class =" avatar Paul"> Oui il marche bien mais Gio m’a dit que je devais passer un autre examen pour pouvoir bien comprendre l’origine mon épilepsie, elle a dit que je devais passer une IRM... </div> 
+				<div class =" avatar Doc"> Bonjour Paul ! Cela fait déjà 1 mois que tu as commencé à prendre ton traitement. Tu n’as eu aucune crise ! C’est très bien, ton traitement a l’air de te convenir !  </div> 
+				<div class =" avatar Paul"> Oui il marche bien mais Gio m’a dit que je devais passer un autre examen pour pouvoir bien comprendre l’origine de mon épilepsie, elle a dit que je devais passer une IRM... </div> 
 			</div>
 			
 			<div id ="text3_13" class="textChap ">
-				<div class =" avatar Doc"> Effectivement ton amie connaît bien les examens utilisés dans les cas d’épilepsies. Ne t’inquiète pas pour l’IRM, ton traitement marche très bien et il n’est donc pas 
+				<div class =" avatar Doc"> Effectivement ton amie connaît bien les examens utilisés dans les cas d’épilepsies. Ne t’inquiètes pas pour l’IRM, ton traitement marche très bien et il n’est donc pas 
 					nécessaire pour toi de passer une IRM. Mais si tu dois un jour en passer une tu n’as vraiment rien à craindre ! </div> 
 			</div>
 		
 			<div id ="text3_14" class="textChap ">
-				<div class =" avatar Doc">  L’IRM permet d’avoir une image précise d’une partie de ton corps, comme le cerveau, et essayer de voir d’où vient ton épilepsie. C’est un gros tube, dans lequel tu vas devoir patienter 10 minutes sans bouger.  </div> 
+				<div class =" avatar Doc">  L’IRM permet d’avoir une image précise d’une partie de ton corps, le cerveau dans ton cas, et essayer de voir d’où vient ton épilepsie. C’est un gros tube, dans lequel tu vas devoir patienter 10 minutes sans bouger.  </div> 
 			</div>
 			
 			<div id ="text3_15" class="textChap ">
@@ -126,11 +126,10 @@
 			</div>
 			
 			<div id ="text3_19" class="textChap ">
-				<div class =" avatar Doc">  Ca doit être beaucoup d’informations en une fois, je vais te faire un résumé.
+				<div class =" avatar Doc">  C'est beaucoup d’information en une fois, je vais te faire un résumé.
 					Lorsqu’une personne est épileptique elle doit passer un électroencéphalogramme afin que le médecin connaisse mieux son épilepsie. 
 					Ensuite si cela est possible le médecin donnera des médicaments à cette personne afin d’éviter les crises d’épilepsie dans le futur. 
-					Si les médicaments marchent c’est parfait et le patient peu continuer à les prendre. Si les médicaments ne marchent pas la personne devra passer une IRM afin de c
-					onnaître l’origine de son épilepsie et de trouver une autre solution pour la traiter.
+					Si les médicaments marchent c’est parfait. Si les médicaments ne marchent pas la personne devra passer une IRM afin de connaître l’origine de son épilepsie et de trouver une autre solution pour la traiter.
 				</div> 
 			</div>
 			
@@ -173,8 +172,8 @@
 			</div>
 			
 			<div id ="text4_9" class="textChap ">
-				<div class =" avatar Doc"> Il faut qu’ils dégagent  l’espace pour éviter les chocs, qu’ils 
-					protègent ta tête des chocs avec un vêtement plié ou une mousse, qu’ils desserrent tes vêtements pour faciliter ta respiration, qu’ils t’aident à t’allonger, qu’ils retirent tes lunettes si tu en portes et qu’ils avertissent des secours si ta crise dure longtemps.</div> 
+				<div class =" avatar Doc"> Il faut qu’ils dégagent l’espace pour éviter les chocs, qu’ils 
+					protègent ta tête avec un vêtement plié ou une mousse, qu’ils desserrent tes vêtements pour faciliter ta respiration, qu’ils t’aident à t’allonger, qu’ils retirent tes lunettes si tu en portes et qu’ils avertissent des secours si ta crise dure longtemps.</div> 
 				<p>  </p>
 				<p>  </p>
 				<div class =" avatar Paul"> Et s’ils ne retiennent pas tout ça ??</div> 

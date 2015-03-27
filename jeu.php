@@ -12,6 +12,7 @@
 		<script src="/Epicer/js/general.js"> </script>   <!--le fichier des fonctions javascript principales-->
 		<script src="/Epicer/js/progressBar.js"> </script>  
 		<script src="/Epicer/js/miniJeu5.js"> </script>  
+		<script src="/Epicer/js/miniJeu4.js"> </script> 
 		<script src="/Epicer/js/miniJeu3.js"> </script> 
 		<script src="/Epicer/js/miniJeu2.js"> </script> 
 		<script src="/Epicer/js/miniJeu1.js"> </script> 
@@ -77,18 +78,18 @@
 					}
 					//si mot de passe est faut 	
 					if ($_POST['action'] == 'Se connecter' AND $log_reussie==false) { 
-								echo "<div id =\"errCnxn\" class= \"error\"> Le pseudo n'est pas existant ou mot de passe incorrecte </div>"; //cette ligne affiche le message d'erreur
+								echo "<div id =\"errCnxn\" class= \"error\"> Le pseudo n'est pas existant ou le mot de passe est incorrect </div>"; //cette ligne affiche le message d'erreur
 								include ($_SERVER['DOCUMENT_ROOT']."/Epicer/loginInclude.php");	 // cela remet la demande de login
 					} // si l'utilisateur a cliqué sur le bouton " creer 
 					if(	$_POST['action'] == 'Creer nouveau joueur' AND $nouv_compte_reussi==false ){
 								// si une des données n'est pas remplie	alors s'affiche un message d'erreur
 								if(empty($_POST['pseudo']) OR empty($_POST['mot_pass'])){
-									echo "<div id =\"errCnxn\" class= \"error\" > Vous n'aviez pas remplis un des champs  </div>"; //cette ligne affiche le message d'erreur
+									echo "<div id =\"errCnxn\" class= \"error\" > Vous n'aviez pas rempli un des champs  </div>"; //cette ligne affiche le message d'erreur
 									include ($_SERVER['DOCUMENT_ROOT']."/Epicer/loginInclude.php");	 // cela remet la demande de login
 								}else { 
 									// si le pseudo rentré existe déjà alors s'affiche un msg d'erreur
 									if($pseudo_existant==true ){
-										echo "<div id =\"errCnxn\" class= \"error\"> Ce pseudo existe déjà, veuillez choisir un autre </div>"; //cette ligne affiche le message d'erreur
+										echo "<div id =\"errCnxn\" class= \"error\"> Ce pseudo existe déjà, veuillez en choisir un autre </div>"; //cette ligne affiche le message d'erreur
 										include ($_SERVER['DOCUMENT_ROOT']."/Epicer/loginInclude.php");	 // cela remet la demande de login
 									}else{
 										// Tout va bien , l'insertion du joueur dans la base de donnée
@@ -134,8 +135,6 @@
 				?> 		
 							<!--Ici s'affiche l'acceuil avec le fond correspondant-->
 							<div id = "imageAcceuil">
-								<img src="/Epicer/images/accueil.png" />
-								<img src="/Epicer/images/choixChapitre.png" />
 							</div>
 							<!--C'est l'info qui s'affiche dans la barre à droite, tout au long du jeu-->						
 							<div id ="barreInfo"> 
@@ -183,10 +182,10 @@
 								<!-- La page de choix de chapitre : -->
 								<div id="choixChapitre"> 
 								
-									<div id="chap1" class ="chap clickble" onClick=start(1,0)> Chapitre I </br> Temps estimé: 11min  </div>
-									<div id="chap2" class ="chap clickble" onClick=start(2,0)> Chapitre II </br> Temps estimé: 5min </div>
-									<div id="chap3" class ="chap clickble" onClick=start(3,0)> Chapitre III </br> Temps estimé: 15min  </div>
-									<div id="chap4" class ="chap clickble" onClick=start(4,0)> Chapitre IV </br>Temps estimé: 9min </div>
+									<div id="chap1" class ="chap clickble" onClick=start(1,0)> Chapitre I </div>
+									<div id="chap2" class ="chap clickble" onClick=start(2,0)> Chapitre II </div>
+									<div id="chap3" class ="chap clickble" onClick=start(3,0)> Chapitre III </div>
+									<div id="chap4" class ="chap clickble" onClick=start(4,0)> Chapitre IV </div>
 								
 								</div>
 								
@@ -217,12 +216,12 @@
 									</div>
 								</div> 
 								
-								<div id="noticeMJ1" class ="noticeMJ"> <h2> Mini Jeu 1 </h2> Tu vas aider Paul à bien tirer son pénalty, pour ça il faut que ce neurone capte exactement 10 points rouges. Il existe normalement des messages qui suppriment les points rouges, mais ici c’est toi qui régulera le nombre de messages en cliquant sur les points pour les supprimer. </div>
-								<div id="noticeMJ2" class ="noticeMJ"> <h2> Mini Jeu 2 </h2> Sur chaque image tu devras trouver l’échantillon qu’on te propose, tu as 3 clicks par image pour trouver la zone correspondante.</div>
+								<div id="noticeMJ1" class ="noticeMJ"> <h2> Mini Jeu 1 </h2> Tu vas aider Paul à bien tirer son pénalty, pour cela il faut que ce neurone reçoive exactement 10 enveloppes rouges. Il existe normalement des messages qui suppriment les enveloppes rouges, mais ici c’est toi qui régulera le nombre de messages en cliquant sur les enveloppes pour les supprimer. </div>
+								<div id="noticeMJ2" class ="noticeMJ"> <h2> Mini Jeu 2 </h2> Sur chaque image tu devras trouver l’échantillon qu’on te propose, tu as 3 cliques par image pour trouver la zone correspondante.</div>
 								<div id="noticeMJ3" class ="noticeMJ"> <h2> Mini Jeu 3 </h2>  Maintenant que Paul prend son médicament, les crises sont inhibées. Tu joueras au même jeu que tout à l’heure sauf que cette fois ci tu es aidé par le médicament.</div>
-								<div id="noticeMJ4" class ="noticeMJ"> <h2> Mini Jeu 4 </h2> Trouve la différence entre les deux images. Tu as 3 clicks pour la trouver.</div>
-								<div id="noticeMJ5" class ="noticeMJ"> <h2> Mini Jeu 5 </h2> Une crise d’épilepsie peut se déclencher dans n’importe quelle situation, c’est pourquoi certaines activités ou professions ne sont pas autorisées aux personnes épileptiques. Essaye de deviner lesquelles en cliquant sur IMAGE  si tu penses qu’elles sont autorisées ou sur IMAGE si tu penses qu’elles ne le sont pas.</div>
-								<div id="noticeQuizz" class ="noticeMJ"> <h2> Quizz </h2> Réponds aux questions en cliquant sur Vrai ou Faux, pense à lire les explications si tu t’es trompé ! </div>
+								<div id="noticeMJ4" class ="noticeMJ"> <h2> Mini Jeu 4 </h2> Trouve la différence entre les deux images. Tu as 3 cliques pour la trouver.</div>
+								<div id="noticeMJ5" class ="noticeMJ"> <h2> Mini Jeu 5 </h2> Une crise d’épilepsie peut se déclencher dans n’importe quelle situation, c’est pourquoi certaines activités ou professions ne sont pas autorisées aux personnes épileptiques. Essaie de deviner lesquelles en cliquant sur la case verte si tu penses qu’elles sont autorisées ou sur la case rouge si tu penses qu’elles ne le sont pas.</div>
+								<div id="noticeQuizz" class ="noticeMJ"> <h2> Quizz </h2> Répond aux questions en cliquant sur Vrai ou Faux, pense à lire les explications si tu t’es trompé ! </div>
 								
 								<div id="miniJeu5"> 
 									<div id="question">Est-ce que cette activité est autorisée : </div>

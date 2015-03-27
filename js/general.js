@@ -36,6 +36,9 @@
 		idEtape=parseInt(document.getElementById("infoEtapeActuelle").innerText);
 		scoreChapitre=parseInt(document.getElementById("infoScoreChapitre").innerText);
 		idJoueur=parseInt(document.getElementById("infoIdJoueur").innerText);
+		$('#imageAcceuil').append ('<img src="/Epicer/images/accueil.png" />');
+		$('#imageAcceuil').append ('<img src="/Epicer/images/choixChapitre.png" />');
+		$('#imageAcceuil').append ('<img src="/Epicer/images/finChapitre.png" />');
 		accueil();
 	}
 
@@ -134,6 +137,13 @@
 	
 	function etapeSuivante(){ // lorsque le joueur clique sur le bouton suivant
 					
+			if(emplacementChap==tableChap.length-2){
+				cachMJ();
+				document.getElementById("btnFinChap").style.visibility="visible";
+				document.getElementById("espaceJeu").style.backgroundImage= "url('/Epicer/images/finChapitre.png')";	
+				emplacementChap=emplacementChap+1;
+			}
+			
 			if(emplacementChap<tableChap.length-2){
 			
 				emplacementChap=emplacementChap+1;
@@ -169,13 +179,6 @@
 					}
 					showNotice(tableChap[emplacementChap]);
 				}
-			}
-			
-			if(emplacementChap==tableChap.length-2){
-				cachMJ();
-				document.getElementById("btnFinChap").style.visibility="visible";
-				document.getElementById("espaceJeu").style.backgroundImage= "url('/Epicer/images/finChapitre.png')";	
-				emplacementChap=emplacementChap+1;
 			}
 	
 	} 
