@@ -14,6 +14,7 @@
 		<script src="/Epicer/js/miniJeu5.js"> </script>  
 		<script src="/Epicer/js/miniJeu4.js"> </script> 
 		<script src="/Epicer/js/miniJeu3.js"> </script> 
+		<script src="/Epicer/js/miniJeu4.js"> </script> 
 		<script src="/Epicer/js/miniJeu2.js"> </script> 
 		<script src="/Epicer/js/miniJeu1.js"> </script> 
 		<script src="/Epicer/js/quizz.js"> </script> 	
@@ -236,6 +237,7 @@
 								</div>
 								
 								<?php include ($_SERVER['DOCUMENT_ROOT']."/Epicer/mj2.php"); ?>
+								<?php include ($_SERVER['DOCUMENT_ROOT']."/Epicer/mj4.php"); ?>
 								
 								<div id="quizz"> 
 									<!--<div id="question">Est-ce que cette activité est autorisée : </div>-->
