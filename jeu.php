@@ -162,6 +162,7 @@
 							
 							<div id="imgesChargmnt"> Veuillez patienter svp, les images du chapitre sont en cours de chargement </div>
 							<input id="etapeSuivante" class="clickble" type="submit" name="button" value=">" onClick="etapeSuivante()"/> </input>
+
 							<input id="etapePrecedente" class="clickble" type="submit" name="button" value="<" onClick="etapePrecedente()"/> </input>
 							
 							<input id="btnFinChap" class="clickble" type="submit" name="button" value="Finir le Chapitre" onClick="finChapitre()"/> </input>

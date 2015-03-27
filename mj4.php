@@ -88,31 +88,38 @@
 		</div>
 		
 		<!--Réponses bonnes et mauvaises-->		
-		<div id= "mj4badRep1" class="txtMauvaiseRep"> Désolé, vous n'as pas choisis les battements du cœur de Paul. Ceci son 
-			entouré en rouge ci-dessous. Ton cœur, comme celui de Paul, est un muscle et il bat lorsqu’un neurone lui en donne l’ordre. 
-			Un message sous forme de décharge électrique passe alors dans les. A chaque battement les signaux font un « pic » qui correspond à un message pour le cœur. 
+		<div id= "mj4badRep1" class="txtMauvaiseRep"> Désolé, vous n'as pas trové la difference.
 		</div>
 		
 		
-		<div id= "mj4goodRep1" class="txtBonneRep"> Effectivement tu as trouvé un battement du cœur de Paul. Ton cœur, comme celui de Paul,
-		est un muscle et il bat lorsqu’un neurone lui en donne l’ordre. Un message sous forme de décharge électrique passe alors dans les muscles .
-		A chaque battement les signaux font un « pic » qui correspond à un message pour le cœur. 
+		<div id= "mj4goodRep1" class="txtBonneRep"> Le patient de gauche a un ventricule manquant,
+		c’est-à-dire qu’il a un « trou » manquant, c’est ce qu’on appelle une hétérotopie.
+		Ce ventricule manquant peut n’avoir aucune conséquence pour le patient,
+		c’est-à-dire qu’il peut vivre tout à fait normalement avec ce ventricule manquant. Néanmoins
+		l’hétérotopie peut être une cause de l’épilepsie. En effet l’hétérotopie augmente parfois le
+		nombre de neurotransmetteurs dans le cerveau, cela peut surexciter des neurones ce qui peut 
+		entrainer une crise d’épilepsie.
 		</div>
 		
-		<div id= "mj4badRep2" class="txtMauvaiseRep"> Désolé, tu n'as pas trouvé l'anomalie du patient, l'anomalie est entouré en rouge. Un premier pic marque le début d’une crise d’épilepsie, puis ce pic se 
-		transforme en oscillations. Ces oscillations (les oscillations sont des « vagues ») régulières dans toutes les lignes provoquent une crise 
-		de type absence, c’est-à-dire que la personne reste immobile pendant quelque instant (généralement 30s), elle ne fait rien et lorsque la crise
-		se termine la personne ne se souvient plus de la crise. C’est comme si la crise n’avait pas existé pour la personne épileptique. </div>
+		<div id= "mj4badRep2" class="txtMauvaiseRep"> Désolé, vous n'as pas trové la difference. </div>
 		
-		<div id= "mj4goodRep2" class="txtBonneRep"> Bonne réponse de l'image 2. </div>
+		<div id= "mj4goodRep2" class="txtBonneRep"> La zone que tu viens de sélectionner contient beaucoup de
+		« plis » chez le patient de gauche et moins de plis chez le patient de droite. On dit que le patient
+		de droite a une polycromygie. Les plis se forment pendant l’enfance et pendant la phase embryonnaire.
+		Le nombre élevé de plis peut être le déclencheur de crises d’épilepsie sans que l’on sache exactement
+		pourquoi. Néanmoins certaines personnes vivent très bien avec une polymicrogyrie sans aucune conséquence sur leur santé. </div>
 		
-		<div id= "mj4badRep3" class="txtMauvaiseRep"> Mauvaise réponse de l'image 3. </div>
+		<div id= "mj4badRep3" class="txtMauvaiseRep"> Désolé, vous n'as pas trové la difference. </div>
 		
-		<div id= "mj4goodRep3" class="txtBonneRep"> Bonne réponse de l'image 3. </div>
+		<div id= "mj4goodRep3" class="txtBonneRep"> Cette malformation est appelée dysembryoplastie neuro-épitheliale,
+		elle apparaît à la naissance et peut être à l’origine de crises d’épilepsie. Néanmoins, comme dans le cas précédent
+		(polymicrogyrie), certaines personnes vivent très bien avec une  dysembryoplastie neuro-épitheliale sans aucune 
+		conséquence sur leur santé. </div>
 		
-		<div id= "mj4badRep4" class="txtMauvaiseRep"> Mauvaise réponse de l'image 4. </div>
+		<div id= "mj4badRep4" class="txtMauvaiseRep"> Désolé, vous n'as pas trové la difference. </div>
 		
-		<div id= "mj4goodRep4" class="txtBonneRep"> Bonne réponse de l'image 4. </div>
+		<div id= "mj4goodRep4" class="txtBonneRep"> Observe bien ces deux résultats d’IRM, ils représentent les cerveaux 
+		de deux patients. Trouve la différence entre ces deux résultats d’IRM. </div>
 		
 		<div id="infoScoreMJ4">  Score: <span id ="scoreMJ4" > </span></div> 
 				
