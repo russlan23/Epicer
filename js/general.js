@@ -36,9 +36,9 @@
 		idEtape=parseInt(document.getElementById("infoEtapeActuelle").innerText);
 		scoreChapitre=parseInt(document.getElementById("infoScoreChapitre").innerText);
 		idJoueur=parseInt(document.getElementById("infoIdJoueur").innerText);
-		$('#imageAcceuil').append ('<img src="/Epicer/images/accueil.png" />');
-		$('#imageAcceuil').append ('<img src="/Epicer/images/choixChapitre.png" />');
-		$('#imageAcceuil').append ('<img src="/Epicer/images/finChapitre.png" />');
+		$('#imageAccueil').append ('<img src="/Epicer/images/accueil.png" />');
+		$('#imageAccueil').append ('<img src="/Epicer/images/choixChapitre.png" />');
+		$('#imageAccueil').append ('<img src="/Epicer/images/finChapitre.png" />');
 		accueil();
 	}
 
@@ -140,9 +140,9 @@
 			if(emplacementChap==tableChap.length-2){
 				cachMJ();
 				document.getElementById("infoEmplacementActuel").innerText="La Fin";
+				document.getElementById("espaceJeu").style.backgroundImage="url('/Epicer/images/finChapitre.png')";  
 				document.getElementById("btnAccueil").style.visibility="hidden";
 				document.getElementById("btnFinChap").style.visibility="visible";
-				document.getElementById("espaceJeu").style.backgroundImage= "url('/Epicer/images/finChapitre.png')";	
 				
 				document.getElementById("etapeSuivante").style.visibility="hidden";
 				document.getElementById("etapePrecedente").style.visibility="hidden";
@@ -288,6 +288,7 @@
 		document.getElementById("reprendre").style.display="none";
 		document.getElementById("espaceJeu").style.backgroundImage="none";
 		document.getElementById("btnAccueil").style.visibility="hidden";
+		
 		
 		if (imLoad==false){
 			updateImagesChap(chapitre);

@@ -2,14 +2,14 @@
 var scoreMJ4;
 var MJ4photo;
 var idFdbckMJ4="";
-var idFigRep;
-var idFigQuest;
+var id4FigRep;
+var id4FigQuest;
 
 function startMJ4(){
 
 	scoreMJ4=0;
 	MJ4photo=0;
-	document.getElementById("MJ4jeu").style.visibility="visible";
+	document.getElementById("MJ4jeu").style.display="initial";
 	photoSuivanteMJ4();
 	
 }
@@ -18,9 +18,9 @@ function mj4repBad(){ // s'execute si le joueur a cliqué sur la mauvaise partie
  
 	document.getElementById(idMJ4Txt).style.visibility="hidden";
 	
-	document.getElementById(idFigQuest).style.visibility="hidden";
+	document.getElementById(id4FigQuest).style.visibility="hidden";
 	
-	document.getElementById(idFigRep).style.visibility="visible";
+	document.getElementById(id4FigRep).style.visibility="visible";
 	
 	idFdbckMJ4="mj4badRep"+MJ4photo; // pour indiquer quel feedback afficher; MJ4photo compte juste le numero d'étape dans ce mini-jeu
 	
@@ -36,14 +36,14 @@ function mj4repGood(){ // s'execute si le joueur a cliqué sur la bonne partie d
 	document.getElementById("scoreMJ4").innerText=scoreMJ4;
 	document.getElementById("photoSuivanteMJ4").style.visibility="visible";
 	document.getElementById(idMJ4Txt).style.visibility="hidden";
-	document.getElementById(idFigQuest).style.visibility="hidden";
+	document.getElementById(id4FigQuest).style.visibility="hidden";
 	
 	idFdbckMJ4="mj4goodRep"+MJ4photo; // pour indiquer quel feedback afficher; MJ4photo compte juste le numero d'étape dans ce mini-jeu
 	
 	if(document.getElementById(idFdbckMJ4)){
 		document.getElementById(idFdbckMJ4).style.display="initial";
 	}
-	document.getElementById(idFigRep).style.visibility="visible";
+	document.getElementById(id4FigRep).style.visibility="visible";
 }
 
 function photoSuivanteMJ4(){
@@ -53,16 +53,16 @@ function photoSuivanteMJ4(){
 	if(document.getElementById(idFdbckMJ4)){
 		document.getElementById(idFdbckMJ4).style.display="none";
 	}
-	if(document.getElementById(idFigRep)){
-		document.getElementById(idFigRep).style.visibility="hidden";
+	if(document.getElementById(id4FigRep)){
+		document.getElementById(id4FigRep).style.visibility="hidden";
 	}
 	MJ4photo=MJ4photo+1;
 		
 	if(MJ4photo<=4) { // le nombre d'images total dans le jeu
 		idMJ4Txt="MJ4txt"+MJ4photo;
-		idFigQuest='MJ4fig'+ MJ4photo+ '_1';
-		idFigRep='MJ4fig'+MJ4photo+'_2'; // à remplacer le 1 par '+ MJ4photo+ ' si on met d'autres photot comme exemples
-		document.getElementById(idFigQuest).style.visibility="visible";
+		id4FigQuest='MJ4fig'+ MJ4photo+ '_1';
+		id4FigRep='MJ4fig'+MJ4photo+'_2'; // à remplacer le 1 par '+ MJ4photo+ ' si on met d'autres photot comme exemples
+		document.getElementById(id4FigQuest).style.visibility="visible";
 		document.getElementById(idMJ4Txt).style.visibility="visible";
 		document.getElementById("scoreMJ4").innerText=scoreMJ4;
 		document.getElementById("infoScoreMJ4").style.visibility="visible";
@@ -77,7 +77,7 @@ function finMJ4(){
 	scoreChapitre=scoreChapitre+scoreMJ4;
 	sauvegardeJoue();
 	sauvegardeJoueur();
-	document.getElementById("MJ4jeu").style.visibility="hidden";
+	document.getElementById("MJ4jeu").style.display="none";
 	// validerEtoiles(); utiliser seulement si les étoiles sont en bon format n'ont pas de fond !
 	document.getElementById("infoScoreMJ4").style.visibility="hidden";
 	document.getElementById("infoScoreChapitre").innerText=scoreChapitre;

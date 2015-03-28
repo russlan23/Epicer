@@ -135,8 +135,7 @@
 					
 				?> 		
 							<!--Ici s'affiche l'acceuil avec le fond correspondant-->
-							<div id = "imageAcceuil">
-							</div>
+							<div id = "imageAccueil">	</div>
 							<!--C'est l'info qui s'affiche dans la barre à droite, tout au long du jeu-->						
 							<div id ="barreInfo"> 
 							

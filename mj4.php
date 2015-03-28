@@ -13,8 +13,8 @@
 		
 		<!--Coordonnées des images-->
 		<div id="MJ4fig1_1" class="MJ4fig" >
-			<img id="MJ4im1" src="/Epicer/images/mj4/mj4Fig1_1.png" alt="Mini jeu4" usemap="#bot1" >
-				<map name="bot1">
+			<img id="MJ4im1" src="/Epicer/images/mj4/mj4Fig1_1.png" alt="Mini jeu4" usemap="#bot8" >
+				<map name="bot8">
 					<area shape="rect" coords="0,0,297,116" alt="fig1"  onclick="mj4repBad()">
 					<area shape="rect" coords="297,0,600,128" alt="fig1"  onclick="mj4repBad()">					
 					<area shape="rect" coords="0,189,297,353" alt="fig1"  onclick="mj4repBad()">
@@ -33,8 +33,8 @@
 		</div>
 		
 		<div id="MJ4fig2_1" class="MJ4fig" >
-			<img id="MJ4im2" src="/Epicer/images/mj4/mj4Fig2_1.png" alt="Mini jeu4" usemap="#bot2" >
-				<map name="bot2">
+			<img id="MJ4im2" src="/Epicer/images/mj4/mj4Fig2_1.png" alt="Mini jeu4" usemap="#bot9" >
+				<map name="bot9">
 					<area shape="rect" coords="0,0,600,220" alt="fig2"  onclick="mj4repBad()">
 					<area shape="rect" coords="0,220,166,352" alt="fig2"  onclick="mj4repBad()">
 					<area shape="rect" coords="473,308,562,352" alt="fig2"  onclick="mj4repBad()">
@@ -52,8 +52,8 @@
 		</div>
 		
 		<div id="MJ4fig3_1" class="MJ4fig" >
-			<img id="MJ4im3" src="/Epicer/images/mj4/mj4Fig3_1.png" alt="Mini jeu4" usemap="#bot3" >
-				<map name="bot3">
+			<img id="MJ4im3" src="/Epicer/images/mj4/mj4Fig3_1.png" alt="Mini jeu4" usemap="#bot10" >
+				<map name="bot10">
 					<area shape="rect" coords="0,0,600,180" alt="fig3"  onclick="mj4repBad()">
 					<area shape="rect" coords="0,218,600,354" alt="fig3"  onclick="mj4repBad()">
 					<area shape="rect" coords="0,180,189,180" alt="fig3"  onclick="mj4repBad()">
@@ -70,8 +70,8 @@
 		</div>
 		
 		<div id="MJ4fig4_1" class="MJ4fig" >
-			<img id="MJ4im4" src="/Epicer/images/mj4/mj4Fig4_1.png" alt="Mini jeu4" usemap="#bot4" >
-				<map name="bot4">
+			<img id="MJ4im4" src="/Epicer/images/mj4/mj4Fig4_1.png" alt="Mini jeu4" usemap="#bot11" >
+				<map name="bot11">
 					<area shape="rect" coords="0,0,600,97" alt="fig4"  onclick="mj4repBad()">
 					<area shape="rect" coords="0,157,600,366" alt="fig4"  onclick="mj4repBad()">
 					<area shape="rect" coords="0,97,196,157" alt="fig4"  onclick="mj4repBad()">
@@ -123,7 +123,7 @@
 		
 		<div id="infoScoreMJ4">  Score: <span id ="scoreMJ4" > </span></div> 
 				
-		<input id="photoSuivanteMJ4" class="clickble" type="submit" name="actvtSuivante" value=">" onClick="photoSuivanteMJ4()"/> </input>	
+		<input id="photoSuivanteMJ4" class="clickble" type="submit" name="photoSuivanteMJ4" value=">" onClick="photoSuivanteMJ4()"/> </input>	
 		
 	</div>
 	
