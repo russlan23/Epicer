@@ -174,7 +174,7 @@
 								<div id ="accueil" > 
 																
 									<div id="reprendre" class ="acc bcWhite clickble" onClick="reprendre()"> Reprendre </div>
-									<div id="accederChapitre" class = "acc bcYellow clickble" onClick= "choixChap()"> Accéder aux chapitres </div>
+									<div id="accederChapitre" class = "acc bcYellow clickble" onClick= "choixChap()"> Accéder au jeu </div>
 									<div id="tutoriel" class = "acc bcGreen clickble" > Tutoriel </div>
 									<div id="historiqueScore" class = "acc bcRed clickble" > Historique </div>
 									

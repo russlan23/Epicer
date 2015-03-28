@@ -54,6 +54,8 @@
 		document.getElementById("btnAccueil").style.visibility="visible";	
 		document.getElementById("espaceJeu").style.backgroundImage="url('/Epicer/images/choixChapitre.png')";  
 		cacheAccueil();
+		document.getElementById("accederChapitre").innerText="Choisir un chapitre";	
+		
 	}
 	
 	function cacheAccueil(){
