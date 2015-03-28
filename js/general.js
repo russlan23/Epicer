@@ -109,10 +109,10 @@
 		switch(chp){
 			case 0: tableChap = [0];  // l'accueil
 				break;
-			case 1: tableChap = [100,101,102,103,1001,2001,104,105,106,107,108,109,1006,2006,110];   // 1,2,3... sont les numéros d'image dans ce chapitre, quand >100 c'est un mini jeu
+			case 1: tableChap = [100,101,102,103,1001,2001,104,105,106,107,108,109,1006,2006,110,111];   // 1,2,3... sont les numéros d'image dans ce chapitre, quand >100 c'est un mini jeu
 					chapActuel=1;
 				break;
-			case 2: tableChap =  [200,201,202,203,204,205,206,207,208];
+			case 2: tableChap =  [200,201,202,203,204,205,206,207,208,209,210];
 					chapActuel=2;
 				break;
 			case 3: tableChap =  [300,301,302,303,304,1002,2002,305,306,307,1003,2003,308,309,310,311,312,1004,2004,313,314];
@@ -139,9 +139,18 @@
 					
 			if(emplacementChap==tableChap.length-2){
 				cachMJ();
+				document.getElementById("infoEmplacementActuel").innerText="La Fin";
+				document.getElementById("btnAccueil").style.visibility="hidden";
 				document.getElementById("btnFinChap").style.visibility="visible";
 				document.getElementById("espaceJeu").style.backgroundImage= "url('/Epicer/images/finChapitre.png')";	
+				
+				document.getElementById("etapeSuivante").style.visibility="hidden";
+				document.getElementById("etapePrecedente").style.visibility="hidden";
+				if(document.getElementById(idText)){
+						document.getElementById(idText).style.display="none";
+					}
 				emplacementChap=emplacementChap+1;
+				
 			}
 			
 			if(emplacementChap<tableChap.length-2){
@@ -231,6 +240,8 @@
 			if(tableChap[emplacementChap]>1000){
 			 location.href='#confEtpPreced';  // si on revenir dans l'étape avant mini jeu 
 			}
+			
+			document.getElementById("btnFinChap").style.visibility="hidden";
 		}
 	}
 	

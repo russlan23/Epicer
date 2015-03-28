@@ -23,6 +23,10 @@
 				<div class =" avatar"> Paul a reçu trop de messages excitateurs. Il a fait une crise d’épilepsie. </div> 
 			</div>
 			
+			<div id ="text1_7" class="textChap"> 
+				<div class =" avatar"> Paul ça va ? </div> 
+			</div>
+			
 			<div id ="text1_8" class="textChap"> 
 				<div class =" avatar"> Mais qu’est ce qui se passe ? A l’aide !  </div> 
 			</div>
@@ -55,8 +59,53 @@
 			</div>
 		
 		<!-- Chapitre 2 -->
-		
+			<div id ="text2_1" class="textChap ">
+				<div class =" avatar Gio"> Tu as vu ? sur le quizz qu’on vient de faire, tu vois bien que l’épilepsie ce n’est pas si grave que ça au finale non ? </div> 
+				<div class =" avatar Paul"> Oui c’est vrai qu’il y a pas mal de réponses auxquelles je ne m’attendais pas. Toi aussi tu as la même chose que moi ? </div> 
+			</div>
 			
+			<div id ="text2_2" class="textChap ">
+				<div class =" avatar Gio"> Non, moi je faisais plutôt des crises de type absence, c’est un autre type de crise généralisée. En gros pendant quelques secondes j’étais  absente ensuite tout redevenait  normale. D’ailleurs il existe d'autes différentes, appelées crises partielles comme par exemple une contraction involontaire d’un muscle, une anomalie de la parole ou encore des hallucinations auditives ou visuels. Tout dépend quelle partie du cerveau est touchée.
+					Mais encore une fois ça ne dure que quelques secondes et ça n’arrive que très rarement. </div> 
+			</div>
+			
+			<div id ="text2_3" class="textChap "> 
+				<div class =" avatar Paul"> Quand tu parlais tu as dit: «  je faisais plutôt des crises.. » tu n’en fais plus ? </div> 
+				<div class =" avatar Gio"> Ah non je n’en fais plus depuis longtemps, d’ailleurs je te conseil d’aller voir le Docteur.  </div> 
+				<div class =" avatar Paul"> D’accord merci pour tout. </div> 
+			</div>
+			
+			<div id ="text2_4" class="textChap ">
+				<div class =" avatar Doc"> Bonjour Paul, ta maman m’a expliqué ce qui t’est arrivé ce matin sur le terrain de foot. Si j’ai bien compris tu as perdu connaissance alors que tu jouais au foot c’est bien ça ? </div> 
+				<div class =" avatar Paul">Oui je n’ai pas compris ce qui m’arrivait, quand je me suis réveillé j’étais allongé par terre et tous mes amis étaient autour de moi, c’est Gio qui m’a dit que j’avais peut-être fait une crise d’épilepsie. </div> 
+				<div class =" avatar Doc"> Installe toi. </div> 
+			</div>
+			
+			<div id ="text2_5" class="textChap ">
+				<div class =" avatar Doc"> D’après ce que m’a raconté ta maman, je pense reconnaitre une crise d’épilepsie généralisée c’est-à-dire que c’est tout ton cerveau qui fait une crise. Mais ne t’inquiètes pas ce n’est rien du tout, c’est la forme la plus courante de crise d’épilepsie. </div> 
+				<p> </p>
+				<p> </p>
+				<div class =" avatar Paul">D’accord.  </div> 
+			</div>
+			
+			<div id ="text2_6" class="textChap ">
+				<div class =" avatar Paul"> Ce que je ne comprends pas c’est pourquoi ça m’arrive à moi, qu’est-ce que j’ai fait ? </div> 
+			</div>
+			
+			<div id ="text2_7" class="textChap ">
+				<div class =" avatar Doc"> Est-ce que tu as certaines personnes de ta famille qui font les mêmes crises que toi ? </div> 
+				<div class =" avatar Paul"> Non pas à ma connaissance. </div> 
+			</div>
+			
+			<div id ="text2_8" class="textChap ">
+				<div class =" avatar Doc"> Ça ne m’étonne pas Mais on ne sait pas forcément d’où cela provient, souvent ça vient d’un groupe de neurones surexcités. Tu sais les causes sont extrêmement diverses : Il peut s’agir d’une toute petite malformation cérébrale à la naissance, d’une légère lésion etc. nous avons tous un cerveau différent et il est donc difficile de définir toutes les causes du déclenchement d’une crise d’épilepsie.
+					Je te propose de se revoir la semaine prochaine pour passer des tests ok ?
+				</div> 
+			</div>
+			
+			<div id ="text2_9" class="textChap ">
+				<div class =" avatar Paul"> Ok ça me va, à la semaine prochaine </div> 
+			</div>
 			
 		<!-- Chapitre 3 -->
 		

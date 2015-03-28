@@ -71,7 +71,7 @@
 		#chap4Fait{visibility:hidden;}
 			
 		#choixChapitre{position:absolute;  visibility:hidden;}
-			.chap{ position : absolute; left: 275px; width:300px; text-align:center; height :70px; color:black; background-color:green; padding: 5px; border-radius: 20px; font-size:20px; }
+			.chap{ position : absolute; left: 275px; width:300px; text-align:center; height :60px; color:black; background-color:green; padding: 5px; border-radius: 20px; font-size:30px; }
 			.chap:hover{ background-color: blue;}
 
 			#chap1{top:60px;}
