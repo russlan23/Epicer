@@ -5,7 +5,7 @@ var idFdbckMJ2="";
 var idFigRep;
 var idFigQuest;
 
-function startMJ2(){
+function startMJ2(){ 
 
 	scoreMJ2=0;
 	MJ2photo=0;
@@ -46,7 +46,7 @@ function mj2repGood(){ // s'execute si le joueur a cliqué sur la bonne partie d
 	document.getElementById(idFigRep).style.visibility="visible";
 }
 
-function photoSuivante(){
+function photoSuivante(){ // Bouton utilisé après la réponse de chaque image pour passer à l'image suivant.
 	
 	document.getElementById("photoSuivante").style.visibility="hidden"; // Attention il ya une fonction photoSuivante et un bouton photoSuivante qui execute cette fonction quand on clique dessus
 	

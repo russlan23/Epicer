@@ -46,7 +46,7 @@ function mj4repGood(){ // s'execute si le joueur a cliqué sur la bonne partie d
 	document.getElementById(id4FigRep).style.visibility="visible";
 }
 
-function photoSuivanteMJ4(){
+function photoSuivanteMJ4(){ // Bouton utilisé après la réponse de chaque image pour passer à l'image suivant.
 	
 	document.getElementById("photoSuivanteMJ4").style.visibility="hidden"; // Attention il ya une fonction photoSuivanteMJ4 et un bouton photoSuivanteMJ4 qui execute cette fonction quand on clique dessus
 	

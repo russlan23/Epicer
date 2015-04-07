@@ -11,7 +11,7 @@
 		<div id="MJ4txt4">Observe bien ces deux résultats d’IRM, ils représentent les cerveaux de
 		deux patients. Trouve la différence entre ces deux résultats d’IRM.  </div>
 		
-		<!--Coordonnées des images-->
+		<!--Coordonnées de l'images1-->
 		<div id="MJ4fig1_1" class="MJ4fig" >
 			<img id="MJ4im1" src="/Epicer/images/mj4/mj4Fig1_1.png" alt="Mini jeu4" usemap="#bot8" >
 				<map name="bot8">
@@ -28,10 +28,13 @@
 					
 				</map>
 		</div>	
+		
+		<!--Image de la réponse de l'image 1-->
 		<div id="MJ4fig1_2" class="MJ4figRep">
 			<img src="/Epicer/images/mj4/mj4Fig1_2.png" alt="Mini jeu4" >
 		</div>
 		
+		<!--Coordonnées de l'images2-->
 		<div id="MJ4fig2_1" class="MJ4fig" >
 			<img id="MJ4im2" src="/Epicer/images/mj4/mj4Fig2_1.png" alt="Mini jeu4" usemap="#bot9" >
 				<map name="bot9">
@@ -46,11 +49,12 @@
 				</map>
 		</div>	
 		
-		
+		<!--Image de la réponse de l'image 2-->
 		<div id="MJ4fig2_2" class="MJ4figRep">
 			<img src="/Epicer/images/mj4/mj4Fig2_2.png" alt="Mini jeu4" >
 		</div>
 		
+		<!--Coordonnées de l'images3-->
 		<div id="MJ4fig3_1" class="MJ4fig" >
 			<img id="MJ4im3" src="/Epicer/images/mj4/mj4Fig3_1.png" alt="Mini jeu4" usemap="#bot10" >
 				<map name="bot10">
@@ -64,11 +68,12 @@
 					
 				</map>
 		</div>
-		
+		<!--Image de la réponse de l'image 3-->
 		<div id="MJ4fig3_2" class="MJ4figRep">
 			<img src="/Epicer/images/mj4/mj4Fig3_2.png" alt="Mini jeu4" >
 		</div>
 		
+		<!--Coordonnées de l'images 4-->
 		<div id="MJ4fig4_1" class="MJ4fig" >
 			<img id="MJ4im4" src="/Epicer/images/mj4/mj4Fig4_1.png" alt="Mini jeu4" usemap="#bot11" >
 				<map name="bot11">
@@ -83,15 +88,17 @@
 				</map>
 		
 		</div>	
+		
+		<!--Image de la réponse de l'image 4-->
 		<div id="MJ4fig4_2" class="MJ4figRep">
 			<img src="/Epicer/images/mj4/mj4Fig4_2.png" alt="Mini jeu4" >
 		</div>
 		
-		<!--Réponses bonnes et mauvaises-->		
+		<!--mauvaise Réponse image 1-->		
 		<div id= "mj4badRep1" class="txtMauvaiseRep"> Désolé, vous n'as pas trové la difference.
 		</div>
 		
-		
+		<!--bonne Réponse image 1-->
 		<div id= "mj4goodRep1" class="txtBonneRep"> Le patient de gauche a un ventricule manquant,
 		c’est-à-dire qu’il a un « trou » manquant, c’est ce qu’on appelle une hétérotopie.
 		Ce ventricule manquant peut n’avoir aucune conséquence pour le patient,
@@ -101,28 +108,36 @@
 		entrainer une crise d’épilepsie.
 		</div>
 		
+		<!--mauvaise Réponse image 2-->
 		<div id= "mj4badRep2" class="txtMauvaiseRep"> Désolé, vous n'as pas trové la difference. </div>
 		
+		<!--bonne Réponse image 2-->
 		<div id= "mj4goodRep2" class="txtBonneRep"> La zone que tu viens de sélectionner contient beaucoup de
 		« plis » chez le patient de gauche et moins de plis chez le patient de droite. On dit que le patient
 		de droite a une polycromygie. Les plis se forment pendant l’enfance et pendant la phase embryonnaire.
 		Le nombre élevé de plis peut être le déclencheur de crises d’épilepsie sans que l’on sache exactement
 		pourquoi. Néanmoins certaines personnes vivent très bien avec une polymicrogyrie sans aucune conséquence sur leur santé. </div>
 		
+		<!--mauvaise Réponse image 3-->
 		<div id= "mj4badRep3" class="txtMauvaiseRep"> Désolé, vous n'as pas trové la difference. </div>
 		
+		<!--bonne Réponse image 3-->
 		<div id= "mj4goodRep3" class="txtBonneRep"> Cette malformation est appelée dysembryoplastie neuro-épitheliale,
 		elle apparaît à la naissance et peut être à l’origine de crises d’épilepsie. Néanmoins, comme dans le cas précédent
 		(polymicrogyrie), certaines personnes vivent très bien avec une  dysembryoplastie neuro-épitheliale sans aucune 
 		conséquence sur leur santé. </div>
 		
+		<!--mauvaise Réponse image 4-->
 		<div id= "mj4badRep4" class="txtMauvaiseRep"> Désolé, vous n'as pas trové la difference. </div>
 		
+		<!--bonne Réponse image 4-->
 		<div id= "mj4goodRep4" class="txtBonneRep"> Observe bien ces deux résultats d’IRM, ils représentent les cerveaux 
 		de deux patients. Trouve la différence entre ces deux résultats d’IRM. </div>
 		
+		<!--score du jeu-->
 		<div id="infoScoreMJ4">  Score: <span id ="scoreMJ4" > </span></div> 
-				
+		
+		<!--bouton pour passer à l'étape suivant-->
 		<input id="photoSuivanteMJ4" class="clickble" type="submit" name="photoSuivanteMJ4" value=">" onClick="photoSuivanteMJ4()"/> </input>	
 		
 	</div>
