@@ -9,7 +9,7 @@ function startMJ2(){
 
 	scoreMJ2=0;
 	MJ2photo=0;
-	document.getElementById("MJ2jeu").style.visibility="visible";
+	document.getElementById("MJ2jeu").style.display="initial";
 	photoSuivante();
 	
 }
@@ -77,7 +77,7 @@ function finMJ2(){
 	scoreChapitre=scoreChapitre+scoreMJ2;
 	sauvegardeJoue();
 	sauvegardeJoueur();
-	document.getElementById("MJ2jeu").style.visibility="hidden";
+	document.getElementById("MJ2jeu").style.display="none";
 	// validerEtoiles(); utiliser seulement si les étoiles sont en bon format n'ont pas de fond !
 	document.getElementById("infoScoreMJ2").style.visibility="hidden";
 	document.getElementById("infoScoreChapitre").innerText=scoreChapitre;

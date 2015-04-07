@@ -24,7 +24,7 @@
 		#MJ2txt3 {position: absolute; top:20px; left: 125px; width: 600px; height: 70px; background-color: #33CCCC; color: black; text-align: center; border-radius:15px; font-size:30px; visibility:hidden;}
 		#MJ2txt4 {position: absolute; top:20px; left: 125px; width: 600px; height: 70px; background-color: #33CCCC; color: black; text-align: center; border-radius:15px; font-size:30px; visibility:hidden;}
 		
-		#MJ2jeu {position: absolute; width: 850px; height: 500px; text-align:center ;visibility:hidden;}
+		#MJ2jeu {position: absolute; width: 850px; height: 500px; text-align:center ; display:none;}
 		
 		.MJ2fig{position: absolute; cursor:pointer; width:600px; height:350px; left:125px; top:100px; border-style: solid; border-color: #33CCCC;}
 		.MJ2figRep {position: absolute; cursor:pointer; width:430px; height:250px; left:150px; top:200px; border-style: solid; border-color: #33CCCC;}
@@ -69,12 +69,12 @@
 
 	/* Mini jeu 4 */ 
 	
-		#MJ4txt1 {position: absolute; top:20px; left: 125px; width: 600px; height: 40px; background-color: #33CCCC; color: black; text-align: center; border-radius:15px; font-size:30px; visibility:hidden;}
-		#MJ4txt2 {position: absolute; top:20px; left: 125px; width: 600px; height: 40px; background-color: #33CCCC; color: black; text-align: center; border-radius:15px; font-size:30px; visibility:hidden;}
-		#MJ4txt3 {position: absolute; top:20px; left: 125px; width: 600px; height: 40px; background-color: #33CCCC; color: black; text-align: center; border-radius:15px; font-size:30px; visibility:hidden;}
-		#MJ4txt4 {position: absolute; top:20px; left: 125px; width: 600px; height: 40px; background-color: #33CCCC; color: black; text-align: center; border-radius:15px; font-size:30px; visibility:hidden;}
+		#MJ4txt1 {position: absolute; top:20px; left: 125px; width: 600px; height: 60px; background-color: #33CCCC; color: black; text-align: center; border-radius:15px; font-size:20px; visibility:hidden;}
+		#MJ4txt2 {position: absolute; top:20px; left: 125px; width: 600px; height: 40px; background-color: #33CCCC; color: black; text-align: center; border-radius:15px; font-size:20px; visibility:hidden;}
+		#MJ4txt3 {position: absolute; top:20px; left: 125px; width: 600px; height: 40px; background-color: #33CCCC; color: black; text-align: center; border-radius:15px; font-size:20px; visibility:hidden;}
+		#MJ4txt4 {position: absolute; top:20px; left: 125px; width: 600px; height: 40px; background-color: #33CCCC; color: black; text-align: center; border-radius:15px; font-size:20px; visibility:hidden;}
 		
-		#MJ4jeu {position: absolute; width: 850px; height: 500px; text-align:center ;visibility:hidden;}
+		#MJ4jeu {position: absolute; width: 850px; height: 500px; text-align:center ; display:none;}
 		
 		.MJ4fig{position: absolute; width:600px; height:350px; left:125px; top:100px; border-style: solid; border-color: #33CCCC;}
 		.MJ4figRep {position: absolute; width:430px; height:250px; left:150px; top:200px; border-style: solid; border-color: #33CCCC;}
@@ -87,7 +87,7 @@
 		#MJ4fig4_1{visibility:hidden;}
 		#MJ4fig4_2{visibility:hidden;}
 		
-		#photoSuivanteMJ4{ position: absolute ; text-align:center; width: 80px; height: 60px; top:220px; right:60px; background-color:green; color: black; font-size:40px; border-radius: 15px; visibility:hidden ;  -webkit-animation: clignote 2s linear infinite alternate; animation: clignote 2s linear infinite alternate;}
+		#photoSuivanteMJ4{ position: absolute ; text-align:center; width: 80px; height: 60px; top:220px; right:35px; background-color:green; color: black; font-size:40px; border-radius: 15px; visibility:hidden ;  -webkit-animation: clignote 2s linear infinite alternate; animation: clignote 2s linear infinite alternate;}
 		#photoSuivanteMJ4:hover{ background-color:blue; }
 				
 		

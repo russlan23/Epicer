@@ -66,6 +66,16 @@ progressBar = {
 							$('#imagesChap').append ("<img src ='/Epicer/images/im110.jpg'/>");
 					break;
 				case 2: 
+							$('#imagesChap').append ('<img src ="/Epicer/images/im200.jpg"/>');
+							$('#imagesChap').append ('<img src ="/Epicer/images/im201.jpg"/>');
+							$('#imagesChap').append ('<img src ="/Epicer/images/im202.jpg"/>');
+							$('#imagesChap').append ("<img src ='/Epicer/images/im203.jpg'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images/im204.jpg'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images/im205.jpg'/>");
+							$('#imagesChap').append ('<img src ="/Epicer/images/im206.jpg"/>');
+							$('#imagesChap').append ('<img src ="/Epicer/images/im207.jpg"/>');
+							$('#imagesChap').append ("<img src ='/Epicer/images/im208.jpg'/>");
+							$('#imagesChap').append ("<img src ='/Epicer/images/im209.jpg'/>");
 					break;
 				case 3: 
 				

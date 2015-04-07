@@ -7,7 +7,7 @@
 	
 	.clickble{cursor:pointer; outline:none; }
 	
-	#imageAcceuil{position: absolute; visibility:hidden;}
+	#imageAccueil{position: absolute; visibility:hidden;}
 	
 	#progress-bar-container{position:relative;	top:0px;left:0px; width:100%; height:5px;}
 	
@@ -37,7 +37,7 @@
 		
 		
 	/* le div de espace Jeu et tout ce qui est dedans :  */
-	#espaceJeu{width: 850px; position: relative; height: 500px; background-color: white; background-size: cover; background-repeat: no-repeat; background-image: url('/Epicer/images/accueil.png'); }
+	#espaceJeu{width: 850px; position: relative; height: 500px; background-color: white; background-size: cover; background-repeat: no-repeat; background-image: url('/Epicer/images/finChapitre.png'); }
 				
 		#etapeSuivante{ position: absolute ; text-align: center; width: 80px; bottom:25px; right:0px; background-color:green;  height: 60px; color: black; font-size:40px; border-radius: 15px; visibility:hidden ;  -webkit-animation: clignote 2s linear infinite alternate; animation: clignote 2s linear infinite alternate;}
 		#etapeSuivante:hover{ background-color:blue; }
@@ -49,16 +49,16 @@
 		
 		#imgesChargmnt{width: 550px; height: 300px;  position: absolute; top: 100px; left:200px; background-color: white; color:black;  cursor:progress;  font-size:25px; visibility:hidden;}
 		
-		#accueil{position : absolute; padding: 20px 20px 20px 20px; top:150px; left:325px;  width :200px; background-color: rgba(143,143,143, 0.8); border-radius: 10px;  -webkit-animation: appear 2s; animation: appear 2s;}
+		#accueil{position : absolute; padding: 20px 20px 20px 20px; top:150px; left:275px;  width :300px; background-color: rgba(143,143,143, 0.8); border-radius: 10px;  -webkit-animation: appear 2s; animation: appear 2s;}
 			
 			
 			/*le Menu dans l'acceuil */
-			.acc{ position :relative; height:65px; width : 160px;  left: 20px;   padding:10px 10px 10px 5px;  color : black; border-radius: 7px; font-size:25px; }
-			.acc:hover{font-size:28px; background: blue;}
-			.bcWhite{background:#FFF; background: -moz-linear-gradient(#FFF, #1C1C1C);	background: -webkit-linear-gradient(#FFF, #1C1C1C); background: -o-linear-gradient(#FFF, #1C1C1C);} 
-			.bcRed{background:red; background: -moz-linear-gradient(red, #1C1C1C);	background: -webkit-linear-gradient(red, #1C1C1C); background: -o-linear-gradient(red, #1C1C1C);} 
-			.bcGreen{background:#04B404; background: -moz-linear-gradient(#04B404, #1C1C1C); background: -webkit-linear-gradient(#04B404, #1C1C1C); background: -o-linear-gradient(#04B404,#1C1C1C);} 
-			.bcYellow{background:#FFFF00; background: -moz-linear-gradient(#FFFF00, #1C1C1C); background: -webkit-linear-gradient(#FFFF00, #1C1C1C); background: -o-linear-gradient(#FFFF00,#1C1C1C);} 
+			.acc{ position :relative; height:65px; width : 280px;   text-align:center; padding:10px 10px 10px 10px;  color : black; border-radius: 7px; font-size:28px; }
+			.acc:hover{font-size:32px; background: blue;}
+			.bcWhite{background:#FFF; } 
+			.bcRed{background:red; } 
+			.bcGreen{background:#04B404;} 
+			.bcYellow{background:#F9F800; } 
 			/*voici element par element s'il faut les editer*/
 			#reprendre {}
 			#accederChapitre{}
@@ -71,7 +71,7 @@
 		#chap4Fait{visibility:hidden;}
 			
 		#choixChapitre{position:absolute;  visibility:hidden;}
-			.chap{ position : absolute; left: 275px; width:300px; text-align:center; height :70px; color:black; background-color:green; padding: 5px; border-radius: 20px; font-size:20px; }
+			.chap{ position : absolute; left: 275px; width:300px; text-align:center; height :60px; color:black; background-color:green; padding: 5px; border-radius: 20px; font-size:30px; }
 			.chap:hover{ background-color: blue;}
 
 			#chap1{top:60px;}
